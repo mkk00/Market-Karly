@@ -102,5 +102,163 @@
         </nav>
       </div>
     </header>
+
+    <!-- main -->
+    <main class="main">
+      <h1>회원가입</h1>
+      <p>필수입력사항</p>
+      
+      <section class="join-content">
+        <form action="#">
+          <fieldset>
+            <!-- 회원 정보 입력 -->
+            <legend>회원 정보 입력</legend>
+            <!-- 아이디 섹션 -->
+            
+            <div class="join-id">
+              <h2 class="join-id__title">
+                <label for="user-id">아이디</label>
+              </h2>
+              <input type="text" id="user-id" name="user-id" placeholder="아이디를 입력해주세요" autocomplete="username">
+              <button type="button" class="verify-button">중복확인</button>
+            </div>
+
+            <!-- 비밀번호 -->
+            <h2 class="join-id__title">
+              <label for="user-pw">비밀번호</label>
+            </h2>
+            <input type="password" id="user-pw" name="user-pw" placeholder="비밀번호를 입력해주세요">
+            <h3 class="a11yHidden">
+              <label for="verify-pw">비밀번호 확인</label>
+            </h3>
+            <input type="password" id="verify-pw" name="verify-pw" placeholder="비밀번호를 한번 더 입력해주세요">
+          </fieldset>
+
+          <!-- 개인 정보 입력 -->
+          <fieldset>
+            <!-- 이름 -->
+            <legend>개인 정보 입력</legend>
+            <h2 class="join-id__title">
+              <label for="user-name">이름</label>
+            </h2>
+            <input type="text" id="user-name" name="user-name" placeholder="이름을 한번 더 입력해주세요" autocomplete="name">
+
+            <!-- 이메일 -->
+            <div class="join-email">
+              <h2 class="join-id__title">
+                <label for="user-email">이메일</label>
+              </h2>
+              <input type="text" id="user-email" name="user-email" placeholder="예) marketkarly@karly.com">
+              <button type="button" class="verify-button">중복확인</button>
+            </div>
+
+            <!-- 휴대폰 -->
+            <div class="join-phone">
+              <h2 class="join-id__title">
+                <label for="user-phone">휴대폰</label>
+              </h2>
+              <input type="text" id="user-phone" name="user-phone" placeholder="숫자만 입력해주세요." autocomplete="email">
+              <button type="button" class="verify-button">인증번호</button>
+            </div>
+
+            <!-- 주소 -->
+            <h2 class="join-id__title">
+              <label for="address">주소</label>
+            </h2>
+            <button type="button">주소검색</button>
+            <p class="address__p--text">배송지에 따라 상품 정보가 달라질 수 있습니다.</p>
+          </fieldset>
+
+          <fieldset>
+            <legend>선택 사항</legend>
+            <h2 class="join-id__title">
+              <label for="gender">성별</label>
+            </h2>
+            <input type="radio" id="gender-male" name="gender" autocomplete="sex">
+            <label for="gender-male">남자</label>
+
+            <input type="radio" id="gender-female" name="gender" autocomplete="sex">
+            <label for="gender-female">여자</label>
+
+            <input type="radio" id="gender-neutral" name="gender" autocomplete="sex">
+            <label for="gender-neutral">선택안함</label>
+
+            <div class="join-wrap">
+              <h2 class="join-id__title">생년월일</h2>
+              <div class="join-birthday">
+                <div class="join-y">
+                  <label for="join-yyyy">생년</label>
+                  <input type="text" id="join-yyyy" placeholder="YYYY" maxlength="4" autocomplete="bday-year">
+                </div>
+                <div class="join-m">
+                  <label for="join-mm">생월</label>
+                  <input type="text" id="join-mm" placeholder="mm" maxlength="2" autocomplete="bday-month">
+                </div>
+                <div class="join-d">
+                  <label for="join-dd">생일</label>
+                  <input type="text" id="join-dd" placeholder="dd" maxlength="2" autocomplete="bday-day">
+                </div>
+              </div>
+            </div>
+
+            <h2 class="join-id__title">
+              <label for="recommender">추가입력 사항</label>
+            </h2>
+            <input type="radio" id="recommender" name="add">
+            <label for="recommender">친구초대 추천인 아이디</label>
+            <input type="radio" id="event-name" name="add">
+            <label for="event-name">참여 이벤트명</label>
+          </fieldset>
+
+          <!-- 이용약관 동의 -->
+          <fieldset>
+            <legend>이용약관동의</legend>
+            <div class="agree-user">
+              <label for="">이용약관동의</label>
+
+              <!-- 전체 동의 -->
+              <div class="agree-all">
+                <input type="checkbox" id="agree-all__terms" name="agree-all__terms">
+                <label for="agree-all__terms">전체 동의합니다.</label>
+                <p class="agree-text">선택항목에 동의하지 않은 경우도 회원가입 및 일반적인 서비스를 이용할 수 있습니다.</p>
+              </div>
+
+              <!-- 이용약관 동의 -->
+              <div class="agree">
+                <input type="checkbox" id="agree-terms" name="agree-terms">
+                <label for="agree-terms">이용약관 동의 (필수)</label>
+                <a href="#" class="terms">약관 보기 &gt;</a>
+              </div>
+
+              <!-- 개인정보 동의 -->
+              <div class="privacy">
+                <input type="checkbox" id="privacy-terms" name="privacy-terms">
+                <label for="privacy-terms">개인정보 수집 · 이용 동의 (필수)</label>
+                <a href="#" class="terms">약관 보기 &gt;</a>
+              </div>
+
+              <!-- 혜택 동의 -->
+              <div class="benefit-information">
+                <input type="checkbox" id="benefit-terms" name="benefit-terms">
+                <label for="benefit-terms">무료배송, 할인쿠폰 등 혜택/정보 수신 동의 (선택)</label>
+                <a href="#" class="terms">약관 보기 &gt;</a>
+              </div>
+
+              <!-- 14세이상 확인 -->
+              <div class="confirm">
+                <input type="checkbox" id="confirm-terms" name="confirm-terms">
+                <label for="confirm-terms">본인은 만 14세 이상입니다. (필수)</label>
+                <a href="#" class="terms">약관 보기 &gt;</a>
+              </div>
+            </div> <!-- class="agree-user" -->
+            
+              <!-- 가입하기 버튼 -->
+              <button type="submit" class="join">가입하기</button>
+          </fieldset>
+        </form>
+      </section>
+    </main>
+
+  
   </body>
 </html>
