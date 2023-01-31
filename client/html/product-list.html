@@ -22,54 +22,81 @@
       <h1 class="a11y-hidden">칼리 - 마켓칼리/뷰티칼리</h1>
       <section class="top">
         <ul class="login">
-          <li class="login__list">회원가입</li>
-          <li class="login__list">로그인</li>
-          <li class="login__list">고객센터</li>
+          <li class="login__list">
+            <span class="login__text">회원가입</span>
+          </li>
+          <li class="login__list">
+            <span class="login__text">로그인</span>
+          </li>
+          <li class="login__list">
+            <div class="login__customerService">
+              <span class="login__customerService-text">고객센터</span>
+              <button class="login__customerService-more">
+                <img src="../assets/default/Icon/Icon_down 1.svg" alt="더보기" class="login__customerService-more-img" />
+              </button>
+            </div>
+          </li>
         </ul>
         <div class="search">
-          <div class="search-logoSwitch">
-            <img src="../assets/icons/Icon/logo.svg" alt="마켓칼리 로고" class="search-logoSwitch__logo" />
-            <div class="search-logoSwitch__switch">
-              <span class="marketKarly">마켓칼리</span>
-              <a href="#" class="beautyKarly">
-                <span class="beautyKarly-text">뷰티칼리</span>
+          <div class="search__logoSwitch">
+            <img src="../assets/icons/Icon/logo.svg" alt="마켓칼리 로고" class="search__logoSwitch-logo" />
+            <div class="search__logoSwitch-switch">
+              <span class="search__logoSwitch-switch__marketKarly">마켓칼리</span>
+              <a href="#" class="search__logoSwitch-switch__beautyKarly">
+                <span class="search__logoSwitch-switch__beautyKarly-text">뷰티칼리</span>
               </a>
             </div>
           </div>
-          <ul class="search-icons">
-            <li class="search-icons__icon">
-              Location
+          <ul class="search__icons">
+            <li class="search__icon">
+              <a href="#" class="search__icon-link">
+                <img src="../assets/icons/Icon/Location.svg" alt="위치" class="search__icon-img" />
+              </a>
             </li>
-            <li class="search-icons__icon">
-              Heart
+            <li class="search__icon">
+              <a href="#" class="search__icon-link">
+                <img src="../assets/icons/Icon/Heart.svg" alt="위치" class="search__icon-img" />
+              </a>
             </li>
-            <li class="search-icons__icon">
-              shopping basket
+            <li class="search__icon">
+              <a href="#" class="search__icon-link">
+                <img src="../assets/icons/Icon/Cart.svg" alt="위치" class="search__icon-img" />
+              </a>
             </li>
           </ul>
-          <div class="search-search">
+          <div class="search__search">
             <label for="search" class="search-search__label">검색</label>
             <input type="text" class="search-search__input" id="search" placeholder="검색어를 입력해주세요" />
-            <img src="#" alt="돋보기" class="search-search__button" />
+            <img src="../assets/icons/Icon/Search.svg" alt="돋보기" class="search-search__button" />
           </div>
         </div>
       </section>
       <nav class="nav">
         <div class="category">
-          <img src="#" alt="#" class="category-icon" />
-          <span class="category-text">카테고리</span>
+          <button class="category__button">
+            <img src="../assets/icons/Icon/Hamburger.svg" alt="카테고리 버튼" class="category__button-icon" />
+          </button>
+          <span class="category__text">카테고리</span>
         </div>
         <nav class="menu">
-          <ol class="menu-lists">
-            <li class="menu-lists__list">신상품</li>
-            <li class="menu-lists__list">베스트</li>
-            <li class="menu-lists__list">알뜰쇼핑</li>
-            <li class="menu-lists__list">특가/혜택</li>
+          <ol class="menu__lists">
+            <li class="menu__list">
+              <span class="menu__list-text">신상품</span>
+            </li>
+            <li class="menu__list">
+              <span class="menu__list-text">베스트</span>
+            </li>
+            <li class="menu__list">
+              <span class="menu__list-text">알뜰쇼핑</span>
+            </li>
+            <li class="menu__list">
+              <span class="menu__list-text">특가/혜택</span>
+            </li>
           </ol>
         </nav>
-        <div class="menu-notice">
-          <span class="menu-notice__text">새벽 • 낮 </span>
-          <span class="menu-notice__text">배송안내</span>
+        <div class="notice">
+          <span class="notice__text">새벽 • 낮 </span>
+          <span class="notice__text">배송안내</span>
         </div>
       </nav>
     </header>
