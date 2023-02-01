@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="../css/pages/login.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script src="./js/main.js" type="module"></script>
     <title>Login | Market Karly</title>
@@ -57,28 +58,27 @@
       </nav>
     </header>
     <main class="main">
-      <div>로그인</div>
+      <div class="title">로그인</div>
       <div class="login">
         <form>
           <div>
-            <div>
+            <div class="id-box">
               <input id="id" placeholder="아이디를 입력해주세요">
             </div>
-            <div>
+            <div class="id-box">
               <input id="password" placeholder="비밀번호를 입력해주세요">
             </div>
-            <div>
-              <span><a href="/">아이디 찾기</a></span>
-              <span>|<a href="/">비밀번호 찾기</a></span>
-            </div>
           </div>
-          <div>
-            <button type="submit" class="login-1">
-              <span>로그인</span>
+          <div class="id-serch">
+            <a class="serch-a" href="/">아이디 찾기</a>
+            <span class="serch-span">|</span><a class="serch-a" href="/">비밀번호 찾기</a>
+          </div>
+          <div class="login-bt">
+            <button type="submit" class="bt-1">
+              <span class="bt-1-span">로그인</span>
             </button>
-            <button type="button" class="register">
-              <span><a href="/">회원가입</a></span>
-            </button>
+            <a href="/"><button type="button" class="bt-2"><span class="bt-2-span">회원가입</span>
+            </button></a>
           </div>
         </form>
       </div>
