@@ -1,0 +1,330 @@
+/* -------------------------------------------------------------------------- */
+/*                                  전체 메인 영역                                  */
+/* -------------------------------------------------------------------------- */
+.main {
+  width: 100%;
+  height: 3132px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 48px 0px 80px;
+  gap: 48px;
+}
+
+/* 베스트 부분 */
+.best {
+  width: 56px;
+  height: 32px;
+
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 21.328px;
+  line-height: 150%;
+
+  color: #000000;
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+/* 제품 리스트 출력 부분 */
+.product {
+  background-color: cadetblue;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+
+  width: 1050px;
+  height: 2924px;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                    아코디언                                    */
+/* -------------------------------------------------------------------------- */
+.navigator {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+
+  width: 267px;
+  height: 906px;
+
+  background-color: white;
+}
+
+/* 아코디언 공통 */
+.accordion_head {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px;
+
+  width: 220px;
+  height: 52px;
+}
+
+.frame70 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px;
+  gap: 8px;
+
+  height: 24px;
+}
+
+.frame70__text {
+  height: 24px;
+
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 150%;
+
+  color: #333333;
+}
+
+.frame70__etc {
+  height: 16px;
+
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 10px;
+  line-height: 160%;
+
+  color: #a6a6a6;
+}
+
+/* 아코디언 - 더보기 버튼 */
+.accordion_head__btn {
+  width: 18px;
+  height: 18px;
+}
+
+.accordion_head__btn > input[type="button"] {
+  display: none;
+}
+
+/* 아코디언 - 필터 */
+.filter {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+
+  width: 220px;
+  height: 52px;
+
+  border-bottom: 1px solid #e1e1e1;
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.filter > .accordion_head > .frame70 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px;
+  gap: 8px;
+
+  width: 220px;
+  height: 24px;
+}
+
+/* 아코디언 - 메뉴 */
+.accordion_set {
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+
+  width: 220px;
+  height: 52px;
+
+  border-bottom: 1px solid #e1e1e1;
+}
+
+/* 아코디언 - 더보기 버튼 눌렀을 경우 */
+.accordion_set.is-active {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+
+  width: 220px;
+  height: 594px;
+
+  border-bottom: 1px solid #e1e1e1;
+
+  align-self: stretch;
+}
+
+.accordion_body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+
+  width: 220px;
+  height: 542px;
+}
+
+.accordion_item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 8px 0px 16px;
+  gap: 8px;
+
+  width: 220px;
+  height: 50px;
+}
+
+.accordion_item__inputCheck {
+  width: 24px;
+  height: 24px;
+}
+
+/* 아코디언 - 체크박스 */
+input[type="checkbox"] {
+  display: none;
+}
+
+input[type="checkbox"] + label {
+  display: flex;
+  padding-left: 31px;
+  width: 24px;
+  height: 24px;
+  background-repeat: no-repeat;
+  background-image: url("../../assets/icons/Icon/isChecked=false.svg");
+}
+
+input[type="checkbox"]:checked + label {
+  background-image: url("../../assets/icons/Icon/isChecked=true.svg");
+}
+
+.accordion_item__text {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  gap: 4px;
+  height: 26px;
+}
+
+.accordion_item__text-top {
+  height: 100%;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 160%;
+  color: #333333;
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.accordion_item__text-bot {
+  height: 19px;
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12.003px;
+  line-height: 160%;
+  color: #a6a6a6;
+
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+/* 브랜드 더보기 */
+.accordion_more {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 0px 12px;
+
+  width: 220px;
+  height: 42px;
+
+  flex: none;
+  order: 10;
+  flex-grow: 0;
+}
+
+.accordion_more__text {
+  width: 66px;
+  height: 18px;
+
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12.003px;
+  line-height: 150%;
+
+  color: #a6a6a6;
+}
+
+.accordion_more__btn {
+  width: 18px;
+  height: 18px;
+
+  border: none;
+  background-color: white;
+}
+
+/* 메뉴들 위치 정리 */
+.navigatior__list:first-child {
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.navigatior__list:nth-child(2) {
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+.navigatior__list:nth-child(3) {
+  flex: none;
+  order: 2;
+  flex-grow: 0;
+}
+.navigatior__list:nth-child(4) {
+  flex: none;
+  order: 3;
+  flex-grow: 0;
+}
+.navigatior__list:nth-child(5) {
+  flex: none;
+  order: 4;
+  flex-grow: 0;
+}
+.navigatior__list:nth-child(6) {
+  flex: none;
+  order: 5;
+  flex-grow: 0;
+}
+.navigatior__list:nth-child(7) {
+  flex: none;
+  order: 6;
+  flex-grow: 0;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                  상품 조회 리스트                                 */
+/* -------------------------------------------------------------------------- */
