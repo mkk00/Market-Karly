@@ -31,7 +31,6 @@
 
 /* 제품 리스트 출력 부분 */
 .product {
-  background-color: cadetblue;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -349,8 +348,6 @@ input[type="checkbox"]:checked + label {
 
   width: 783px;
   height: 44px;
-
-  background-color: salmon;
 }
 
 .group-menu__text {
@@ -446,3 +443,266 @@ input[type="checkbox"]:checked + label {
 
   background: #a6a6a6;
 } */
+
+/* -------------------------------------------------------------------------- */
+/*                                Product-List                                */
+/* -------------------------------------------------------------------------- */
+.productList {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 24px;
+
+  width: 783px;
+  height: 2880px;
+}
+
+.slider {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 45px;
+
+  width: 783px;
+  height: 538px;
+}
+
+.slide {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 16px;
+
+  width: 249px;
+  height: 538px;
+}
+
+.slide__visual {
+  width: 249px;
+  height: 320px;
+
+  position: relative;
+}
+
+.visual-img {
+  width: 249px;
+  height: 320px;
+  object-fit: cover;
+}
+
+.visual__icon {
+  position: absolute;
+  left: 75.9%;
+  right: 6.02%;
+  top: 80.62%;
+  bottom: 5.31%;
+}
+
+.slide__info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px 0px 24px;
+  gap: 8px;
+
+  width: 165px;
+  height: 177px;
+}
+
+.info-text {
+  height: 18px;
+
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12.003px;
+  line-height: 150%;
+
+  color: var(--gray-400);
+}
+
+.info-productName {
+  height: 26px;
+
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 160%;
+
+  color: #333333;
+}
+
+.slide:first-child > .slide__info > .info-productName {
+  width: 165px;
+}
+
+.slide:nth-child(2) > .slide__info > .info-productName {
+  width: 221px;
+}
+
+.slide:nth-child(3) > .slide__info > .info-productName {
+  width: 144px;
+}
+
+.info-price {
+  height: 32px;
+
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 21.328px;
+  line-height: 150%;
+
+  color: var(--content);
+}
+
+.info-salePrice {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 8px;
+
+  width: 148px;
+  height: 32px;
+}
+
+.info-sale {
+  height: 32px;
+
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 21.328px;
+  line-height: 150%;
+
+  color: var(--accent-yellow);
+}
+
+.info-originPrice {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  isolation: isolate;
+
+  width: 53px;
+  height: 19px;
+
+  position: relative;
+}
+
+.info-originPrice__price {
+  width: 53px;
+  height: 19px;
+
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12.003px;
+  line-height: 160%;
+
+  color: var(--gray-400);
+}
+
+.info-originPrice__rectangle {
+  position: absolute;
+  height: 1px;
+  left: 0px;
+  right: 0px;
+  top: calc(50% - 1px / 2 + 1px);
+
+  background: var(--gray-400);
+}
+
+.info-info {
+  height: 19px;
+
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12.003px;
+  line-height: 160%;
+
+  color: var(--gray-400);
+}
+
+.slide:first-child > .slide__info > .info-info {
+  width: 134px;
+}
+.slide:nth-child(2) > .slide__info > .info-info {
+  width: 168px;
+}
+.slide:nth-child(3) > .slide__info > .info-info {
+  width: 171px;
+}
+
+.info-badge {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 8px;
+
+  width: 123px;
+  height: 26px;
+}
+
+.karlyBadge {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 4px;
+  gap: 4px;
+
+  width: 65px;
+  height: 26px;
+
+  background: var(--gray-100);
+  border-radius: 4px;
+}
+
+.karlyBadge__text {
+  width: 57px;
+  height: 18px;
+
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12.003px;
+  line-height: 150%;
+
+  color: var(--primary);
+}
+
+.textBadge {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 4px;
+  gap: 4px;
+
+  width: 50px;
+  height: 26px;
+
+  background: var(--gray-100);
+  border-radius: 4px;
+}
+
+.textBadge__text {
+  width: 42px;
+  height: 18px;
+
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12.003px;
+  line-height: 150%;
+
+  color: var(--content);
+}
