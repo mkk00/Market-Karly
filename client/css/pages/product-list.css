@@ -100,7 +100,7 @@
   font-size: 10px;
   line-height: 160%;
 
-  color: #a6a6a6;
+  color: var(--gray-300);
 }
 
 /* 아코디언 - 더보기 버튼 */
@@ -243,7 +243,7 @@ input[type="checkbox"]:checked + label {
   font-weight: 400;
   font-size: 12.003px;
   line-height: 160%;
-  color: #a6a6a6;
+  color: var(--gray-300);
 
   flex: none;
   order: 1;
@@ -276,7 +276,7 @@ input[type="checkbox"]:checked + label {
   font-size: 12.003px;
   line-height: 150%;
 
-  color: #a6a6a6;
+  color: var(--gray-300);
 }
 
 .accordion_more__btn {
@@ -365,3 +365,84 @@ input[type="checkbox"]:checked + label {
 
   color: #333333;
 }
+
+.group-menu__lists {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  gap: 8px;
+
+  width: 445px;
+  height: 24px;
+}
+
+.group-menu__list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  gap: 4px;
+
+  height: 24px;
+}
+
+.group-menu__button {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  padding: 0px;
+  gap: 4px;
+
+  height: 24px;
+}
+
+.group-menu__button-text {
+  height: 24px;
+
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 150%;
+
+  color: var(--gray-300);
+}
+
+.group-menu__button-frame {
+  width: 14px;
+  height: 20px;
+
+  display: none;
+}
+
+.group-menu__button.is-active > .group-menu__button-text {
+  color: #333333;
+}
+
+.group-menu__button.is-active > .group-menu__button-frame {
+  display: block;
+}
+
+.group-menu__list:first-child {
+  width: 60px;
+}
+.group-menu__list:nth-child(2),
+.group-menu__list:nth-child(3) {
+  width: 56px;
+}
+
+.group-menu__list:nth-child(4) {
+  width: 42px;
+}
+.group-menu__list:nth-child(5),
+.group-menu__list:nth-child(6) {
+  width: 73px;
+}
+
+/* .group-menu__list-bar {
+  width: 1px;
+  height: 10px;
+
+  background: #a6a6a6;
+} */
