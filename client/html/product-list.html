@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="../css/style.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script src="./js/main.js" type="module"></script>
     <title>Product List | Market Karly</title>
@@ -110,110 +110,215 @@
           <span class="best">베스트</span>
           <div class="product">
             <nav class="navigator">
-              <h3 class="a11y-hidden">상품 필터 검색</h2>
-              <ul class="navigator-lists">
-                <li class="navigator-lists__list">
-                  <div class="type">
-                    <span class="type-text">필터</span>
-                    <button class="type-clear">초기화</button>
+              <h3 class="a11y-hidden">필터</h3>
+              <section class="filter">
+                <div class="accordion_head">
+                  <div class="frame70">
+                    <span class="frame70__text">필터</span>
+                    <span class="frame70__clear">초기화</span>
                   </div>
-                </li>
-                <li class="navigator-lists__list">
-                  <div class="type">
-                    <span class="type-text">카테고리</span>
-                    <button class="type-button">></button>
+                </div>
+              </section>
+
+              <h3 class="a11y-hidden">카테고리</h3>
+              <section class="accordion_set">
+                <div class="accordion_head">
+                  <div class="frame70">
+                    <span class="frame70__text">카테고리</span>
+                    <span class="frame70__cnt">1</span>
                   </div>
-                </li>
-                <li class="navigator-lists__list">
-                  <div class="type">
-                    <span class="type-text">브랜드</span>
-                    <button class="type-button">></button>
+                  <button class="accordion_head__btn">
+                    <img src="../assets/icons/Icon/arrow-down.svg" alt="메뉴 더보기" class="accordion_head__icon" />
+                  </button>
+                </div>
+              </section>
+
+              <h3 class="a11y-hidden">브랜드</h3>
+              <section class="accordion_set">
+                <div class="accordion_head">
+                  <div class="frame70">
+                    <span class="frame70__text">브랜드</span>
+                    <span class="frame70__cnt">1</span>
                   </div>
-                  <div class="sub">
-                    <ul class="sub-lists">
-                      <li class="sub-list">
-                        <button class="sub-button">체크</button>
-                        <a href="/" class="sub-link">감자밭</a>
-                        <span class="sub-num">1</span>
-                      </li>
-                      <li class="sub-list">
-                        <button class="sub-button">체크</button>
-                        <a href="/" class="sub-link">강남면옥</a>
-                        <span class="sub-num">1</span>
-                      </li>
-                      <li class="sub-list">
-                        <button class="sub-button">체크</button>
-                        <a href="/" class="sub-link">경남제약</a>
-                        <span class="sub-num">1</span>
-                      </li>
-                      <li class="sub-list">
-                        <button class="sub-button">체크</button>
-                        <a href="/" class="sub-link">경복궁</a>
-                        <span class="sub-num">1</span>
-                      </li>
-                      <li class="sub-list">
-                        <button class="sub-button">체크</button>
-                        <a href="/" class="sub-link">고래사</a>
-                        <span class="sub-num">1</span>
-                      </li>
-                      <li class="sub-list">
-                        <button class="sub-button">체크</button>
-                        <a href="/" class="sub-link">고메공방</a>
-                        <span class="sub-num">1</span>
-                      </li>
-                      <li class="sub-list">
-                        <button class="sub-button">체크</button>
-                        <a href="/" class="sub-link">고은어다이어트</a>
-                        <span class="sub-num">1</span>
-                      </li>
-                      <li class="sub-list">
-                        <button class="sub-button">체크</button>
-                        <a href="/" class="sub-link">교토마블</a>
-                        <span class="sub-num">1</span>
-                      </li>
-                      <li class="sub-list">
-                        <button class="sub-button">체크</button>
-                        <a href="/" class="sub-link">그래놀라 하우스</a>
-                        <span class="sub-num">1</span>
-                      </li>
-                      <li class="sub-list">
-                        <button class="sub-button">체크</button>
-                        <a href="/" class="sub-link">그리즈 시그니처 램</a>
-                        <span class="sub-num">1</span>
-                      </li>
-                    </ul>
-                    <div class="sub-more">
-                      <span class="sub-more__text">브랜드 더보기</span>
-                      <button class="sub-more__btn">></button>
+                  <button class="accordion_head__btn">
+                    <img src="../assets/icons/Icon/arrow-up.svg" alt="메뉴 더보기" class="accordion_head__icon" />
+                  </button>
+                </div>
+                <div class="accordion_body">
+                  <div class="accordion_item">
+                    <div class="accordion_item__inputCheck">
+                      <label for="check" class="a11y-hidden">체크박스</label>
+                      <input type="checkbox" id="check" class="accordion_item__checkbox" />
+                    </div>
+                    <div class="accordion_item__text">
+                      <span class="accordion_item__text-top">감자밭</span>
+                      <span class="accordion_item__text-bot">1</span>
                     </div>
                   </div>
-                </li>
-                <li class="navigator-lists__list">
-                  <div class="type">
-                    <span class="type-text">가격</span>
-                    <button class="type-button">></button>
+                </div>
+                <div class="accordion_body">
+                  <div class="accordion_item">
+                    <div class="accordion_item__inputCheck">
+                      <label for="check" class="a11y-hidden">체크박스</label>
+                      <input type="checkbox" id="check" class="accordion_item__checkbox" />
+                    </div>
+                    <div class="accordion_item__text">
+                      <span class="accordion_item__text-top">강남면옥</span>
+                      <span class="accordion_item__text-bot">1</span>
+                    </div>
                   </div>
-                </li>
-                <li class="navigator-lists__list">
-                  <div class="type">
-                    <span class="type-text">혜택</span>
-                    <button class="type-button">></button>
+                </div>
+                <div class="accordion_body">
+                  <div class="accordion_item">
+                    <div class="accordion_item__inputCheck">
+                      <label for="check" class="a11y-hidden">체크박스</label>
+                      <input type="checkbox" id="check" class="accordion_item__checkbox" />
+                    </div>
+                    <div class="accordion_item__text">
+                      <span class="accordion_item__text-top">경남제약</span>
+                      <span class="accordion_item__text-bot">1</span>
+                    </div>
                   </div>
-                </li>
-                <li class="navigator-lists__list">
-                  <div class="type">
-                    <span class="type-text">유형</span>
-                    <button class="type-button">></button>
+                </div>
+                <div class="accordion_body">
+                  <div class="accordion_item">
+                    <div class="accordion_item__inputCheck">
+                      <label for="check" class="a11y-hidden">체크박스</label>
+                      <input type="checkbox" id="check" class="accordion_item__checkbox" />
+                    </div>
+                    <div class="accordion_item__text">
+                      <span class="accordion_item__text-top">경복궁</span>
+                      <span class="accordion_item__text-bot">1</span>
+                    </div>
                   </div>
-                </li>
-                <li class="navigator-lists__list">
-                  <div class="type">
-                    <span class="type-text">특정상품 제외</span>
-                    <button class="type-button">></button>
+                </div>
+                <div class="accordion_body">
+                  <div class="accordion_item">
+                    <div class="accordion_item__inputCheck">
+                      <label for="check" class="a11y-hidden">체크박스</label>
+                      <input type="checkbox" id="check" class="accordion_item__checkbox" />
+                    </div>
+                    <div class="accordion_item__text">
+                      <span class="accordion_item__text-top">고래사</span>
+                      <span class="accordion_item__text-bot">1</span>
+                    </div>
                   </div>
-                </li>
-              </ul>
+                </div>
+                <div class="accordion_body">
+                  <div class="accordion_item">
+                    <div class="accordion_item__inputCheck">
+                      <label for="check" class="a11y-hidden">체크박스</label>
+                      <input type="checkbox" id="check" class="accordion_item__checkbox" />
+                    </div>
+                    <div class="accordion_item__text">
+                      <span class="accordion_item__text-top">고메공방</span>
+                      <span class="accordion_item__text-bot">1</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion_body">
+                  <div class="accordion_item">
+                    <div class="accordion_item__inputCheck">
+                      <label for="check" class="a11y-hidden">체크박스</label>
+                      <input type="checkbox" id="check" class="accordion_item__checkbox" />
+                    </div>
+                    <div class="accordion_item__text">
+                      <span class="accordion_item__text-top">고온어다이어트</span>
+                      <span class="accordion_item__text-bot">1</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion_body">
+                  <div class="accordion_item">
+                    <div class="accordion_item__inputCheck">
+                      <label for="check" class="a11y-hidden">체크박스</label>
+                      <input type="checkbox" id="check" class="accordion_item__checkbox" />
+                    </div>
+                    <div class="accordion_item__text">
+                      <span class="accordion_item__text-top">교토마블</span>
+                      <span class="accordion_item__text-bot">1</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion_body">
+                  <div class="accordion_item">
+                    <div class="accordion_item__inputCheck">
+                      <label for="check" class="a11y-hidden">체크박스</label>
+                      <input type="checkbox" id="check" class="accordion_item__checkbox" />
+                    </div>
+                    <div class="accordion_item__text">
+                      <span class="accordion_item__text-top">그래놀라 하우스</span>
+                      <span class="accordion_item__text-bot">1</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion_body">
+                  <div class="accordion_item">
+                    <div class="accordion_item__inputCheck">
+                      <label for="check" class="a11y-hidden">체크박스</label>
+                      <input type="checkbox" id="check" class="accordion_item__checkbox" />
+                    </div>
+                    <div class="accordion_item__text">
+                      <span class="accordion_item__text-top">그리츠 시그니처 램</span>
+                      <span class="accordion_item__text-bot">1</span>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <h3 class="a11y-hidden">가격</h3>
+              <section class="accordion_set">
+                <div class="accordion_head">
+                  <div class="frame70">
+                    <span class="frame70__text">가격</span>
+                    <span class="frame70__cnt"></span>
+                  </div>
+                  <button class="accordion_head__btn">
+                    <img src="../assets/icons/Icon/arrow-down.svg" alt="메뉴 더보기" class="accordion_head__icon" />
+                  </button>
+                </div>
+              </section>
+
+              <h3 class="a11y-hidden">혜택</h3>
+              <section class="accordion_set">
+                <div class="accordion_head">
+                  <div class="frame70">
+                    <span class="frame70__text">혜택</span>
+                    <span class="frame70__cnt"></span>
+                  </div>
+                  <button class="accordion_head__btn">
+                    <img src="../assets/icons/Icon/arrow-down.svg" alt="메뉴 더보기" class="accordion_head__icon" />
+                  </button>
+                </div>
+              </section>
+
+              <h3 class="a11y-hidden">유형</h3>
+              <section class="accordion_set">
+                <div class="accordion_head">
+                  <div class="frame70">
+                    <span class="frame70__text">유형</span>
+                    <span class="frame70__cnt"></span>
+                  </div>
+                  <button class="accordion_head__btn">
+                    <img src="../assets/icons/Icon/arrow-down.svg" alt="메뉴 더보기" class="accordion_head__icon" />
+                  </button>
+                </div>
+              </section>
+
+              <h3 class="a11y-hidden">특정상품 제외</h3>
+              <section class="accordion_set">
+                <div class="accordion_head">
+                  <div class="frame70">
+                    <span class="frame70__text">특정상품 제외</span>
+                    <span class="frame70__cnt"></span>
+                  </div>
+                  <button class="accordion_head__btn">
+                    <img src="../assets/icons/Icon/arrow-down.svg" alt="메뉴 더보기" class="accordion_head__icon" />
+                  </button>
+                </div>
+              </section>
             </nav>
+
             <div class="group">
               <h3 class="a11y-hidden">상품 검색 조회</h2>
               <div class="menu">
@@ -396,6 +501,7 @@
                   </ul>
                 </div>
               </div>
+              
             </div>
           </div>
         </section>
