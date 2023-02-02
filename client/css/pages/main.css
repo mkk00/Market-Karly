@@ -1,1 +1,43 @@
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable.css');
+
+
+
+/* {#ddd} main */
+
+/* main-banner */
+
+.main-banner{
+  height: 370px;
+}
+
+/* main banner swiper */
+.main-banner__inner{
+  width: 1920px;
+  height: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.main-banner .swiper-button-prev, 
+.main-banner .swiper-button-next{
+  width: 52px;
+  height: 52px;
+  display: inline-block;
+  background: url('../../assets/icons/Icon/Banner-arrow.svg') no-repeat center;
+  background-size: 100% auto;
+  margin-top: calc(0px - (var(--swiper-navigation-size)/ 2));
+}
+
+.main-banner .swiper-button-prev{
+  left: 350px;
+}
+
+.main-banner .swiper-button-next{
+  right: 350px;
+  transform: rotate(180deg);
+}
+
+.main-banner .swiper-button-prev::after, 
+.main-banner .swiper-button-next::after{
+  display: none;
+}
