@@ -448,3 +448,42 @@
 
   background: var(--gray-50);
 }
+
+.footer__bottom-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px;
+  gap: 8px;
+
+  width: 680px;
+  height: 56px;
+}
+
+.footer__bottom-precautions {
+  width: 680px;
+  height: 32px;
+
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 160%;
+
+  text-align: center;
+
+  color: var(--gray-400);
+}
+
+.footer__bottom-copyrights {
+  width: 181px;
+  height: 16px;
+
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 160%;
+
+  color: var(--gray-400);
+}
