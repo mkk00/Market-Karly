@@ -364,6 +364,31 @@
   gap: 0px;
 }
 
+.footer-sns {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 20px;
+
+  width: 230px;
+  height: 30px;
+}
+
+.footer-sns__list {
+  position: relative;
+  width: 30px;
+  height: 30px;
+}
+
+.footer-sns__icon {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  left: 0px;
+  top: 0px;
+}
+
 /* middle */
 .footer__inner-middle {
   display: flex;
