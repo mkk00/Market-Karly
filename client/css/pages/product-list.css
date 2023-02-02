@@ -131,6 +131,14 @@
   display: none;
 }
 
+.accordion_head__btn > input[type='button'] + label {
+  display: flex;
+  width: 18px;
+  height: 18px;
+  background-repeat: no-repeat;
+  background: url('../../assets/icons/Icon/Direction=Down.svg');
+}
+
 /* 아코디언 - 필터 */
 .filter {
   display: flex;
