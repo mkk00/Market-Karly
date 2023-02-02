@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
     <link rel="stylesheet" href="../css/pages/cart.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-    <script src="./js/main.js" type="module"></script>
+    <script src="../js/cart/jm.js" type="module"></script>
     <title>Cart | Market Karly</title>
   </head>
 
@@ -123,7 +123,83 @@
       </header>
 
       <!-- Main -->
-
+      <main class="main">
+        <div class="title">장바구니</div>
+        <div class="box-big">
+          <div class="box-1">
+            <div class="box-2">
+              <input type="checkbox" name="checker" id="checker1"><label for="checker1"></label>
+              전체선택(3/3)<span class="cart-divider">|</span><button class="delete-button">선택삭제</button>
+            </div>
+            <div class="box-3">
+              <span class="food"><img src="../assets/icons/Icon/Refrigerated.svg" alt="Refrigerated"/>냉장식품</span><button class="down-button"><img src="../assets/icons/Icon/Icon_down2.svg"/></button>
+            </div>
+            <div class="box-3">
+              <span class="food"><img src="../assets/icons/Icon/Frozen.svg" alt="frozen"/>냉동식품</span><button class="down-button"><img src="../assets/icons/Icon/Icon_down2.svg"/></button>
+            </div>
+            <div class="box-3">
+              <span class="food"><img src="../assets/icons/Icon/sunny.svg"/>상온식품</span><button class="down-button"><img src="../assets/icons/Icon/Icon_down2.svg"/></button>
+            </div>
+            <div class="box-4">
+              <input type="checkbox" name="checker" id="checker2"><label for="checker2"></label>
+              전체선택(3/3)<span class="cart-divider">|</span><button class="delete-button">선택삭제</button>
+            </div>
+          </div>
+          <div class="box-long">
+            <div class="box-5">
+              <div class="box-6">
+                <span class="span-location"><img src="../assets/icons/Icon/Location.svg" alt="location"/>배송지</span>
+              </div>
+              <div class="box-6">서울 중랑구 면목로 42길 11 (행운빌딩)<br>
+              603호</div>
+              <div class="box-7">
+                샛별배송
+              </div>
+              <div>
+                <button class="change-location">배송지 변경</button>
+              </div>
+              </div>
+              <div class="math">
+                <div class="math-gap">
+                <div class="box-8">
+                  <span>상품금액</span>
+                  <span>40,680원</span>
+                </div>
+                <div class="box-8">
+                  <span>상품할인금액</span>
+                  <span>-4,651원</span>
+                </div>
+                <div class="box-8">
+                  <span>배송비</span>
+                  <span>+3000원</span>
+                </div>
+                </div>
+              </div>
+              <div class="box-9">
+                <div class="result">
+                  <span class="expected">결제예정금액</span>
+                  <div class="won"><span class="span-result">40,680</span>원</div>
+                </div>
+                <div class="bank">
+                  <span class="span-bank">적립</span>
+                  <span class="span-36">최대 36원 적립 일반 0.1%</span>
+                </div>
+              </div>
+            
+            <div>
+              <button class="order-button">주문하기</button>
+              <div class="manual">
+                쿠폰/적립금은 주문서에서 사용 가능합니다<br>
+                [주문완료] 상태일 경우에만 주문 취소 가능합니다.<br>
+                [마이컬리>주문내역 상세페이지] 에서 직접 취소하실 수 있습니다.<br>
+                쿠폰, 적립금 사용 금액을 제외한 실 결제 금액 기준으로 최종 산정됩니다.<br>
+                상품별로 적립금 지급 기준이 다를 수 있습니다.(상품 상세 페이지에서 확인 가능합니다)
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </main>
       <!-- Footer -->
       <footer class="footer">
         <div class="footer__inner">
