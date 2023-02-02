@@ -131,7 +131,9 @@ input[placeholder]{
 /* 주소 검색 */
 .join-address{
   margin-bottom:20px;
+  gap:0;
 }
+
 .join-address .input-box{
   margin-bottom:var(--spacing-xxs);
   color:var(--primary);
@@ -139,6 +141,7 @@ input[placeholder]{
   border-radius:var(--spacing-xxs);
   background-color:inherit;
   cursor: pointer;
+  margin-left: 4px;
 }
 
 .address__p--text{
@@ -248,4 +251,106 @@ input[type=radio]:checked + label {
 .join-event{
   display: inline-block;
   margin-left: 34px;
+}
+
+
+
+
+/* 이용약관 동의 */
+
+.join-agree{
+  border-top:1px solid var(--gray-500);
+  border-bottom:1px solid var(--gray-200);
+  padding:20px 0px;
+  align-items:flex-start;
+  line-height: 1.5;
+}
+
+.join-required{
+  font-size: var(--spacing-base);
+  font-weight: 600;
+  color:var(--content);
+  margin-left:8px;
+}
+.join-required::after{
+  content:"*";
+  color: var(--info-error);
+  position:relative;
+  top:-4px;
+  left:47px;
+}
+.agree-user{
+  margin-left: 40px;
+}
+
+.agree-all__text{
+  font-size: 21px;
+  font-weight: 600;
+  color:var(--content);
+}
+
+.agreement{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:12px 0px;
+}
+
+.terms{
+  color:var(--primary);
+  font-size: var(--spacing-sm);
+  font-weight: 400;
+}
+
+.agree-all__text::after{
+  content:"선택항목에 동의하지 않은 경우도 회원가입 및 일반적인 서비스를 이용할 수 있습니다.";
+  display: block;
+  color:var(--gray-400);
+  font-size: var(--spacing-sm);
+  font-weight: 400;
+}
+
+.agreement-text{
+  font-size: var(--spacing-base);
+  font-weight: 400;
+  color:var(--content);
+}
+
+/* 체크박스 버튼 이미지 */
+input[type=checkbox] {
+  display:none;
+}
+input[type=checkbox] + label { 
+  display: inline-block;
+  cursor: pointer; 
+  padding-left: 31px; 
+  background-repeat: no-repeat;
+  background-image: url('../../assets/icons/Icon/isChecked=false.svg');
+  height:24px;
+  line-height: 24px;
+}
+input[type=checkbox]:checked + label {
+  display: inline-block;
+  background-image: url('../../assets/icons/Icon/isChecked=true.svg');
+  height: 24px;
+}
+
+/* 가입하기 버튼 */
+.join-up{
+  width: 340px;
+  height: 54px;
+  background-color:var(--primary);
+  border-radius:4px;
+  color:var(--white);
+  font-size: var(--spacing-base);
+  font-weight: 600;
+  border:none;
+  cursor: pointer;
+  padding: 0;
+  margin:65px 0px 40px 0px;
+
+  position:relative;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
 }
