@@ -154,7 +154,50 @@
                   <input type="password" id="verify-pw" name="verify-pw" placeholder="비밀번호를 한번 더 입력해주세요" class="input-box"/>
                 </div>
               </fieldset>
-              
+
+              <fieldset>
+                <!-- 이름 -->
+                <legend>개인 정보 입력</legend>
+                <div class="join-name join-layout">
+                  <h3 class="join__title">
+                    <label for="user-name" class="required">이름</label>
+                  </h3>
+                  <input type="text" id="user-name" name="user-name" placeholder="이름을 한번 더 입력해주세요" autocomplete="name" class="input-box"/>
+                </div>
+                <!-- 이메일 -->
+                <div class="join">
+                  <div class="join__inner">
+                    <h3 class="join__title">
+                      <label for="user-email" class="required">이메일</label>
+                    </h3>
+                    <input type="text" id="user-email" name="user-email" placeholder="예) marketkarly@karly.com" class="input-box"/>
+                  </div>
+                  <button type="button" class="verify-button">중복확인</button>
+                </div>
+
+                <!-- 휴대폰 -->
+                <div class="join">
+                  <div class="join__inner">
+                    <h3 class="join__title">
+                      <label for="user-phone" class="required">휴대폰</label>
+                    </h3>
+                    <input type="text" id="user-phone" name="user-phone" placeholder="숫자만 입력해주세요." autocomplete="email" class="input-box"/>
+                  </div>
+                  <button type="button" class="verify-button">인증번호</button>
+                </div>
+
+                <!-- 주소 -->
+                <div class="join-address join-layout">
+                  <h3 class="join__title required">
+                    주소
+                    <label for="address" class="a11y-hidden">주소</label>
+                  </h3>
+                  <div class="join-address__button">
+                    <button type="button" class="input-box">주소검색</button>
+                    <p class="address__p--text">배송지에 따라 상품 정보가 달라질 수 있습니다.</p>
+                  </div>
+                </div>
+              </fieldset>
             </form>
           </section>
         </div>

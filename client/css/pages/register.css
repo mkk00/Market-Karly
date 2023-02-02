@@ -126,3 +126,22 @@ input[placeholder]{
   justify-content: space-between;
   flex-grow: 1;
 }
+
+
+/* 주소 검색 */
+.join-address{
+  margin-bottom:20px;
+}
+.join-address .input-box{
+  margin-bottom:var(--spacing-xxs);
+  color:var(--primary);
+  border: 1px solid var(--primary);
+  border-radius:var(--spacing-xxs);
+  background-color:inherit;
+  cursor: pointer;
+}
+
+.address__p--text{
+  font-size: 12px;
+  font-weight: 400;
+}
