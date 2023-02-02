@@ -30,13 +30,12 @@
         <div class="header__inner">
           <div class="header-top">
             <ul class="member">
-              <li><a href="#">회원가입</a></li>
-              <li><a href="#">로그인</a></li>
-              <li>
-                <a href="#">고객센터<i class="fa-solid fa-caret-down"></i></a>
+              <li><a href="./register.html">회원가입</a></li>
+              <li><span class="list-divider">&#124;</span><a href="./login.html">로그인</a></li>
+              <li><span class="list-divider">&#124;</span><a href="#">고객센터<img src="../assets/icons/Icon/icon_down.svg" alt="카테고리 메뉴" /></a>
               </li>
             </ul>
-
+  
             <div class="header-top__inner">
               <h1 class="header__logo">
                 <a href="./main.html">
@@ -49,10 +48,10 @@
                 </li>
                 <li>
                   <h1><a href="#">뷰티칼리</a></h1>
-                  <img src="../assets/icons/Icon/New.svg" alt="" />
+                  <img src="../assets/icons/Icon/New.svg" alt="신규 탭" />
                 </li>
               </ul>
-
+  
               <ul class="user-order">
                 <li>
                   <a href="#"><img src="../assets/icons/Icon/Location.svg" alt="배송지 등록" /></a>
@@ -61,7 +60,7 @@
                   <a href="./login.html"><img src="../assets/icons/Icon/Heart.svg" alt="관심상품" /></a>
                 </li>
                 <li>
-                  <a href="#"><img src="../assets/icons/Icon/Cart-1.svg" alt="장바구니" /></a>
+                  <a href="./cart.html"><img src="../assets/icons/Icon/Cart-1.svg" alt="장바구니" /></a>
                 </li>
               </ul>
               <div class="search">
@@ -72,24 +71,29 @@
                     <div class="search-form__inner">
                       <label for="search__input" class="a11y-hidden">검색</label>
                       <input id="search__input" type="search" placeholder="검색어를 입력해주세요" />
+                      <button class="search__search-btn">
+                          <img src="../assets/icons/Icon/search.svg" alt="검색버튼" />
+                      </button>
                     </div>
                   </fieldset>
                 </form>
               </div>
             </div>
           </div>
-          <div class="header-nav">
+        </div>
+        <div class="header-nav">
+          <div class="header-nav__inner">
             <button class="category">
-              <div class="category__hamburger"></div>
+              <div class="category__hamburger a11y-hidden">카테고리 열기</div>
               <div class="category__text">카테고리</div>
             </button>
             <nav class="main-menu">
               <h2 class="a11y-hidden">메인 메뉴</h2>
               <ul class="main-menu__list">
-                <li><a href="#">신상품</a></li>
-                <li><a href="#">베스트</a></li>
-                <li><a href="#">알뜰쇼핑</a></li>
-                <li><a href="#">특가/혜택</a></li>
+                <li><a href="./product-list.html">신상품</a></li>
+                <li><a href="./product-list.html">베스트</a></li>
+                <li><a href="./product-list.html">알뜰쇼핑</a></li>
+                <li><a href="./product-list.html">특가/혜택</a></li>
               </ul>
             </nav>
             <button class="delivery-notice"><span>샛별·낮</span> 배송안내</button>
