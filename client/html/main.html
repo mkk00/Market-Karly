@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="../css/pages/main.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script src="./js/main.js" type="module"></script>
+    <script src="../js/main/mkk.js" type="module"></script>
+    <script defer src="../js/main/mkk_swiper.js"></script>
     <title>Main | Market Karly</title>
   </head>
 
@@ -16,7 +18,9 @@
       <!-- TopBanner -->
       <div class="top-banner">
         <div class="top-banner__inner">
-          <div class="top-banner__text">지금 가입하고 인기상품 <span>100원</span>에 받아가세요!</div>
+          <div class="top-banner__text">
+            <a href="#">지금 가입하고 인기상품 <span>100원</span>에 받아가세요!</a>
+          </div>
           <button class="top-banner__close-btn">
             <img src="../assets/icons/Icon/icon_close.svg" alt="상단 배너 닫기" />
           </button>
@@ -28,13 +32,12 @@
         <div class="header__inner">
           <div class="header-top">
             <ul class="member">
-              <li><a href="#">회원가입</a></li>
-              <li><a href="#">로그인</a></li>
-              <li>
-                <a href="#">고객센터<i class="fa-solid fa-caret-down"></i></a>
+              <li><a href="./register.html">회원가입</a></li>
+              <li><span class="list-divider">&#124;</span><a href="./login.html">로그인</a></li>
+              <li><span class="list-divider">&#124;</span><a href="#">고객센터<img src="../assets/icons/Icon/icon_down.svg" alt="카테고리 메뉴" /></a>
               </li>
             </ul>
-
+  
             <div class="header-top__inner">
               <h1 class="header__logo">
                 <a href="./main.html">
@@ -47,10 +50,10 @@
                 </li>
                 <li>
                   <h1><a href="#">뷰티칼리</a></h1>
-                  <img src="../assets/icons/Icon/New.svg" alt="" />
+                  <img src="../assets/icons/Icon/New.svg" alt="신규 탭" />
                 </li>
               </ul>
-
+  
               <ul class="user-order">
                 <li>
                   <a href="#"><img src="../assets/icons/Icon/Location.svg" alt="배송지 등록" /></a>
@@ -59,7 +62,7 @@
                   <a href="./login.html"><img src="../assets/icons/Icon/Heart.svg" alt="관심상품" /></a>
                 </li>
                 <li>
-                  <a href="#"><img src="../assets/icons/Icon/Cart-1.svg" alt="장바구니" /></a>
+                  <a href="./cart.html"><img src="../assets/icons/Icon/Cart-1.svg" alt="장바구니" /></a>
                 </li>
               </ul>
               <div class="search">
@@ -70,24 +73,29 @@
                     <div class="search-form__inner">
                       <label for="search__input" class="a11y-hidden">검색</label>
                       <input id="search__input" type="search" placeholder="검색어를 입력해주세요" />
+                      <button class="search__search-btn">
+                          <img src="../assets/icons/Icon/search.svg" alt="검색버튼" />
+                      </button>
                     </div>
                   </fieldset>
                 </form>
               </div>
             </div>
           </div>
-          <div class="header-nav">
+        </div>
+        <div class="header-nav">
+          <div class="header-nav__inner">
             <button class="category">
-              <div class="category__hamburger"></div>
+              <div class="category__hamburger a11y-hidden">카테고리 열기</div>
               <div class="category__text">카테고리</div>
             </button>
             <nav class="main-menu">
               <h2 class="a11y-hidden">메인 메뉴</h2>
               <ul class="main-menu__list">
-                <li><a href="#">신상품</a></li>
-                <li><a href="#">베스트</a></li>
-                <li><a href="#">알뜰쇼핑</a></li>
-                <li><a href="#">특가/혜택</a></li>
+                <li><a href="./product-list.html">신상품</a></li>
+                <li><a href="./product-list.html">베스트</a></li>
+                <li><a href="./product-list.html">알뜰쇼핑</a></li>
+                <li><a href="./product-list.html">특가/혜택</a></li>
               </ul>
             </nav>
             <button class="delivery-notice"><span>샛별·낮</span> 배송안내</button>
@@ -163,9 +171,9 @@
                 <div class="swiper-slide">
                   <a href="./product-detail.html">
                     <div class="today-products__item">
-                      <img src="../assets/mainproduct/product01.png" alt="풀무원 탱탱쫄면" />
-                      <a href="#">
-                        <img src="../assets/icons/Icon/Cart.svg" alt="장바구니 추가" />
+                      <img src="../assets/mainproduct/product01.png" class="today-products__thumbnail" alt="풀무원 탱탱쫄면" />
+                      <a href="#" class="today-products__add-cart">
+                        <img src="../assets/icons/Icon/Cart-round.svg" alt="장바구니 추가" />
                       </a>
                     </div>
                     <div class="today-products__info">
@@ -177,9 +185,10 @@
                 <div class="swiper-slide">
                   <a href="./product-detail.html">
                     <div class="today-products__item">
-                      <img src="../assets/mainproduct/product02.png" alt="온더바디 시카 자석 선쿠션" />
-                      <a href="#">
-                        <img src="../assets/icons/Icon/Cart.svg" alt="장바구니 추가" />
+                      <img src="../assets/mainproduct/product02.png" class="today-products__thumbnail"
+                        alt="온더바디 시카 자석 선쿠션" />
+                      <a href="#" class="today-products__add-cart">
+                        <img src="../assets/icons/Icon/Cart-round.svg" alt="장바구니 추가" />
                       </a>
                     </div>
                     <div class="today-products__info">
@@ -191,9 +200,9 @@
                 <div class="swiper-slide">
                   <a href="./product-detail.html">
                     <div class="today-products__item">
-                      <img src="../assets/mainproduct/product03.png" alt="유기농 밀키퀸 현미" />
-                      <a href="#">
-                        <img src="../assets/icons/Icon/Cart.svg" alt="장바구니 추가" />
+                      <img src="../assets/mainproduct/product03.png" class="today-products__thumbnail" alt="유기농 밀키퀸 현미" />
+                      <a href="#" class="today-products__add-cart">
+                        <img src="../assets/icons/Icon/Cart-round.svg" alt="장바구니 추가" />
                       </a>
                     </div>
                     <div class="today-products__info">
@@ -205,9 +214,10 @@
                 <div class="swiper-slide">
                   <a href="./product-detail.html">
                     <div class="today-products__item">
-                      <img src="../assets/mainproduct/product04.png" alt="프로쉬 베이비 세탁세제" />
-                      <a href="#">
-                        <img src="../assets/icons/Icon/Cart.svg" alt="장바구니 추가" />
+                      <img src="../assets/mainproduct/product04.png" class="today-products__thumbnail"
+                        alt="프로쉬 베이비 세탁세제" />
+                      <a href="#" class="today-products__add-cart">
+                        <img src="../assets/icons/Icon/Cart-round.svg" alt="장바구니 추가" />
                       </a>
                     </div>
                     <div class="today-products__info">
@@ -220,9 +230,9 @@
                 <div class="swiper-slide">
                   <a href="./product-detail.html">
                     <div class="today-products__item">
-                      <img src="../assets/mainproduct/product05.png" alt="치킨 샐러드" />
-                      <a href="#">
-                        <img src="../assets/icons/Icon/Cart.svg" alt="장바구니 추가" />
+                      <img src="../assets/mainproduct/product05.png" class="today-products__thumbnail" alt="치킨 샐러드" />
+                      <a href="#" class="today-products__add-cart">
+                        <img src="../assets/icons/Icon/Cart-round.svg" alt="장바구니 추가" />
                       </a>
                     </div>
                     <div class="today-products__info">
@@ -234,9 +244,9 @@
                 <div class="swiper-slide">
                   <a href="./product-detail.html">
                     <div class="today-products__item">
-                      <img src="../assets/mainproduct/product06.png" alt="매콤 양념 등갈비" />
-                      <a href="#">
-                        <img src="../assets/icons/Icon/Cart.svg" alt="장바구니 추가" />
+                      <img src="../assets/mainproduct/product06.png" class="today-products__thumbnail" alt="매콤 양념 등갈비" />
+                      <a href="#" class="today-products__add-cart">
+                        <img src="../assets/icons/Icon/Cart-round.svg" alt="장바구니 추가" />
                       </a>
                     </div>
                     <div class="today-products__info">
@@ -246,9 +256,9 @@
                   </a>
                 </div>
               </div>
-              <div class="swiper-button-prev"></div>
-              <div class="swiper-button-next"></div>
             </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
           </div>
         </section>
 
@@ -258,127 +268,135 @@
           </div>
         </section>
 
-        <section class="today-products">
-          <div class="today-products__inner">
-            <h2 class="today-products__title">놓치면 후회할 가격</h2>
-            <div class="swiper today-product-swiper">
+        <section class="recommend-products">
+          <div class="recommend-products__inner">
+            <h2 class="recommend-products__title">놓치면 후회할 가격</h2>
+            <div class="swiper recommend-product-swiper">
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
                   <a href="./pro duct-detail.html">
-                    <div class="today-products__item">
-                      <img src="../assets/ubuho/thumbnail.jpg" alt="반할만떡 유부호만두" />
-                      <a href="#">
-                        <img src="../assets/icons/Icon/Cart.svg" alt="장바구니 추가" />
+                    <div class="recommend-products__item">
+                      <img src="../assets/ubuho/thumbnail.jpg" class="recommend-products__thumbnail" alt="반할만떡 유부호만두" />
+                      <a href="#" class="recommend-products__add-cart">
+                        <img src="../assets/icons/Icon/Cart-round.svg" alt="장바구니 추가" />
                       </a>
                     </div>
-                    <div class="today-products__info">
-                      <div class="today-products__name">[대구 반할만떡] 유부호만두</div>
-                      <div class="today-products__price">5,860 원</div>
+                    <div class="recommend-products__info">
+                      <div class="recommend-products__name">[대구 반할만떡] 유부호만두</div>
+                      <div class="recommend-products__price">5,860 원</div>
                     </div>
                   </a>
                 </div>
                 <div class="swiper-slide">
                   <a href="./product-detail.html">
-                    <div class="today-products__item">
-                      <img src="../assets/jukkumi/thumbnail.jpg" alt="홍대주꾸미볶음" />
-                      <a href="#">
-                        <img src="../assets/icons/Icon/Cart.svg" alt="장바구니 추가" />
+                    <div class="recommend-products__item">
+                      <img src="../assets/jukkumi/thumbnail.jpg" class="recommend-products__thumbnail" alt="홍대주꾸미볶음" />
+                      <a href="#" class="recommend-products__add-cart">
+                        <img src="../assets/icons/Icon/Cart-round.svg" alt="장바구니 추가" />
                       </a>
                     </div>
-                    <div class="today-products__info">
-                      <div class="today-products__name">[홍대주꾸미] 주꾸미 볶음 300g</div>
-                      <div class="today-products__price">7,900 원</div>
+                    <div class="recommend-products__info">
+                      <div class="recommend-products__name">[홍대주꾸미] 주꾸미 볶음 300g</div>
+                      <div class="recommend-products__price">7,900 원</div>
                     </div>
                   </a>
                 </div>
                 <div class="swiper-slide">
                   <a href="./product-detail.html">
-                    <div class="today-products__item">
-                      <img src="../assets/kangnam/thumbnail.jpg" alt="강남면옥 소갈비찜" />
-                      <a href="#">
-                        <img src="../assets/icons/Icon/Cart.svg" alt="장바구니 추가" />
+                    <div class="recommend-products__item">
+                      <img src="../assets/kangnam/thumbnail.jpg" class="recommend-products__thumbnail" alt="강남면옥 소갈비찜" />
+                      <a href="#" class="recommend-products__add-cart">
+                        <img src="../assets/icons/Icon/Cart-round.svg" alt="장바구니 추가" />
                       </a>
                     </div>
-                    <div class="today-products__info">
-                      <div class="today-products__name">[강남면옥] 소갈비찜</div>
-                      <div class="today-products__price">29,800 원</div>
+                    <div class="recommend-products__info">
+                      <div class="recommend-products__name">[강남면옥] 소갈비찜</div>
+                      <div class="recommend-products__price">29,800 원</div>
                     </div>
                   </a>
                 </div>
                 <div class="swiper-slide">
                   <a href="./product-detail.html">
-                    <div class="today-products__item">
-                      <img src="../assets/bacon/thumbnail.jpg" alt="한돈 삼겹 베이컨" />
-                      <a href="#">
-                        <img src="../assets/icons/Icon/Cart.svg" alt="장바구니 추가" />
+                    <div class="recommend-products__item">
+                      <img src="../assets/bacon/thumbnail.jpg" class="recommend-products__thumbnail" alt="한돈 삼겹 베이컨" />
+                      <a href="#" class="recommend-products__add-cart">
+                        <img src="../assets/icons/Icon/Cart-round.svg" alt="장바구니 추가" />
                       </a>
                     </div>
-                    <div class="today-products__info">
-                      <div class="today-products__name">[karly's] 한돈 삼겹 베이컨</div>
-                      <div class="today-products__price">4,500원</div>
+                    <div class="recommend-products__info">
+                      <div class="recommend-products__name">[karly's] 한돈 삼겹 베이컨</div>
+                      <div class="recommend-products__price">4,500원</div>
                     </div>
                   </a>
                 </div>
                 <div class="swiper-slide">
                   <a href="./product-detail.html">
-                    <div class="today-products__item">
-                      <img src="../assets/mainproduct/product07.jpg" alt="친환경 설향 딸기" />
-                      <a href="#">
-                        <img src="../assets/icons/Icon/Cart.svg" alt="장바구니 추가" />
+                    <div class="recommend-products__item">
+                      <img src="../assets/mainproduct/product07.jpg" class="recommend-products__thumbnail"
+                        alt="친환경 설향 딸기" />
+                      <a href="#" class="recommend-products__add-cart">
+                        <img src="../assets/icons/Icon/Cart-round.svg" alt="장바구니 추가" />
                       </a>
                     </div>
-                    <div class="today-products__info">
-                      <div class="today-products__name">친환경 설향 딸기</div>
-                      <div class="today-products__price">10,900 원</div>
+                    <div class="recommend-products__info">
+                      <div class="recommend-products__name">친환경 설향 딸기</div>
+                      <div class="recommend-products__price">10,900 원</div>
                     </div>
                   </a>
                 </div>
                 <div class="swiper-slide">
                   <a href="./product-detail.html">
-                    <div class="today-products__item">
-                      <img src="../assets/mainproduct/product08.jpg" alt="매콤 양념 등갈비" />
-                      <a href="#">
-                        <img src="../assets/icons/Icon/Cart.svg" alt="장바구니 추가" />
+                    <div class="recommend-products__item">
+                      <img src="../assets/mainproduct/product08.jpg" class="recommend-products__thumbnail"
+                        alt="매콤 양념 등갈비" />
+                      <a href="#" class="recommend-products__add-cart">
+                        <img src="../assets/icons/Icon/Cart-round.svg" alt="장바구니 추가" />
                       </a>
                     </div>
-                    <div class="today-products__info">
-                      <div class="today-products__name">[마이셰프] 소고기 샤브샤브 밀키트</div>
-                      <div class="today-products__price"><span>7%</span> 20,553 원</div>
-                      <div class="today-products__price-origin">22,100 원</div>
+                    <div class="recommend-products__info">
+                      <div class="recommend-products__name">[마이셰프] 소고기 샤브샤브 밀키트</div>
+                      <div class="recommend-products__price"><span>7%</span> 20,553 원</div>
+                      <div class="recommend-products__price-origin">22,100 원</div>
                     </div>
                   </a>
                 </div>
-              </div>
-              <div class="swiper-button-prev"></div>
-              <div class="swiper-button-next"></div>
-            </div>
-          </div>
-        </section>
-
-        <aside class="recent-product">
-          <h2>최근 본 상품</h2>
-          <div class="swiper recent-swiper">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <a href="#">
-                  <img src="../assets/mainproduct/product01.png" alt="풀무원 탱탱쫄면" />
-                </a>
-              </div>
-              <div class="swiper-slide">
-                <a href="#">
-                  <img src="../assets/mainproduct/product02.png" alt="온더바디 시카 자석 선쿠션" />
-                </a>
-              </div>
-              <div class="swiper-slide">
-                <a href="#">
-                  <img src="../assets/mainproduct/product03.png" alt="유기농 밀키퀸 현미" />
-                </a>
               </div>
             </div>
             <div class="swiper-button-prev"></div>
             <div class="swiper-button-next"></div>
           </div>
+        </section>
+
+        <aside class="recent-product">
+          <button class="recent-product__up-btn">
+            <a href="#"><img src="../assets/icons/Icon/Direction_Up.svg" alt="최근 본 상품 리스트 위로가기" /></a>
+          </button>
+          <h2>최근 본 상품</h2>
+          <ul class="recent-product__list">
+            <li>
+              <a href="../html/product-detail.html">
+                <img src="../assets/mainproduct/product01.png" alt="풀무원 탱탱쫄면" />
+              </a>
+            </li>
+            <li>
+              <a href="../html/product-detail.html">
+                <img src="../assets/mainproduct/product02.png" alt="온더바디 시카 자석 선쿠션" />
+              </a>
+            </li>
+            <li>
+              <a href="../html/product-detail.html">
+                <img src="../assets/mainproduct/product03.png" alt="유기농 밀키퀸 현미" />
+              </a>
+            </li>
+          </ul>
+          <button class="recent-product__down-btn">
+            <a href="#"><img src="../assets/icons/Icon/Direction_Down.svg" alt="최근 본 상품 리스트 위로가기" /></a>
+          </button>
         </aside>
+
+        <button type="button" class="goto-top">
+          <img src="../assets/icons/Icon/GoToTop.svg" alt="상단으로 가기" />
+        </button>
 
         <div class="add-cart">
           <h2 class="a11y-hidden">장바구니 추가</h2>
@@ -386,15 +404,31 @@
             <h3 class="add-cart__product-name">[풀무원] 탱탱쫄면 (4개입)</h3>
             <div class="add-cart__price-count">
               <div class="add-cart__price">4,980원</div>
-              <label for="product-count" class="a11y-hidden">상품가격</label>
-              <input type="number" id="product-count" min="1" value="1" />
+              <div class="product-count__container">
+                <button type="button" class="product-count__minus">
+                  <img src="../assets/icons/Icon/count_minus_off.svg" alt="수량 증가" />
+                </button>
+                <label for="product-count" class="a11y-hidden">상품가격</label>
+                <input type="text" id="product-count" min="1" max="99" step="1" value="1" />
+                <button type="button" class="product-count__plus">
+                  <img src="../assets/icons/Icon/count_plus_on.svg" alt="수량 증가" />
+                </button>
+              </div>
             </div>
             <div class="add-cart__sum">
               <div class="add-cart__sum-price">
                 <p>합계</p>
                 <div class="add-cart__total-price">4,980원</div>
               </div>
-              <div class="add-cart__save-point"><span>적립</span> 구매 시 5원 적립</div>
+              <div class="add-cart__save-point"><span>적립</span>구매 시 5원 적립</div>
+            </div>
+            <div class="add-cart__btn">
+              <button class="add-cart__cancel">
+                <a href="#">취소</a>
+              </button>
+              <button class="add-cart__add">
+                <a href="#">장바구니 담기</a>
+              </button>
             </div>
           </div>
         </div>
