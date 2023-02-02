@@ -1,0 +1,128 @@
+/* 메인 부분 */
+.main{
+  height: 1489px;
+  background-color: var(--white);
+}
+
+.main-wrap{
+  width: 640px;
+  height: 100%;
+  margin:0 auto;
+  padding:80px 0 40px;
+}
+
+/* 회원가입 제목 */
+.main__text{
+  text-align: center;
+  font-size: 21px;
+  font-weight: 600;
+  line-height: 150%;
+}
+
+/* 필수입력사항 */
+.main__text-p{
+  text-align: right;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 18px;
+  padding-top: 12px;
+}
+
+.main__text-p::before{
+  content:"*";
+  color: var(--info-error);
+  position:relative;
+  top:-3px;
+  left:-1px;
+}
+
+/* 회원가입 폼 */
+.join-content::before{
+  content:"";
+  display: block;
+  width: 640px;
+  height: 2px;
+  background-color:var(--gray-900);
+  margin-top:6px;
+}
+
+/* 폼 공통 레이아웃 */
+.join-layout{
+  display: flex;
+  align-items: center;
+  gap:var(--spacing-xs);
+
+}
+
+/* 필수입력사항 공통부분 */
+.required::after{
+  content:"*";
+  color: var(--info-error);
+  position:relative;
+  top:-7px;
+  left:var(--spacing-xxs);
+}
+
+/* input 상자 공통부분 */
+.input-box{
+  width: 333px;
+  height: 44px;
+  color:var(--gray-600);
+  border:1px solid var(--gray-300);
+  border-radius:var(--spacing-xxs);
+  background-color: inherit;
+  margin:var(--spacing-md) 0px;
+}
+
+/* 중복확인, 인증버호 받기 버튼 */
+.verify-button{
+  width: 143px;
+  height: 44px;
+  color:var(--primary);
+  border: 1px solid var(--primary);
+  border-radius:var(--spacing-xxs);
+  background-color:inherit;
+  cursor: pointer;
+  margin: 0 9px 0px var(--spacing-xs);
+}
+
+.required{
+  margin-left: var(--spacing-xxs);
+}
+
+/* 레이블 글자 */
+.join__title{
+  width: 139px;
+  height: 44px;
+  font-size: var(--spacing-base);
+  font-weight: 600;
+  line-height: 36px;
+  padding:var(--spacing-xxs);
+  color:var(--content);
+}
+
+.join__title-text{
+  margin-left:var(--spacing-xxs);
+}
+
+/* placeholder */
+input[placeholder]{
+  font-size: var(--spacing-base);
+  font-weight: 400;
+  line-height: 160%;
+  color:var(--gray-600);
+  padding: 9px 0px 9px var(--spacing-md);
+}
+
+/* 아이디 */
+.join{
+  display: flex;
+  align-items: center;
+}
+
+.join__inner{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-grow: 1;
+}
