@@ -198,6 +198,74 @@
                   </div>
                 </div>
               </fieldset>
+              
+              <!-- 선택 사항 -->
+              <fieldset>
+                <legend>선택 사항</legend>
+
+                <div class="join-gender join-layout">
+                  <h3 class="join__title join__title-text">
+                    성별
+                    <label for="gender" class="a11y-hidden">성별</label>
+                  </h3>
+                  <div class="gender-group">
+                    <div class="geder-group__male">
+                      <input type="radio" id="gender-male" name="gender" class="input-radio" />
+                      <label for="gender-male">남자</label>
+                    </div>
+
+                    <div class="gender-group__female">
+                      <input type="radio" id="gender-female" name="gender" class="input-radio" />
+                      <label for="gender-female">여자</label>
+                    </div>
+
+                    <div class="gender-group__neutral">
+                      <input type="radio" id="gender-neutral" name="gender" class="input-radio" />
+                      <label for="gender-neutral">선택안함</label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="join-birthday-wrap join-layout">
+                  <h3 class="join__title join__title-text">생년월일</h3>
+                  <div class="join-birthday">
+                    <div class="join-birthday__inner">
+                      <div class="join-y">
+                        <label for="join-yyyy" class="a11y-hidden">생년</label>
+                        <input type="text" id="join-yyyy" placeholder="YYYY" maxlength="4" autocomplete="bday-year" class="birthday-input" />
+                      </div>
+                      <span class="join-birthday__text">&sol;</span>
+                      <div class="join-m">
+                        <label for="join-mm" class="a11y-hidden">생월</label>
+                        <input type="text" id="join-mm" placeholder="MM" maxlength="2" autocomplete="bday-month" class="birthday-input" />
+                      </div>
+                      <span class="join-birthday__text">&sol;</span>
+                      <div class="join-d">
+                        <label for="join-dd" class="a11y-hidden">생일</label>
+                        <input type="text" id="join-dd" placeholder="DD" maxlength="2" autocomplete="bday-day" class="birthday-input" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="join-recommender join-layout">
+                  <h3 class="join__title join__title-text">
+                    <label for="recommender" class="input-radio">추가입력 사항</label>
+                  </h3>
+
+                  <div class="join_add">
+                    <div class="join-invite">
+                      <input type="radio" id="recommender" name="add" class="input-radio" />
+                      <label for="recommender">친구초대 추천인 아이디</label>
+                    </div>
+                    
+                    <div class="join-event">
+                      <input type="radio" id="event-name" name="add" class="input-radio" />
+                      <label for="event-name">참여 이벤트명</label>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
             </form>
           </section>
         </div>

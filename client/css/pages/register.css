@@ -145,3 +145,107 @@ input[placeholder]{
   font-size: 12px;
   font-weight: 400;
 }
+
+
+/* 성별 */
+.join-gender{
+  margin: var(--spacing-md) 0px;
+  color:var(--content);
+  font-size: var(--spacing-base);
+  font-weight: 600;
+}
+
+.input-radio{
+  width: 24px;
+  height: 24px;
+}
+
+.gender-group{
+  width: 333px;
+  height: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.gender-group{
+  margin-left: -4px;
+}
+
+/* 라디오 버튼 이미지  */
+input[type=radio] {
+  display:none;
+}
+input[type=radio] + label { 
+  display: inline-block;
+  cursor: pointer; 
+  padding-left: 31px; 
+  background-repeat: no-repeat;
+  background-image: url('../../assets/icons/Icon/isSelected=false.svg');
+  height:24px;
+  line-height: 24px;
+}
+input[type=radio]:checked + label {
+  display: inline-block;
+  background-image: url('../../assets/icons/Icon/isSelected=true.svg');
+  height: 24px;
+}
+
+/* 생년월일 */
+.join-birthday{
+  margin:var(--spacing-md) 0px;
+}
+
+.join-birthday{
+  width: 333px;
+  border:1px solid var(--gray-300);
+  border-radius: 4px;
+  margin-left: -5px;
+}
+.join-birthday__inner{
+  display: flex;
+  width: 333px;
+
+}
+
+.join-y input[placeholder],
+.join-m input[placeholder],
+.join-d input[placeholder]{
+  text-align: center;
+  padding:0px;
+}
+
+.birthday-input{
+  width: 100%;
+  height: 100%;
+  border:none;
+  color:var(--gray-400);
+  outline: none;
+}
+
+.join-birthday__text{
+  color:var(--gray-400);
+  line-height: 40px;
+}
+
+.join-y,
+.join-m,
+.join-d{
+  padding: 0px 3px 0px 3px;
+}
+
+/* 추가입력 사항 */
+.join-recommender{
+  gap: 0;
+  padding:20px 0px 20px 0px;
+}
+
+.join-invite{
+  display: inline-block;
+  margin-left: 4px;
+}
+
+.join-event{
+  display: inline-block;
+  margin-left: 34px;
+}
