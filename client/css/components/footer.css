@@ -401,6 +401,38 @@
   height: 104px;
 }
 
+.footer__site {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 8px;
+
+  width: 217px;
+  height: 48px;
+}
+
+.footer-site__link {
+  height: 34px;
+
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.footer-site__text {
+  height: 48px;
+
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 160%;
+
+  color: var(--content);
+}
+
 /* -------------------------------------------------------------------------- */
 /*                               footer__bottom                               */
 /* -------------------------------------------------------------------------- */
