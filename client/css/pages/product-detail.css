@@ -1,3 +1,22 @@
+/* -------------------------------------------------------------------------- */
+/*                                    기본 설정                                   */
+/* -------------------------------------------------------------------------- */
+
+/* 외부 라이브러리 */
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard-dynamic-subset.css');
+
+/* Base Setting */
+@import url(../base/normalize.css);
+@import url(../base/reset.css);
+@import url(../base/a11y.css);
+@import url(../base/module.css);
+@import url(../base/theme.css);
+@import url(../base/base.css);
+
+/* Components */
+@import url(../components/header.css);
+@import url(../components/footer.css);
+
 main {
   display: flex;
   flex-direction: row;
@@ -67,7 +86,7 @@ main {
   font-weight: 700;
   font-size: 21px;
   line-height: 140%;
-  color: #6B6B6B;
+  color: #6b6b6b;
 }
 .product__h1 {
   height: 43px;
@@ -114,7 +133,7 @@ main {
   font-weight: 600;
   font-size: 16px;
   line-height: 150%;
-  color: #5F0080;
+  color: #5f0080;
 }
 
 .product__info-bottom {
@@ -134,7 +153,7 @@ main {
   width: 560px;
   border-width: 1px 0px;
   border-style: solid;
-  border-color: #E1E1E1;
+  border-color: #e1e1e1;
   /* align-self: stretch; */
 }
 .product__dl-seller,
@@ -159,7 +178,7 @@ main {
   font-weight: 600;
   font-size: 12px;
   line-height: 150%;
-  color: #6B6B6B;
+  color: #6b6b6b;
 }
 .product__delivery-frame_01,
 .product__delivery-frame_02 {
@@ -174,7 +193,7 @@ main {
   font-weight: 600;
   font-size: 12px;
   line-height: 150%;
-  color: #6B6B6B;
+  color: #6b6b6b;
 }
 .product__dd-delivery,
 .product__dd-wrap {
@@ -190,7 +209,7 @@ main {
   font-weight: 400;
   font-size: 12px;
   line-height: 150%;
-  color: #6B6B6B;
+  color: #6b6b6b;
 }
 
 .product__buy {
@@ -205,7 +224,7 @@ main {
   padding: 16px 0px;
   width: 560px;
   height: 116px;
-  border-bottom: 1px solid #E1E1E1;
+  border-bottom: 1px solid #e1e1e1;
 }
 .product__buy-dt {
   padding: 0px;
@@ -215,7 +234,7 @@ main {
   font-weight: 600;
   font-size: 12px;
   line-height: 150%;
-  color: #6B6B6B;
+  color: #6b6b6b;
 }
 .product__buy-dd {
   padding: 0px;
@@ -228,7 +247,7 @@ main {
   padding: 0px;
   width: 432px;
   height: 84px;
-  border: 1px solid #E1E1E1;
+  border: 1px solid #e1e1e1;
 }
 .product__buy-legend {
   display: flex;
@@ -246,7 +265,7 @@ main {
   font-weight: 600;
   font-size: 12px;
   line-height: 150%;
-  color: #6B6B6B;
+  color: #6b6b6b;
 }
 
 .product__buy-btn {
@@ -259,7 +278,7 @@ main {
   width: 84px;
   height: 30px;
 
-  border: 1px solid #C4C4C4;
+  border: 1px solid #c4c4c4;
 }
 .product__buy-btn-minus,
 .product__buy-btn-plus {
@@ -347,7 +366,7 @@ main {
   width: 34px;
   height: 24px;
   padding: 0px 8px;
-  background: #FA622F;
+  background: #fa622f;
   border-radius: 12px;
 }
 
@@ -356,7 +375,7 @@ main {
   font-weight: 400;
   font-size: 10px;
   line-height: 160%;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .product__buy-last-point_02 {
@@ -396,16 +415,16 @@ main {
 
   width: 424px;
   height: 54px;
-  background: #5F0080;
+  background: #5f0080;
   border-radius: 4px;
-  border-color: #5F0080;
+  border-color: #5f0080;
 }
 .product__buy-feature-btn p {
   font-style: normal;
   font-weight: 600;
   font-size: 16px;
   line-height: 150%;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 /* nav btn*/
@@ -431,7 +450,7 @@ main {
   background-color: #ffffff;
   border-width: 1px 1px 0px 1px;
   border-style: solid;
-  border-color: #E1E1E1;
+  border-color: #e1e1e1;
 
   margin: 0px -1px;
 }
@@ -440,7 +459,7 @@ main {
   font-weight: 600;
   font-size: 16px;
   line-height: 150%;
-  color: #5F0080;
+  color: #5f0080;
 }
 /* 상세정보 */
 .product__nav-button_02 {
@@ -452,8 +471,8 @@ main {
 
   width: 263.25px;
   height: 54px;
-  background: #F9F9F9;
-  border: 1px solid #A6A6A6;
+  background: #f9f9f9;
+  border: 1px solid #a6a6a6;
 
   margin: 0px -1px;
 }
@@ -474,8 +493,8 @@ main {
 
   width: 263.25px;
   height: 54px;
-  background: #F9F9F9;
-  border: 1px solid #A6A6A6;
+  background: #f9f9f9;
+  border: 1px solid #a6a6a6;
 
   margin: 0px -1px;
 }
@@ -496,8 +515,8 @@ main {
 
   width: 263.25px;
   height: 54px;
-  background: #F9F9F9;
-  border: 1px solid #A6A6A6;
+  background: #f9f9f9;
+  border: 1px solid #a6a6a6;
 }
 .product__nav-text_04 {
   font-style: normal;
@@ -566,7 +585,7 @@ main {
   padding: 28px 0px 0px;
   width: 1050px;
   height: 106px;
-  border-top: 1px solid #E1E1E1;
+  border-top: 1px solid #e1e1e1;
 }
 .description__article p {
   font-style: normal;
@@ -608,8 +627,8 @@ main {
 .description__goods-point header::after {
   width: 279.5px;
   height: 1px;
-  background: #D9D9D9;
-  content: " ";
+  background: #d9d9d9;
+  content: ' ';
 }
 
 /* detail */
@@ -630,7 +649,7 @@ main {
   width: 1050px;
   height: 801px;
 
-  border-top: 1px solid #E1E1E1;
+  border-top: 1px solid #e1e1e1;
 }
 .detail__whykarly h3 {
   font-style: normal;
@@ -680,7 +699,7 @@ main {
   font-weight: 600;
   font-size: 21px;
   line-height: 150%;
-  color: #5F0080;
+  color: #5f0080;
 }
 .detail__p_01 {
   width: 250px;
@@ -710,7 +729,7 @@ main {
   font-weight: 600;
   font-size: 21.328px;
   line-height: 150%;
-  color: #5F0080;
+  color: #5f0080;
 }
 .detail__p_02 {
   width: 264px;
@@ -738,7 +757,7 @@ main {
   font-weight: 600;
   font-size: 21px;
   line-height: 150%;
-  color: #5F0080;
+  color: #5f0080;
 }
 .detail__p_03 {
   width: 293px;
@@ -781,7 +800,7 @@ main {
   font-weight: 600;
   font-size: 21px;
   line-height: 150%;
-  color: #5F0080;
+  color: #5f0080;
 }
 .detail__p_04 {
   width: 260px;
@@ -811,7 +830,7 @@ main {
   font-weight: 600;
   font-size: 21px;
   line-height: 150%;
-  color: #5F0080;
+  color: #5f0080;
 }
 .detail__p_05 {
   width: 256px;
@@ -882,21 +901,21 @@ main {
   font-weight: 600;
   font-size: 12px;
   line-height: 150%;
-  color: #6B6B6B;
+  color: #6b6b6b;
 }
 .product__header-btn {
   width: 155px;
   height: 44px;
-  background: #5F0080;
+  background: #5f0080;
   border-radius: 4px;
-  border-color: #5F0080;
+  border-color: #5f0080;
 }
 .product__header-btn a {
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 150%;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 .product-review__board {
@@ -936,7 +955,7 @@ main {
 .product-review__rank-btn {
   padding: 0px;
   background-color: transparent;
-  border: #FFFFFF;
+  border: #ffffff;
   width: 42px;
   font-style: normal;
   font-weight: 600;
@@ -947,18 +966,18 @@ main {
 .product-review__bar {
   width: 1px;
   height: 10px;
-  background: #A6A6A6;
+  background: #a6a6a6;
 }
 .product-review__new-btn {
   padding: 0px;
   background-color: transparent;
-  border: #FFFFFF;
+  border: #ffffff;
   width: 73px;
   font-style: normal;
   font-weight: 600;
   font-size: 14px;
   line-height: 150%;
-  color: #A6A6A6;
+  color: #a6a6a6;
 }
 
 /* table */
@@ -981,7 +1000,7 @@ main {
   font-weight: 600;
   font-size: 16px;
   line-height: 150%;
-  border-bottom: 1px solid #E1E1E1;
+  border-bottom: 1px solid #e1e1e1;
   color: #333333;
 }
 
@@ -993,7 +1012,7 @@ main {
   gap: 82px;
 
   height: 154px;
-  border-bottom: 1px solid #E1E1E1;
+  border-bottom: 1px solid #e1e1e1;
 }
 .product-review__best-title_01,
 .product-review__best-title_02,
@@ -1063,7 +1082,7 @@ main {
 .product-review__btn button {
   width: 56px;
   height: 56px;
-  border: #FFFFFF;
+  border: #ffffff;
 }
 .product-review__prev-btn {
   background: url(../../assets/icons/Icon/btn-prev.svg);
@@ -1145,9 +1164,9 @@ main {
 .product-inquiry__body ul li {
   font-size: 0;
 }
-.product-inquiry__body-notice{
-font-size: 16px;
-color: #333333 !important;
+.product-inquiry__body-notice {
+  font-size: 16px;
+  color: #333333 !important;
 }
 .product-inquiry__body ul li span {
   width: 100px;
@@ -1168,7 +1187,7 @@ color: #333333 !important;
   transform: translateY(3px);
   margin-right: 20px;
 }
-.product-inquiry__lock{
+.product-inquiry__lock {
   margin-left: 20px;
 }
 
@@ -1229,20 +1248,20 @@ color: #333333 !important;
   height: 18px;
   color: var(--gray-400);
 }
-.product-inquiry__complete{
-  color: #5F0080 !important;
+.product-inquiry__complete {
+  color: #5f0080 !important;
   font-weight: 600;
 }
 .product-inquiry__btn {
   width: 128px;
-height: 56px;
+  height: 56px;
   margin: 16px 461px 0px 461px;
   display: flex;
 }
 .product-inquiry__btn button {
   width: 56px;
   height: 56px;
-  border: #FFFFFF;
+  border: #ffffff;
 }
 .product-inquiry__prev-btn {
   background: url(../../assets/icons/Icon/btn-prev.svg);
