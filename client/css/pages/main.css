@@ -423,6 +423,22 @@
 }
 
 
+/* {#ddd} Go to top */
+
+.goto-top{
+  width: 58px;
+  height: 58px;
+  position: fixed;
+  right: 49px;
+  bottom: 15px;
+  /* display: none; */
+}
+
+.goto-top img{
+  width: 100%;
+}
+
+
 
 /* {#ddd} popup */
 
