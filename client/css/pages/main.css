@@ -185,3 +185,19 @@
 .recommend-products .swiper-button-next{
   right: -30px;
 }
+
+
+
+/* line-banner */
+
+.line-banner__inner{
+  width: 1050px;
+  height: 219px;
+  margin: 0 auto;
+}
+
+.line-banner__inner img{
+  width: 100%;
+  height: 139px;
+  margin-top: 40px;
+}
