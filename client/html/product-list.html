@@ -14,93 +14,119 @@
   <body>
     <div class="wrapper">
       <!-- TopBanner -->
-      <div class="topBanner">
-        <span class="topBanner-text">지금 가입하고 인기상품 100원에 받아가세요.</span>
-        <img src="../assets/icons/Icon/Cancel.png" alt="탑배너 닫기" class="topBanner-close" />
+      <div class="top-banner">
+        <div class="top-banner__inner">
+          <div class="top-banner__text">
+            <a href="#">지금 가입하고 인기상품 <span>100원</span>에 받아가세요!</a>
+          </div>
+          <button class="top-banner__close-btn">
+            <img src="../assets/icons/Icon/icon_close.svg" alt="상단 배너 닫기" />
+          </button>
+        </div>
       </div>
 
       <!-- Header -->
       <header class="header">
-        <h1 class="a11y-hidden">칼리 - 마켓칼리/뷰티칼리</h1>
-        <section class="top">
-          <ul class="login">
-            <li class="login__list">
-              <span class="login__text">회원가입</span>
-            </li>
-            <li class="login__list">
-              <span class="login__text">로그인</span>
-            </li>
-            <li class="login__list">
-              <div class="login__customerService">
-                <span class="login__customerService-text">고객센터</span>
-                <button class="login__customerService-more">
-                  <img src="../assets/icons/Icon/Icon_down 1.svg" alt="더보기" class="login__customerService-more-img" />
-                </button>
-              </div>
-            </li>
-          </ul>
-          <div class="search">
-            <div class="search__logoSwitch">
-              <img src="../assets/icons/Icon/logo.svg" alt="마켓칼리 로고" class="search__logoSwitch-logo" />
-              <div class="search__logoSwitch-switch">
-                <span class="search__logoSwitch-switch__marketKarly">마켓칼리</span>
-                <a href="#" class="search__logoSwitch-switch__beautyKarly">
-                  <span class="search__logoSwitch-switch__beautyKarly-text">뷰티칼리</span>
-                </a>
-              </div>
-            </div>
-            <ul class="search__icons">
-              <li class="search__icon">
-                <a href="#" class="search__icon-link">
-                  <img src="../assets/icons/Icon/Location.svg" alt="위치" class="search__icon-img" />
-                </a>
-              </li>
-              <li class="search__icon">
-                <a href="#" class="search__icon-link">
-                  <img src="../assets/icons/Icon/Heart.svg" alt="위치" class="search__icon-img" />
-                </a>
-              </li>
-              <li class="search__icon">
-                <a href="#" class="search__icon-link">
-                  <img src="../assets/icons/Icon/Cart.svg" alt="위치" class="search__icon-img" />
-                </a>
+        <div class="header__inner">
+          <div class="header-top">
+            <ul class="member">
+              <li><a href="./register.html">회원가입</a></li>
+              <li><span class="list-divider">&#124;</span><a href="./login.html">로그인</a></li>
+              <li>
+                <span class="list-divider">&#124;</span><a href="#">고객센터<img src="../assets/icons/Icon/icon_down.svg" alt="카테고리 메뉴" /></a>
               </li>
             </ul>
-            <div class="search__search">
-              <label for="search" class="search-search__label">검색</label>
-              <input type="text" class="search-search__input" id="search" placeholder="검색어를 입력해주세요" />
-              <img src="../assets/icons/Icon/Search.svg" alt="돋보기" class="search-search__button" />
+
+            <div class="header-top__inner">
+              <h1 class="header__logo">
+                <a href="./main.html">
+                  <img src="../assets/icons/Icon/logo.svg" alt="Market Karly" />
+                </a>
+              </h1>
+              <ul class="header__switch">
+                <li class="is-active">
+                  <h1><a href="#">마켓칼리</a></h1>
+                </li>
+                <li>
+                  <h1><a href="#">뷰티칼리</a></h1>
+                  <img src="../assets/icons/Icon/New.svg" alt="신규 탭" />
+                </li>
+              </ul>
+
+              <ul class="user-order">
+                <li>
+                  <a href="#"><img src="../assets/icons/Icon/Location.svg" alt="배송지 등록" /></a>
+                </li>
+                <li>
+                  <a href="./login.html"><img src="../assets/icons/Icon/Heart.svg" alt="관심상품" /></a>
+                </li>
+                <li>
+                  <a href="./cart.html"><img src="../assets/icons/Icon/Cart-1.svg" alt="장바구니" /></a>
+                </li>
+              </ul>
+              <div class="search">
+                <h2 class="a11y-hidden">검색</h2>
+                <form class="search-form">
+                  <fieldset>
+                    <legend>검색</legend>
+                    <div class="search-form__inner">
+                      <label for="search__input" class="a11y-hidden">검색</label>
+                      <input id="search__input" type="search" placeholder="검색어를 입력해주세요" />
+                      <button class="search__search-btn">
+                        <img src="../assets/icons/Icon/search.svg" alt="검색버튼" />
+                      </button>
+                    </div>
+                  </fieldset>
+                </form>
+              </div>
             </div>
           </div>
-        </section>
-        <nav class="nav">
-          <div class="category">
-            <button class="category__button">
-              <img src="../assets/icons/Icon/Hamburger.svg" alt="카테고리 버튼" class="category__button-icon" />
+        </div>
+        <div class="header-nav">
+          <div class="header-nav__inner">
+            <button class="category">
+              <div class="category__hamburger a11y-hidden">카테고리 열기</div>
+              <div class="category__text">카테고리</div>
             </button>
-            <span class="category__text">카테고리</span>
+            <nav class="main-menu">
+              <h2 class="a11y-hidden">메인 메뉴</h2>
+              <ul class="main-menu__list">
+                <li><a href="./product-list.html">신상품</a></li>
+                <li><a href="./product-list.html">베스트</a></li>
+                <li><a href="./product-list.html">알뜰쇼핑</a></li>
+                <li><a href="./product-list.html">특가/혜택</a></li>
+              </ul>
+            </nav>
+            <button class="delivery-notice"><span>샛별·낮</span> 배송안내</button>
+            <div class="sub-menu">
+              <h3 class="a11y-hidden">서브 메뉴</h3>
+              <ul class="sub-menu__list">
+                <li><a href="#">선물하기</a></li>
+                <li><a href="#">채소</a></li>
+                <li><a href="#">과일 · 견과 · 쌀</a></li>
+                <li><a href="#">수산 · 해산 · 건어물</a></li>
+                <li><a href="#">정육 · 계란</a></li>
+                <li><a href="#">국 · 반찬 · 메인요리</a></li>
+                <li><a href="#">샐러드 · 간편식</a></li>
+                <li><a href="#">면 · 양념 · 오일</a></li>
+                <li><a href="#">생수 · 음료 · 우유 · 커피</a></li>
+                <li><a href="#">간식 · 과자 · 떡</a></li>
+                <li><a href="#">베이커리 · 치즈 · 델리</a></li>
+                <li><a href="#">건강식품</a></li>
+                <li><a href="#">와인</a></li>
+                <li><a href="#">전통주</a></li>
+                <li><a href="#">생활용품 · 리빙 · 캠핑</a></li>
+                <li><a href="#">스킨케어 · 메이크업</a></li>
+                <li><a href="#">헤어 · 바디 · 구강</a></li>
+                <li><a href="#">주방용품</a></li>
+                <li><a href="#">가전제품</a></li>
+                <li><a href="#">반려동물</a></li>
+                <li><a href="#">베이비 · 키즈 · 완구</a></li>
+                <li><a href="#">여행 · 티켓</a></li>
+              </ul>
+            </div>
           </div>
-          <nav class="menu">
-            <ol class="menu__lists">
-              <li class="menu__list">
-                <span class="menu__list-text">신상품</span>
-              </li>
-              <li class="menu__list">
-                <span class="menu__list-text">베스트</span>
-              </li>
-              <li class="menu__list">
-                <span class="menu__list-text">알뜰쇼핑</span>
-              </li>
-              <li class="menu__list">
-                <span class="menu__list-text">특가/혜택</span>
-              </li>
-            </ol>
-          </nav>
-          <div class="notice">
-            <span class="notice__text">새벽 • 낮 </span>
-            <span class="notice__text">배송안내</span>
-          </div>
-        </nav>
+        </div>
       </header>
 
       <!-- Main -->
@@ -132,7 +158,7 @@
                         <span class="frame70__etc">1</span>
                       </div>
                       <div class="accordion_head__btn">
-                        <input type="image" src="../assets/icons/Icon/Direction=Down.svg" id="more" class="accordion_head__btn" />
+                        <input type="button" id="more" class="accordion_head__btn" />
                         <label for="more"></label>
                       </div>
                     </div>
@@ -148,7 +174,7 @@
                         <span class="frame70__etc">1</span>
                       </div>
                       <div class="accordion_head__btn">
-                        <input type="image" src="../assets/icons/Icon/Direction=Down.svg" id="more" class="accordion_head__btn" />
+                        <input type="button" id="more" class="accordion_head__btn" />
                         <label for="more"></label>
                       </div>
                     </div>
@@ -272,7 +298,7 @@
                         <span class="frame70__etc"></span>
                       </div>
                       <div class="accordion_head__btn">
-                        <input type="image" src="../assets/icons/Icon/Direction=Down.svg" id="more" class="accordion_head__btn" />
+                        <input type="button" id="more" class="accordion_head__btn" />
                         <label for="more"></label>
                       </div>
                     </div>
@@ -288,7 +314,7 @@
                         <span class="frame70__etc"></span>
                       </div>
                       <div class="accordion_head__btn">
-                        <input type="image" src="../assets/icons/Icon/Direction=Down.svg" id="more" class="accordion_head__btn" />
+                        <input type="button" id="more" class="accordion_head__btn" />
                         <label for="more"></label>
                       </div>
                     </div>
@@ -304,7 +330,7 @@
                         <span class="frame70__etc"></span>
                       </div>
                       <div class="accordion_head__btn">
-                        <input type="image" src="../assets/icons/Icon/Direction=Down.svg" id="more" class="accordion_head__btn" />
+                        <input type="button" id="more" class="accordion_head__btn" />
                         <label for="more"></label>
                       </div>
                     </div>
@@ -320,7 +346,7 @@
                         <span class="frame70__etc"></span>
                       </div>
                       <div class="accordion_head__btn">
-                        <input type="image" src="../assets/icons/Icon/Direction=Down.svg" id="more" class="accordion_head__btn" />
+                        <input type="button" id="more" class="accordion_head__btn" />
                         <label for="more"></label>
                       </div>
                     </div>
