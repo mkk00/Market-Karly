@@ -16,7 +16,7 @@
   width: 56px;
   height: 32px;
 
-  font-family: "Pretendard";
+  font-family: 'Pretendard';
   font-style: normal;
   font-weight: 600;
   font-size: 21.328px;
@@ -81,7 +81,7 @@
 .frame70__text {
   height: 24px;
 
-  font-family: "Pretendard";
+  font-family: 'Pretendard';
   font-style: normal;
   font-weight: 600;
   font-size: 16px;
@@ -93,7 +93,7 @@
 .frame70__etc {
   height: 16px;
 
-  font-family: "Pretendard";
+  font-family: 'Pretendard';
   font-style: normal;
   font-weight: 600;
   font-size: 10px;
@@ -108,7 +108,7 @@
   height: 18px;
 }
 
-.accordion_head__btn > input[type="button"] {
+.accordion_head__btn > input[type='button'] {
   display: none;
 }
 
@@ -195,21 +195,21 @@
 }
 
 /* 아코디언 - 체크박스 */
-input[type="checkbox"] {
+input[type='checkbox'] {
   display: none;
 }
 
-input[type="checkbox"] + label {
+input[type='checkbox'] + label {
   display: flex;
   padding-left: 31px;
   width: 24px;
   height: 24px;
   background-repeat: no-repeat;
-  background-image: url("../../assets/icons/Icon/isChecked=false.svg");
+  background-image: url('../../assets/icons/Icon/isChecked=false.svg');
 }
 
-input[type="checkbox"]:checked + label {
-  background-image: url("../../assets/icons/Icon/isChecked=true.svg");
+input[type='checkbox']:checked + label {
+  background-image: url('../../assets/icons/Icon/isChecked=true.svg');
 }
 
 .accordion_item__text {
@@ -223,7 +223,7 @@ input[type="checkbox"]:checked + label {
 
 .accordion_item__text-top {
   height: 100%;
-  font-family: "Pretendard";
+  font-family: 'Pretendard';
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -237,7 +237,7 @@ input[type="checkbox"]:checked + label {
 
 .accordion_item__text-bot {
   height: 19px;
-  font-family: "Pretendard";
+  font-family: 'Pretendard';
   font-style: normal;
   font-weight: 400;
   font-size: 12.003px;
@@ -269,7 +269,7 @@ input[type="checkbox"]:checked + label {
   width: 66px;
   height: 18px;
 
-  font-family: "Pretendard";
+  font-family: 'Pretendard';
   font-style: normal;
   font-weight: 600;
   font-size: 12.003px;
@@ -354,7 +354,7 @@ input[type="checkbox"]:checked + label {
   width: 62px;
   height: 24px;
 
-  font-family: "Pretendard";
+  font-family: 'Pretendard';
   font-style: normal;
   font-weight: 600;
   font-size: 16px;
@@ -370,7 +370,6 @@ input[type="checkbox"]:checked + label {
   padding: 0px;
   gap: 8px;
 
-  width: 445px;
   height: 24px;
 }
 
@@ -397,7 +396,7 @@ input[type="checkbox"]:checked + label {
 .group-menu__button-text {
   height: 24px;
 
-  font-family: "Pretendard";
+  font-family: 'Pretendard';
   font-style: normal;
   font-weight: 600;
   font-size: 16px;
@@ -421,28 +420,12 @@ input[type="checkbox"]:checked + label {
   display: block;
 }
 
-.group-menu__list:first-child {
-  width: 60px;
-}
-.group-menu__list:nth-child(2),
-.group-menu__list:nth-child(3) {
-  width: 56px;
-}
-
-.group-menu__list:nth-child(4) {
-  width: 42px;
-}
-.group-menu__list:nth-child(5),
-.group-menu__list:nth-child(6) {
-  width: 73px;
-}
-
-/* .group-menu__list-bar {
+.group-menu__partition {
   width: 1px;
   height: 10px;
 
   background: #a6a6a6;
-} */
+}
 
 /* -------------------------------------------------------------------------- */
 /*                                Product-List                                */
@@ -464,7 +447,6 @@ input[type="checkbox"]:checked + label {
   justify-content: space-between;
   align-items: flex-start;
   padding: 0px;
-  gap: 45px;
 
   width: 783px;
   height: 538px;
@@ -516,7 +498,7 @@ input[type="checkbox"]:checked + label {
 .info-text {
   height: 18px;
 
-  font-family: "Pretendard";
+  font-family: 'Pretendard';
   font-style: normal;
   font-weight: 600;
   font-size: 12.003px;
@@ -528,7 +510,7 @@ input[type="checkbox"]:checked + label {
 .info-productName {
   height: 26px;
 
-  font-family: "Pretendard";
+  font-family: 'Pretendard';
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -552,7 +534,7 @@ input[type="checkbox"]:checked + label {
 .info-price {
   height: 32px;
 
-  font-family: "Pretendard";
+  font-family: 'Pretendard';
   font-style: normal;
   font-weight: 600;
   font-size: 21.328px;
@@ -575,7 +557,7 @@ input[type="checkbox"]:checked + label {
 .info-sale {
   height: 32px;
 
-  font-family: "Pretendard";
+  font-family: 'Pretendard';
   font-style: normal;
   font-weight: 600;
   font-size: 21.328px;
@@ -601,7 +583,7 @@ input[type="checkbox"]:checked + label {
   width: 53px;
   height: 19px;
 
-  font-family: "Pretendard";
+  font-family: 'Pretendard';
   font-style: normal;
   font-weight: 400;
   font-size: 12.003px;
@@ -623,7 +605,7 @@ input[type="checkbox"]:checked + label {
 .info-info {
   height: 19px;
 
-  font-family: "Pretendard";
+  font-family: 'Pretendard';
   font-style: normal;
   font-weight: 400;
   font-size: 12.003px;
@@ -671,7 +653,7 @@ input[type="checkbox"]:checked + label {
   width: 57px;
   height: 18px;
 
-  font-family: "Pretendard";
+  font-family: 'Pretendard';
   font-style: normal;
   font-weight: 600;
   font-size: 12.003px;
@@ -698,7 +680,7 @@ input[type="checkbox"]:checked + label {
   width: 42px;
   height: 18px;
 
-  font-family: "Pretendard";
+  font-family: 'Pretendard';
   font-style: normal;
   font-weight: 600;
   font-size: 12.003px;
@@ -744,7 +726,7 @@ input[type="checkbox"]:checked + label {
 .numbering-list__text {
   height: 15px;
 
-  font-family: "Inter";
+  font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
