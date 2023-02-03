@@ -1,13 +1,18 @@
-import { getNode } from '../../lib/index.js';
+// import { getNode } from '../../lib/index.js';
 
 /* -------------------------------------------------------------------------- */
 /*                                product_list                                */
 /* -------------------------------------------------------------------------- */
-const brandCheck = getNode('.accordion_item__inputCheck');
 
-function handleBrand(e) {
+const brand = document.querySelectorAll('.accordion_item__checkbox');
+
+function handleBrandCheck(e) {
   e.preventDefault();
-  console.log(brandCheck);
+  let checkBtn = e.target.closest('.accordion_item__checkbox');
+
+  checkBtn.classList.toggle('is-active');
 }
 
-brandCheck.addEventListener('click', handleBrand);
+for (let i = 0; i < brand.length; i++) {
+  brand[i].addEventListener('click', handleBrandCheck);
+}

@@ -216,27 +216,16 @@
   height: 50px;
 }
 
-.accordion_item__inputCheck {
-  width: 24px;
-  height: 24px;
-}
-
 /* 아코디언 - 체크박스 */
-input[type='checkbox'] {
-  display: none;
-}
-
-input[type='checkbox'] + label {
-  display: flex;
-  padding-left: 31px;
+.accordion_item__inputCheck {
+  position: relative;
   width: 24px;
   height: 24px;
-  background-repeat: no-repeat;
-  background-image: url('../../assets/icons/Icon/isChecked=false.svg');
+  content: url('../../assets/icons/Icon/isChecked=false.svg');
 }
 
-input[type='checkbox']:checked + label {
-  background-image: url('../../assets/icons/Icon/isChecked=true.svg');
+.accordion_item__checkbox.is-active {
+  content: url('../../assets/icons/Icon/isChecked=true.svg');
 }
 
 .accordion_item__text {
