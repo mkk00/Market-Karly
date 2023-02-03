@@ -45,3 +45,20 @@ function categoryClose(){
 $category.addEventListener('mouseover', categoryOpen)
 $category.addEventListener('mouseleave', categoryClose)
 $subMenu.addEventListener('mouseleave', categoryClose)
+
+
+
+// {#ddd} header switch tab
+
+const $headerSwitch = getNodes('.header__switch li');
+
+for(let i=0; $headerSwitch.length; i++){
+  $headerSwitch[i].addEventListener('click', tabSwitch)
+}
+
+function tabSwitch(){
+  for(let j=0; j < $headerSwitch.length; j++){
+    $headerSwitch[j].classList.remove('is-active');
+  }
+  this.classList.add('is-active');
+}
