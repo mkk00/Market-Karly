@@ -35,7 +35,7 @@ flex-grow: 0;
 
 a{text-decoration-line:none;}
 
-.title{
+.main-title{
 
 /* Label/Large */
 
@@ -59,7 +59,7 @@ order: 0;
 flex-grow: 0;
 }
 
-.id-box{
+.main-id-box{
   /* field */
 
 
@@ -118,7 +118,7 @@ flex-grow: 0;
   box-sizing: border-box;
 }
 
-.id-serch{
+.main-id-serch{
   display:flex;
   justify-content: flex-end;
 }
