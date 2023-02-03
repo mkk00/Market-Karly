@@ -18,7 +18,9 @@
       <!-- TopBanner -->
       <div class="top-banner">
         <div class="top-banner__inner">
-          <div class="top-banner__text">지금 가입하고 인기상품 <span>100원</span>에 받아가세요!</div>
+          <div class="top-banner__text">
+            <a href="#">지금 가입하고 인기상품 <span>100원</span>에 받아가세요!</a>
+          </div>
           <button class="top-banner__close-btn">
             <img src="../assets/icons/Icon/icon_close.svg" alt="상단 배너 닫기" />
           </button>
@@ -29,90 +31,103 @@
       <header class="header">
         <div class="header__inner">
           <div class="header-top">
-            <ul class="header-login">
-              <li class="header__login--focused">회원가입<span>&#124;</span></li>
-              <li>로그인<span>&#124;</span></li>
+            <ul class="member">
+              <li><a href="./register.html">회원가입</a></li>
+              <li><span class="list-divider">&#124;</span><a href="./login.html">로그인</a></li>
               <li>
-                <a href="#"><img src="../assets/icons/Icon/Icon_down.png" alt="내리기 버튼" /></a>
+                <span class="list-divider">&#124;</span><a href="#">고객센터<img src="../assets/icons/Icon/icon_down.svg" alt="카테고리 메뉴" /></a>
               </li>
             </ul>
 
-            <div class="header-search">
-              <div class="header-logo">
-                <h1 class="logo"><img src="../assets/icons/Icon/logo.png" alt="마켓칼리 로고" /></h1>
+            <div class="header-top__inner">
+              <h1 class="header__logo">
+                <a href="./main.html">
+                  <img src="../assets/icons/Icon/logo.svg" alt="Market Karly" />
+                </a>
+              </h1>
+              <ul class="header__switch">
+                <li class="is-active">
+                  <h1><a href="#">마켓칼리</a></h1>
+                </li>
+                <li>
+                  <h1><a href="#">뷰티칼리</a></h1>
+                  <img src="../assets/icons/Icon/New.svg" alt="신규 탭" />
+                </li>
+              </ul>
 
-                <ul class="header__switch">
-                  <li>마켓칼리</li>
-                  <li><img src="../assets/icons/Icon/Vector.png" alt="새로운 알람" /></li>
-                </ul>
+              <ul class="user-order">
+                <li>
+                  <a href="#"><img src="../assets/icons/Icon/Location.svg" alt="배송지 등록" /></a>
+                </li>
+                <li>
+                  <a href="./login.html"><img src="../assets/icons/Icon/Heart.svg" alt="관심상품" /></a>
+                </li>
+                <li>
+                  <a href="./cart.html"><img src="../assets/icons/Icon/Cart-1.svg" alt="장바구니" /></a>
+                </li>
+              </ul>
+              <div class="search">
+                <h2 class="a11y-hidden">검색</h2>
+                <form class="search-form">
+                  <fieldset>
+                    <legend>검색</legend>
+                    <div class="search-form__inner">
+                      <label for="search__input" class="a11y-hidden">검색</label>
+                      <input id="search__input" type="search" placeholder="검색어를 입력해주세요" />
+                      <button class="search__search-btn">
+                        <img src="../assets/icons/Icon/search.svg" alt="검색버튼" />
+                      </button>
+                    </div>
+                  </fieldset>
+                </form>
               </div>
-
-              <form action="method" class="search-form">
-                <fieldset>
-                  <legend>검색창</legend>
-                  <label for="search" class="a11yHidden">검색창</label>
-                  <input class="search-form__input" type="search" id="search" placeholder="검색어를 입력해주세요" />
-                  <button type="button" class="search-form__button"><img src="../assets/icons/Icon/search.png" alt="검색 버튼" /></button>
-                </fieldset>
-              </form>
-
-              <ul class="header__icons">
-                <li>
-                  <a href=""><img src="../assets/icons/Icon/Location.png" alt="배송지등록" /></a>
-                </li>
-                <li>
-                  <a href=""><img src="../assets/icons/Icon/Heart.png" alt="좋아요" /></a>
-                </li>
-                <li>
-                  <a href=""><img src="../assets/icons/Icon/Cart.png" alt="장바구니" /></a>
-                </li>
+            </div>
+          </div>
+        </div>
+        <div class="header-nav">
+          <div class="header-nav__inner">
+            <button class="category">
+              <div class="category__hamburger a11y-hidden">카테고리 열기</div>
+              <div class="category__text">카테고리</div>
+            </button>
+            <nav class="main-menu">
+              <h2 class="a11y-hidden">메인 메뉴</h2>
+              <ul class="main-menu__list">
+                <li><a href="./product-list.html">신상품</a></li>
+                <li><a href="./product-list.html">베스트</a></li>
+                <li><a href="./product-list.html">알뜰쇼핑</a></li>
+                <li><a href="./product-list.html">특가/혜택</a></li>
+              </ul>
+            </nav>
+            <button class="delivery-notice"><span>샛별·낮</span> 배송안내</button>
+            <div class="sub-menu">
+              <h3 class="a11y-hidden">서브 메뉴</h3>
+              <ul class="sub-menu__list">
+                <li><a href="#">선물하기</a></li>
+                <li><a href="#">채소</a></li>
+                <li><a href="#">과일 · 견과 · 쌀</a></li>
+                <li><a href="#">수산 · 해산 · 건어물</a></li>
+                <li><a href="#">정육 · 계란</a></li>
+                <li><a href="#">국 · 반찬 · 메인요리</a></li>
+                <li><a href="#">샐러드 · 간편식</a></li>
+                <li><a href="#">면 · 양념 · 오일</a></li>
+                <li><a href="#">생수 · 음료 · 우유 · 커피</a></li>
+                <li><a href="#">간식 · 과자 · 떡</a></li>
+                <li><a href="#">베이커리 · 치즈 · 델리</a></li>
+                <li><a href="#">건강식품</a></li>
+                <li><a href="#">와인</a></li>
+                <li><a href="#">전통주</a></li>
+                <li><a href="#">생활용품 · 리빙 · 캠핑</a></li>
+                <li><a href="#">스킨케어 · 메이크업</a></li>
+                <li><a href="#">헤어 · 바디 · 구강</a></li>
+                <li><a href="#">주방용품</a></li>
+                <li><a href="#">가전제품</a></li>
+                <li><a href="#">반려동물</a></li>
+                <li><a href="#">베이비 · 키즈 · 완구</a></li>
+                <li><a href="#">여행 · 티켓</a></li>
               </ul>
             </div>
           </div>
-
-          <nav class="nav">
-            <div class="nav__inner">
-              <div class="nav-kategorie"><img src="../assets/icons/Icon/Hamburger.png" alt="카테고리 버튼" /></div>
-
-              <div class="nav-kategorie__submenu">
-                <ul class="nav-kategorie__submenu-list">
-                  <li><a href="#">선물하기</a></li>
-                  <li><a href="#">채소</a></li>
-                  <li><a href="#">과일 · 견과 · 쌀</a></li>
-                  <li><a href="#">수산 · 해산 · 건어물</a></li>
-                  <li><a href="#">정육 · 계란</a></li>
-                  <li><a href="#">국 · 반찬 · 메인요리</a></li>
-                  <li><a href="#">샐러드 · 간편식</a></li>
-                  <li><a href="#">면 · 양념 · 오일</a></li>
-                  <li><a href="#">생수 · 음료 · 우유 · 커피</a></li>
-                  <li><a href="#">간식 · 과자 · 떡</a></li>
-                  <li><a href="#">베이커리 · 치즈 · 델리</a></li>
-                  <li><a href="#">건강식품</a></li>
-                  <li><a href="#">와인</a></li>
-                  <li><a href="#">전통주</a></li>
-                  <li><a href="#">생활용품 · 리빙 · 캠핑</a></li>
-                  <li><a href="#">스킨케어 · 메이크업</a></li>
-                  <li><a href="#">헤어 · 바디 · 구강</a></li>
-                  <li><a href="#">주방용품</a></li>
-                  <li><a href="#">가전제품</a></li>
-                  <li><a href="#">반려동물</a></li>
-                  <li><a href="#">베이비 · 키즈 · 완구</a></li>
-                  <li><a href="#">여행 · 티켓</a></li>
-                </ul>
-              </div>
-
-              <ul class="nav-menu">
-                <li><a href="#">신상품</a></li>
-                <li><a href="#">베스트</a></li>
-                <li><a href="#">알뜰쇼핑</a></li>
-                <li><a href="#">특가/혜택</a></li>
-              </ul>
-
-              <div class="nav-content">
-                <a href="#"><span>샛별·낮</span> 배송안내</a>
-              </div>
-            </div>
-          </nav>
         </div>
       </header>
 
@@ -134,24 +149,24 @@
                     <h3 class="join__title">
                       <label for="user-id" class="required">아이디</label>
                     </h3>
-                    <input type="text" id="user-id" name="user-id" placeholder="아이디를 입력해주세요" autocomplete="username" class="input-box"/>
+                    <input type="text" id="user-id" name="user-id" placeholder="아이디를 입력해주세요" autocomplete="username" class="input-box" />
                   </div>
                   <button type="button" class="verify-button">중복확인</button>
                 </div>
-              
+
                 <!-- 비밀번호 -->
                 <div class="join-pw join-layout">
                   <h3 class="join__title">
                     <label for="user-pw" class="required">비밀번호</label>
                   </h3>
-                  <input type="password" id="user-pw" name="user-pw" placeholder="비밀번호를 입력해주세요" class="input-box"/>
+                  <input type="password" id="user-pw" name="user-pw" placeholder="비밀번호를 입력해주세요" class="input-box" />
                 </div>
 
                 <div class="join-pw__required join-layout">
                   <h3 class="join__title">
                     <label for="verify-pw" class="required">비밀번호 확인</label>
                   </h3>
-                  <input type="password" id="verify-pw" name="verify-pw" placeholder="비밀번호를 한번 더 입력해주세요" class="input-box"/>
+                  <input type="password" id="verify-pw" name="verify-pw" placeholder="비밀번호를 한번 더 입력해주세요" class="input-box" />
                 </div>
               </fieldset>
 
@@ -162,7 +177,7 @@
                   <h3 class="join__title">
                     <label for="user-name" class="required">이름</label>
                   </h3>
-                  <input type="text" id="user-name" name="user-name" placeholder="이름을 한번 더 입력해주세요" autocomplete="name" class="input-box"/>
+                  <input type="text" id="user-name" name="user-name" placeholder="이름을 한번 더 입력해주세요" autocomplete="name" class="input-box" />
                 </div>
                 <!-- 이메일 -->
                 <div class="join">
@@ -170,7 +185,7 @@
                     <h3 class="join__title">
                       <label for="user-email" class="required">이메일</label>
                     </h3>
-                    <input type="text" id="user-email" name="user-email" placeholder="예) marketkarly@karly.com" class="input-box"/>
+                    <input type="text" id="user-email" name="user-email" placeholder="예) marketkarly@karly.com" class="input-box" />
                   </div>
                   <button type="button" class="verify-button">중복확인</button>
                 </div>
@@ -181,7 +196,7 @@
                     <h3 class="join__title">
                       <label for="user-phone" class="required">휴대폰</label>
                     </h3>
-                    <input type="text" id="user-phone" name="user-phone" placeholder="숫자만 입력해주세요." autocomplete="email" class="input-box"/>
+                    <input type="text" id="user-phone" name="user-phone" placeholder="숫자만 입력해주세요." autocomplete="email" class="input-box" />
                   </div>
                   <button type="button" class="verify-button">인증번호</button>
                 </div>
@@ -258,7 +273,7 @@
                       <input type="radio" id="recommender" name="add" class="input-radio" />
                       <label for="recommender">친구초대 추천인 아이디</label>
                     </div>
-                    
+
                     <div class="join-event">
                       <input type="radio" id="event-name" name="add" class="input-radio" />
                       <label for="event-name">참여 이벤트명</label>
@@ -266,18 +281,16 @@
                   </div>
                 </div>
               </fieldset>
-              
+
               <!-- 이용약관 동의 -->
               <fieldset class="last-fieldset">
                 <legend>이용약관동의</legend>
-                <div class="join-agree  join-layout">
-                  
-                  
-                    <label for="agree-all__terms" class="join-required">이용약관동의</label>
-                    <div class="agree-user">
+                <div class="join-agree join-layout">
+                  <label for="agree-all__terms" class="join-required">이용약관동의</label>
+                  <div class="agree-user">
                     <!-- 전체 동의 -->
                     <div class="agree">
-                      <input type="checkbox" id="agree-all__terms" name="agree-all__terms"/>
+                      <input type="checkbox" id="agree-all__terms" name="agree-all__terms" />
                       <label for="agree-all__terms" class="agree-all__text">전체 동의합니다.</label>
                     </div>
 
@@ -308,7 +321,8 @@
                       <label for="confirm-terms" class="agreement-text">본인은 만 14세 이상입니다. (필수)</label>
                       <a href="#" class="terms">약관 보기 &gt;</a>
                     </div>
-                  </div><!-- class="agree-user" -->
+                  </div>
+                  <!-- class="agree-user" -->
                 </div>
 
                 <!-- 가입하기 버튼 -->
