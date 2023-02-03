@@ -1,4 +1,4 @@
-import { getNode } from '../../lib/index.js';
+import { getNode, getNodes } from '../../lib/index.js';
 
 /* -------------------------------------------------------------------------- */
 /*                                   header                                   */
@@ -9,9 +9,6 @@ import { getNode } from '../../lib/index.js';
 window.onload = () =>{
   setTimeout(scrollTo(0,0),100)
 }
-
-// 새로고침시 스크롤 복원 비활성화
-history.scrollRestoration = "manual"
 
 
 
@@ -26,3 +23,25 @@ function topBannerClose(){
 }
 
 $topBannerCloseBtn.addEventListener('click', topBannerClose)
+
+
+
+// {#ddd} category
+
+const $category = getNode('.category');
+const $subMenu = getNode('.sub-menu');
+
+function categoryOpen(){
+  $category.style.backgroundImage="url(../assets/icons/Icon/Hamburger-p.svg)"
+  $subMenu.style.display='block'
+  $subMenu.style.transitionDuration="300ms"
+}
+
+function categoryClose(){
+  $category.style.backgroundImage="url(../assets/icons/Icon/Hamburger-black.svg)"
+  $subMenu.style.display='none'
+}
+
+$category.addEventListener('mouseover', categoryOpen)
+$category.addEventListener('mouseleave', categoryClose)
+$subMenu.addEventListener('mouseleave', categoryClose)

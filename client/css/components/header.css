@@ -119,6 +119,10 @@ button {
   padding: 4px 5px;
 }
 
+.member li:first-child{
+  color: var(--primary);
+}
+
 .member li:last-child a::before{
   content: "";
   font-size: 0;
@@ -246,17 +250,17 @@ input:focus{
   justify-content: space-between;
   align-items: center;
   position: relative;
-  padding: var(--spacing-base) 0;
 }
 
 /* category */
 
 .category{
   width: 84px;
-  height: 24px;
+  height: 72px;
   line-height: 24px;
   font-weight: 600;
   background: url('../../assets/icons/Icon/Hamburger-black.svg') no-repeat 0px 5px;
+  background-position: 0 29px;
   outline-offset: 5px;
 }
 
@@ -269,7 +273,7 @@ input:focus{
   float: right;
 }
 
-.category:hover{
+.category .category__container:hover{
   color: var(--primary);
   background: url('../../assets/icons/Icon/Hamburger.svg') no-repeat 0px 5px;
 }
@@ -338,6 +342,7 @@ input:focus{
   line-height: 40px;
   display: block;
   font-weight: 600;
+  text-align: left;
 }
 
 .sub-menu__list li a::before{
