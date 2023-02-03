@@ -16,3 +16,361 @@
 /* Components */
 @import url(../components/header.css);
 @import url(../components/footer.css);
+
+
+/* 메인 부분 */
+.main{
+  height: 1489px;
+  background-color: var(--white);
+}
+
+.main-wrap{
+  width: 640px;
+  height: 100%;
+  margin:0 auto;
+  padding:80px 0 40px;
+}
+
+/* 회원가입 제목 */
+.main__text{
+  text-align: center;
+  font-size: 21px;
+  font-weight: 600;
+  line-height: 150%;
+}
+
+/* 필수입력사항 */
+.main__text-p{
+  text-align: right;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 18px;
+  padding-top: 12px;
+}
+
+.main__text-p::before{
+  content:"*";
+  color: var(--info-error);
+  position:relative;
+  top:-3px;
+  left:-1px;
+}
+
+/* 회원가입 폼 */
+.join-content::before{
+  content:"";
+  display: block;
+  width: 640px;
+  height: 2px;
+  background-color:var(--gray-900);
+  margin-top:6px;
+}
+
+/* 폼 공통 레이아웃 */
+.join-layout{
+  display: flex;
+  align-items: center;
+  gap:var(--spacing-xs);
+
+}
+
+/* 필수입력사항 공통부분 */
+.required::after{
+  content:"*";
+  color: var(--info-error);
+  position:relative;
+  top:-7px;
+  left:var(--spacing-xxs);
+}
+
+/* input 상자 공통부분 */
+.input-box{
+  width: 333px;
+  height: 44px;
+  color:var(--gray-600);
+  border:1px solid var(--gray-300);
+  border-radius:var(--spacing-xxs);
+  background-color: inherit;
+  margin:var(--spacing-md) 0px;
+}
+
+/* 중복확인, 인증버호 받기 버튼 */
+.verify-button{
+  width: 143px;
+  height: 44px;
+  color:var(--primary);
+  border: 1px solid var(--primary);
+  border-radius:var(--spacing-xxs);
+  background-color:inherit;
+  cursor: pointer;
+  margin: 0 9px 0px var(--spacing-xs);
+}
+
+.required{
+  margin-left: var(--spacing-xxs);
+}
+
+/* 레이블 글자 */
+.join__title{
+  width: 139px;
+  height: 44px;
+  font-size: var(--spacing-base);
+  font-weight: 600;
+  line-height: 36px;
+  padding:var(--spacing-xxs);
+  color:var(--content);
+}
+
+.join__title-text{
+  margin-left:var(--spacing-xxs);
+}
+
+/* placeholder */
+input[placeholder]{
+  font-size: var(--spacing-base);
+  font-weight: 400;
+  line-height: 160%;
+  color:var(--gray-600);
+  padding: 9px 0px 9px var(--spacing-md);
+}
+
+/* 아이디 */
+.join{
+  display: flex;
+  align-items: center;
+}
+
+.join__inner{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+
+/* 주소 검색 */
+.join-address{
+  margin-bottom:20px;
+  gap:0;
+}
+
+.join-address .input-box{
+  margin-bottom:var(--spacing-xxs);
+  color:var(--primary);
+  border: 1px solid var(--primary);
+  border-radius:var(--spacing-xxs);
+  background-color:inherit;
+  cursor: pointer;
+  margin-left: 4px;
+}
+
+.address__p--text{
+  font-size: 12px;
+  font-weight: 400;
+}
+
+
+/* 성별 */
+.join-gender{
+  margin: var(--spacing-md) 0px;
+  color:var(--content);
+  font-size: var(--spacing-base);
+  font-weight: 600;
+}
+
+.input-radio{
+  width: 24px;
+  height: 24px;
+}
+
+.gender-group{
+  width: 333px;
+  height: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.gender-group{
+  margin-left: -4px;
+}
+
+/* 라디오 버튼 이미지  */
+input[type=radio] {
+  display:none;
+}
+input[type=radio] + label { 
+  display: inline-block;
+  cursor: pointer; 
+  padding-left: 31px; 
+  background-repeat: no-repeat;
+  background-image: url('../../assets/icons/Icon/isSelected=false.svg');
+  height:24px;
+  line-height: 24px;
+}
+input[type=radio]:checked + label {
+  display: inline-block;
+  background-image: url('../../assets/icons/Icon/isSelected=true.svg');
+  height: 24px;
+}
+
+/* 생년월일 */
+.join-birthday{
+  margin:var(--spacing-md) 0px;
+}
+
+.join-birthday{
+  width: 333px;
+  border:1px solid var(--gray-300);
+  border-radius: 4px;
+  margin-left: -5px;
+}
+.join-birthday__inner{
+  display: flex;
+  width: 333px;
+
+}
+
+.join-y input[placeholder],
+.join-m input[placeholder],
+.join-d input[placeholder]{
+  text-align: center;
+  padding:0px;
+}
+
+.birthday-input{
+  width: 100%;
+  height: 100%;
+  border:none;
+  color:var(--gray-400);
+  outline: none;
+}
+
+.join-birthday__text{
+  color:var(--gray-400);
+  line-height: 40px;
+}
+
+.join-y,
+.join-m,
+.join-d{
+  padding: 0px 3px 0px 3px;
+}
+
+/* 추가입력 사항 */
+.join-recommender{
+  gap: 0;
+  padding:20px 0px 20px 0px;
+}
+
+.join-invite{
+  display: inline-block;
+  margin-left: 4px;
+}
+
+.join-event{
+  display: inline-block;
+  margin-left: 34px;
+}
+
+
+
+
+/* 이용약관 동의 */
+
+.join-agree{
+  border-top:1px solid var(--gray-500);
+  border-bottom:1px solid var(--gray-200);
+  padding:20px 0px;
+  align-items:flex-start;
+  line-height: 1.5;
+}
+
+.join-required{
+  font-size: var(--spacing-base);
+  font-weight: 600;
+  color:var(--content);
+  margin-left:8px;
+}
+.join-required::after{
+  content:"*";
+  color: var(--info-error);
+  position:relative;
+  top:-4px;
+  left:47px;
+}
+.agree-user{
+  margin-left: 40px;
+}
+
+.agree-all__text{
+  font-size: 21px;
+  font-weight: 600;
+  color:var(--content);
+}
+
+.agreement{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:12px 0px;
+}
+
+.terms{
+  color:var(--primary);
+  font-size: var(--spacing-sm);
+  font-weight: 400;
+}
+
+.agree-all__text::after{
+  content:"선택항목에 동의하지 않은 경우도 회원가입 및 일반적인 서비스를 이용할 수 있습니다.";
+  display: block;
+  color:var(--gray-400);
+  font-size: var(--spacing-sm);
+  font-weight: 400;
+}
+
+.agreement-text{
+  font-size: var(--spacing-base);
+  font-weight: 400;
+  color:var(--content);
+}
+
+/* 체크박스 버튼 이미지 */
+input[type=checkbox] {
+  display:none;
+}
+input[type=checkbox] + label { 
+  display: inline-block;
+  cursor: pointer; 
+  padding-left: 31px; 
+  background-repeat: no-repeat;
+  background-image: url('../../assets/icons/Icon/isChecked=false.svg');
+  height:24px;
+  line-height: 24px;
+}
+input[type=checkbox]:checked + label {
+  display: inline-block;
+  background-image: url('../../assets/icons/Icon/isChecked=true.svg');
+  height: 24px;
+}
+
+/* 가입하기 버튼 */
+.join-up{
+  width: 340px;
+  height: 54px;
+  background-color:var(--primary);
+  border-radius:4px;
+  color:var(--white);
+  font-size: var(--spacing-base);
+  font-weight: 600;
+  border:none;
+  cursor: pointer;
+  padding: 0;
+  margin:65px 0px 40px 0px;
+
+  position:relative;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+}
