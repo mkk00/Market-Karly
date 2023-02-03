@@ -69,7 +69,6 @@
   padding: 0px;
 
   width: 267px;
-  height: 906px;
 
   background-color: white;
 }
@@ -180,7 +179,7 @@
   border-bottom: 1px solid #e1e1e1;
 }
 
-/* 아코디언 - 더보기 버튼 눌렀을 경우 */
+/* 아코디언 - 더보기 버튼 182 ~ 220 */
 .accordion_set.is-active {
   display: flex;
   flex-direction: column;
@@ -190,22 +189,21 @@
   width: 220px;
   height: 594px;
 
-  border-bottom: 1px solid #e1e1e1;
-
-  align-self: stretch;
+  border-bottom: 1px solid var(--gray-100);
 }
 
-.accordion_body {
+.accordion_set.is-active > .accordion_head > .accordion_head__btn > .accordion_head__btn-icon {
+  content: url('../../assets/icons/Icon/arrow-up.svg');
+}
+
+.accordion_set.is-active > .accordion_body {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   padding: 0px;
-
-  width: 220px;
-  height: 542px;
 }
 
-.accordion_item {
+.accordion_set.is-active > .accordion_body > .accordion_item {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -216,7 +214,12 @@
   height: 50px;
 }
 
-/* 아코디언 - 체크박스 */
+.accordion_body,
+.accordion_item {
+  display: none;
+}
+
+/* 아코디언 - 체크박스 223 ~ 232 */
 .accordion_item__inputCheck {
   position: relative;
   width: 24px;

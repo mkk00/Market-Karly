@@ -4,15 +4,22 @@
 /*                                product_list                                */
 /* -------------------------------------------------------------------------- */
 
-const brand = document.querySelectorAll('.accordion_item__checkbox');
+const checkBtn = document.querySelectorAll('.accordion_item__inputCheck');
+const moreBtn = document.querySelectorAll('.accordion_head__btn');
 
-function handleBrandCheck(e) {
+function handleCheckbox(e) {
   e.preventDefault();
-  let checkBtn = e.target.closest('.accordion_item__checkbox');
+  let select = e.target.closest('.accordion_item__checkbox');
 
-  checkBtn.classList.toggle('is-active');
+  select.classList.toggle('is-active');
 }
 
-for (let i = 0; i < brand.length; i++) {
-  brand[i].addEventListener('click', handleBrandCheck);
+function handleMore(e) {
+  e.preventDefault();
+  let more = e.target.closest('.accordion_set');
+
+  more.classList.toggle('is-active');
 }
+
+checkBtn.forEach((check) => check.addEventListener('click', handleCheckbox));
+moreBtn.forEach((set) => set.addEventListener('click', handleMore));
