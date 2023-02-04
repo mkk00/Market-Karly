@@ -511,12 +511,20 @@
   height: 320px;
 
   position: relative;
+
+  overflow: hidden;
+}
+
+.slide__visual:hover .visual-img {
+  transform: scale(1.1);
 }
 
 .visual-img {
   width: 249px;
   height: 320px;
   object-fit: cover;
+
+  transition: all 0.2s linear;
 }
 
 .visual__icon {
