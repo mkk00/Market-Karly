@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
     <link rel="stylesheet" href="../css/pages/product-detail.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-    <script src="./js/main.js" type="module"></script>
+    <!-- <script src="./js/main.js" type="module"></script> -->
+    <script src="../js/product_detail/seohyun.js" type="module"></script>
     <title>Product Detail | Market Karly</title>
   </head>
 
@@ -134,7 +135,7 @@
         <section class="product">
           <!-- product_detail 상품 정보 -->
           <article class="product__detail">
-            <img class="product__img_01" src="../assets/spicy-chewy-noodles/product.png" alt="탱탱 쫄면" />
+            <img class="product__img_01" src="../assets/icons/Icon/product-detail-first.svg" alt="탱탱 쫄면" />
             <!-- detail -->
             <section class="product__info">
               <div class="product__info-top">
@@ -151,37 +152,35 @@
               </div>
               <div class="product__info-bottom">
                 <dl class="product__dl-delivery">
-                  <div class="product__info-title">배송</div>
-                  <div class="product__delivery-frame_01">
-                    <dt>샛별배송</dt>
-                    <dd class="product__dd-delivery">23시 전 주문 시 내일 아침 7시 전 도착<br />(대구 부산 울산 샛별배송 운영시;간 별도 확인)</dd>
-                  </div>
+                  <dt class="product__info-title">배송</dt>
+                    <dd class="product__content">
+                      <div class="product__dd-delivery">샛별배송<br>23시 전 주문 시 내일 아침 7시 전 도착<br />(대구 부산 울산 샛별배송 운영시;간 별도 확인)</div>
+                    </dd>
                 </dl>
                 <dl class="product__dl-seller">
-                  <div class="product__info-title">판매자</div>
-                  <dt>칼리</dt>
+                  <dt class="product__info-title">판매자</dt>
+                  <dd class="product__content">칼리</dd>
                 </dl>
                 <dl class="product__dl-wrap">
-                  <div class="product__info-title">포장타입</div>
-                  <div class="product__delivery-frame_02">
-                    <dt>상온 (종이포장)</dt>
-                    <dd class="product__dd-wrap">택배배송은 에코 포장이 스티로폼으로 대체됩니다.</dd>
-                  </div>
+                  <dt class="product__info-title">포장타입</dt>
+                    <dd class="product__content">
+                      <dd class="product__dd-wrap">상온 (종이포장)<br>택배배송은 에코 포장이 스티로폼으로 대체됩니다.</dd>
+                    </dd>
                 </dl>
                 <dl class="product__dl-sales-unit">
-                  <div class="product__info-title">판매단위</div>
-                  <dt>1봉</dt>
+                  <dt class="product__info-title">판매단위</dt>
+                  <dd class="product__content">1봉</dd>
                 </dl>
                 <dl class="product__dl-weight">
-                  <div class="product__info-title">중량/용량</div>
-                  <dt>123g*4봉</dt>
+                  <dt class="product__info-title">중량/용량</dt>
+                  <dd class="product__content">123g*4봉</dd>
                 </dl>
                 <dl class="product__dl-area">
-                  <div class="product__info-title">원산지</div>
-                  <dt>상세페이지 별도표기</dt>
+                  <dt class="product__info-title">원산지</dt>
+                  <dd class="product__content">상세페이지 별도표기</dd>
                 </dl>
                 <dl class="product__dl-allergy">
-                  <div class="product__info-title">알레르기 정보</div>
+                  <dt class="product__info-title">알레르기 정보</dt>
                   <dd class="product__dd-allergy">
                     -대두, 밀, 쇠고기 함유<br />
                     -계란, 우유, 메밀, 땅콩, 고등어, 게, 돼지고기, 새우, 복숭아, 토마토, 아황산류, 호두, 잣, 닭고기, 오징어, 조개류(굴, 전복, 홍합 포함)를
@@ -198,12 +197,16 @@
                       <div class="product__buy-legend">
                         <p>[풀무원] 탱탱쫄면 (4개입)</p>
                         <div class="product__buy-btn">
-                          <button class="product__buy-btn-minus"><img src="../assets/icons/Icon/btn-minus.svg" alt="마이너스 버튼" /></button>
-                          <!-- <input type="text" value="1"> --><span class="product__buy-btn-num">1</span>
-                          <button class="product__buy-btn-plus"><img src="../assets/icons/Icon/btn-plus.svg" alt="플러스 버튼" /></button>
+                          <button class="product__buy-btn__minus"  aria-label="btn-minus">
+                            <img class="product__buy-btn__minus-img" src="../assets/icons/Icon/btn-minus.svg" alt="마이너스 버튼" width="30" height="30"/>
+                          </button>
+                            <span class="product__buy-btn__num">1</span>
+                          <button class="product__buy-btn__plus"  aria-label="btn-plus">
+                            <img class="product__buy-btn__plus-img" src="../assets/icons/Icon/btn-plus.svg" alt="플러스 버튼" width="30" height="30"/>
+                          </button>
                         </div>
                       </div>
-                      <p class="product__buy-total">4,980원</p>
+                      <span class="product__buy-total">4,980원</span>
                     </fieldset>
                   </dd>
                 </dl>
@@ -223,13 +226,13 @@
                 <div class="product__buy-feature">
                   <ul class="product__buy-feature-icon">
                     <li>
-                      <a href="/"><img src="../assets/icons/Icon/squre-heart.svg" /></a>
+                      <a href="/"><img src="../assets/icons/Icon/squre-heart.svg" alt="좋아요 아이콘"/></a>
                     </li>
                     <li>
-                      <a href="/"><img src="../assets/icons/Icon/squre-bell.svg" /></a>
+                      <a href="/"><img src="../assets/icons/Icon/squre-bell.svg" alt="알람 아이콘"/></a>
                     </li>
                   </ul>
-                  <button class="product__buy-feature-btn">
+                  <button class="product__buy-feature-btn"  aria-label="buy-btn">
                     <p>장바구니 담기</p>
                   </button>
                 </div>
@@ -239,23 +242,23 @@
           <!-- 상품 설명,상세정보,후기,문의 -->
           <ul class="product__nav">
             <li>
-              <button type="button" class="product__nav-button_01">
+              <button type="button" class="product__nav-button_01" aria-label="nav-btn_01">
                 <span class="product__nav-text_01">상품설명</span>
               </button>
             </li>
             <li>
-              <button type="button" class="product__nav-button_02">
+              <button type="button" class="product__nav-button_02" aria-label="nav-btn_02">
                 <span class="product__nav-text_02">상세정보</span>
               </button>
             </li>
             <li>
-              <button type="button" class="product__nav-button_03">
+              <button type="button" class="product__nav-button_03" aria-label="nav-btn_03">
                 <span class="product__nav-text_03">후기</span>
                 <span class="product__nav-text_num">(1,000)</span>
               </button>
             </li>
             <li>
-              <button type="button" class="product__nav-button_04">
+              <button type="button" class="product__nav-button_04" aria-label="nav-btn_04">
                 <span class="product__nav-text_04">문의</span>
                 <span class="product__nav-text_num_04"></span>
               </button>
@@ -265,7 +268,7 @@
           <!-- description -->
           <article class="description">
             <section class="description__goods-intro">
-              <img src="../assets/spicy-chewy-noodles/thumbnail.png" alt="탱탱 쫄면 정보" />
+              <img src="../assets/spicy-chewy-noodles/thumbnail.png" width="1050" height="670" alt="탱탱 쫄면 정보" />
               <div class="description__info">
                 <header class="description__header">
                   <p>튀기지 않아 부담 없는 매콤함</p>
@@ -289,7 +292,7 @@
           </article>
           <!-- detail -->
           <article class="detail">
-            <img src="../assets/spicy-chewy-noodles/detail-info.png" alt="상품 정보 디테일" />
+            <img src="../assets/spicy-chewy-noodles/detail-info.png" width="1050" height="1066" alt="상품 정보 디테일" />
             <section class="detail__whykarly">
               <h3>WHY KARLY</h3>
               <article class="detail__article">
@@ -364,7 +367,9 @@
                     <li>작성하신 후기는 확인 후 적립금이 지급됩니다. (영업일 기준 평균 1~2일 소요)</li>
                   </ul>
                 </div>
-                <button class="product__header-btn" type="button"><a href="/">후기 작성하기</a></button>
+                <button class="product__header-btn" type="button" aria-label="review-btn">
+                  <a href="/">후기 작성하기</a>
+                </button>
               </header>
               <!-- 상품후기게시판 -->
               <article class="product-review__board">
@@ -372,9 +377,9 @@
                   <li class="product-review__num">총 2개</li>
                   <div class="product-review__order-btn">
                     <li>
-                      <button class="product-review__rank-btn" type="button">추천순</button>
+                      <button class="product-review__rank-btn" type="button" aria-label="review-rank-btn">추천순</button>
                       <span class="product-review__bar"> </span>
-                      <button class="product-review__new-btn" type="button">최근 등록순</button>
+                      <button class="product-review__new-btn" type="button" aria-label="review-new-btn">최근 등록순</button>
                     </li>
                   </div>
                 </ul>
@@ -421,8 +426,8 @@
                   </ul>
                 </div>
                 <div class="product-review__btn">
-                  <button class="product-review__prev-btn"></button>
-                  <button class="product-review__next-btn"></button>
+                  <button class="product-review__prev-btn" aria-label="review-prev-btn"></button>
+                  <button class="product-review__next-btn" aria-label="review-next-btn"></button>
                 </div>
               </article>
             </section>
@@ -433,7 +438,7 @@
                   <li>상품에 대한 문의를 남기는 공간입니다. 해당 게시판의 성격과 다른 글은 사전동의 없이 담당 게시판으로 이동될 수 있습니다.</li>
                   <li>배송관련, 주문(취소/교환/환불)관련 문의 및 요청사항은 마이컬리 내 1:1 문의에 남겨주세요.</li>
                 </ul>
-                <button type="button">문의 하기</button>
+                <button type="button" aria-label="inquiry-btn">문의 하기</button>
               </header>
               <article class="product-inquiry__board">
                 <section class="product-inquiry__section">
@@ -518,8 +523,8 @@
                   </div>
                 </section>
                 <div class="product-inquiry__btn">
-                  <button class="product-inquiry__prev-btn"></button>
-                  <button class="product-inquiry__next-btn"></button>
+                  <button class="product-inquiry__prev-btn" aria-label="inquiry-prev-btn"></button>
+                  <button class="product-inquiry__next-btn" aria-label="inquiry-next-btn"></button>
                 </div>
               </article>
             </section>
