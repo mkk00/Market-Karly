@@ -1,9 +1,8 @@
-// import { getNode } from '../../lib/index.js';
+// Product-List ukss
 
 /* -------------------------------------------------------------------------- */
-/*                                product_list                                */
+/*                                  Navigator Part                               */
 /* -------------------------------------------------------------------------- */
-
 const checkBtn = document.querySelectorAll('.accordion_item__inputCheck');
 const moreBtn = document.querySelectorAll('.accordion_head__btn');
 const resetBtn = document.querySelector('.frame70__btn');
@@ -54,3 +53,22 @@ checkBtn.forEach((check) => check.addEventListener('click', handleCheckbox));
 checkBtn.forEach((check) => check.addEventListener('click', handleStatus));
 moreBtn.forEach((more) => more.addEventListener('click', handleMore));
 resetBtn.addEventListener('click', handleReset);
+
+/* -------------------------------------------------------------------------- */
+/*                                    group                                   */
+/* -------------------------------------------------------------------------- */
+const group = document.querySelectorAll('.group-menu__button');
+
+// 상품 출력 순서 선택
+function handleType(e) {
+  e.preventDefault();
+  let isActive = document.querySelector('.group-menu__button.is-active');
+  let target = e.target.closest('.group-menu__button');
+
+  if (isActive !== target) {
+    target.classList.add('is-active');
+    isActive.classList.remove('is-active');
+  }
+}
+
+group.forEach((type) => type.addEventListener('click', handleType));
