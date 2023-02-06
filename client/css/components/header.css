@@ -95,19 +95,18 @@ button {
 
 .member{
   font-size: var(--text-xs);
-  width: 178px;
   height: 31px;
-  padding: var(--spacing-sm) 0 0 0;
   position: absolute;
   top: 0;
-  right: -10px;
+  right: 0;
 }
 
 .member li{
   height: 19px;
   line-height: 19px;
   position: relative;
-  display: inline-block;
+  float: left;
+  padding-top: 8px;
 } 
 
 .list-divider{
@@ -116,11 +115,14 @@ button {
 }
 
 .member li a{
-  padding: 4px 5px;
+  padding: 4px 12px;
 }
 
 .member li:first-child{
   color: var(--primary);
+}
+.member li:last-child{
+  margin-right: -12px;
 }
 
 .member li:last-child a::before{
