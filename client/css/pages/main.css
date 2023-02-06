@@ -44,6 +44,7 @@
   background: url('../../assets/icons/Icon/Banner-arrow.svg') no-repeat center;
   background-size: 100% auto;
   margin-top: calc(0px - (var(--swiper-navigation-size)/ 2));
+  opacity: 0;
 }
 
 .main-banner .swiper-button-prev{
