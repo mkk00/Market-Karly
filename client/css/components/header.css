@@ -257,6 +257,12 @@ input::-webkit-search-results-decoration{
 
 .rearrIcon input:focus{
   background: var(--white);
+  border: 1px solid var(--gray-50);
+}
+
+.rearrIcon .search__search-btn img{
+  transform: translateX(10px);
+  width: 90%;
 }
 
 
