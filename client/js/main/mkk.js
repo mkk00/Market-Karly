@@ -37,7 +37,12 @@ $mainBanner.addEventListener('mouseleave', mainBannerArrowOut)
 const $popupClose = getNode('.popup__btn button:last-child');
 const $popupTodayClose = getNode('.popup__btn button:first-child');
 const $popup = getNode('.popup');
+const $popupDim = getNode('.popup-dim');
 
 function closePopup(){
   $popup.style.display="none";
+  $popupDim.style.display="none";
 }
+
+$popupClose.addEventListener('click', closePopup);
+$popupDim.addEventListener('qclick', closePopup);
