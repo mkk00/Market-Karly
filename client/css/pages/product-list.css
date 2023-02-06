@@ -69,7 +69,6 @@
   padding: 0px;
 
   width: 267px;
-  height: 906px;
 
   background-color: white;
 }
@@ -109,7 +108,32 @@
   color: #333333;
 }
 
-.frame70__etc {
+.frame70__status {
+  width: 13px;
+  height: 16px;
+
+  padding: 0;
+  border: none;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 10px;
+  line-height: 160%;
+
+  color: var(--gray-300);
+}
+
+.frame70__btn {
+  width: 26px;
+  height: 12px;
+}
+
+.frame70__btn-text {
   height: 16px;
 
   font-family: 'Pretendard';
@@ -180,7 +204,7 @@
   border-bottom: 1px solid #e1e1e1;
 }
 
-/* 아코디언 - 더보기 버튼 눌렀을 경우 */
+/* 아코디언 - 더보기 버튼 182 ~ 220 */
 .accordion_set.is-active {
   display: flex;
   flex-direction: column;
@@ -188,24 +212,23 @@
   padding: 0px;
 
   width: 220px;
-  height: 594px;
+  height: 100%;
 
-  border-bottom: 1px solid #e1e1e1;
-
-  align-self: stretch;
+  border-bottom: 1px solid var(--gray-100);
 }
 
-.accordion_body {
+.accordion_set.is-active > .accordion_head > .accordion_head__btn > .accordion_head__btn-icon {
+  content: url('../../assets/icons/Icon/arrow-up.svg');
+}
+
+.accordion_set.is-active > .accordion_body {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   padding: 0px;
-
-  width: 220px;
-  height: 542px;
 }
 
-.accordion_item {
+.accordion_set.is-active > .accordion_body > .accordion_item {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -216,27 +239,21 @@
   height: 50px;
 }
 
-.accordion_item__inputCheck {
-  width: 24px;
-  height: 24px;
-}
-
-/* 아코디언 - 체크박스 */
-input[type='checkbox'] {
+.accordion_body,
+.accordion_item {
   display: none;
 }
 
-input[type='checkbox'] + label {
-  display: flex;
-  padding-left: 31px;
+/* 아코디언 - 체크박스 223 ~ 232 */
+.accordion_item__inputCheck {
+  position: relative;
   width: 24px;
   height: 24px;
-  background-repeat: no-repeat;
-  background-image: url('../../assets/icons/Icon/isChecked=false.svg');
+  content: url('../../assets/icons/Icon/isChecked=false.svg');
 }
 
-input[type='checkbox']:checked + label {
-  background-image: url('../../assets/icons/Icon/isChecked=true.svg');
+.accordion_item__checkbox.is-active {
+  content: url('../../assets/icons/Icon/isChecked=true.svg');
 }
 
 .accordion_item__text {
@@ -284,7 +301,7 @@ input[type='checkbox']:checked + label {
   align-items: center;
   padding: 0px 0px 12px;
 
-  width: 220px;
+  width: 100%;
   height: 42px;
 
   flex: none;
@@ -293,7 +310,6 @@ input[type='checkbox']:checked + label {
 }
 
 .accordion_more__text {
-  width: 66px;
   height: 18px;
 
   font-family: 'Pretendard';
@@ -433,9 +449,6 @@ input[type='checkbox']:checked + label {
 }
 
 .group-menu__button-frame {
-  width: 14px;
-  height: 20px;
-
   display: none;
 }
 
@@ -495,12 +508,20 @@ input[type='checkbox']:checked + label {
   height: 320px;
 
   position: relative;
+
+  overflow: hidden;
+}
+
+.slide__visual:hover .visual-img {
+  transform: scale(1.1);
 }
 
 .visual-img {
   width: 249px;
   height: 320px;
   object-fit: cover;
+
+  transition: all 0.2s linear;
 }
 
 .visual__icon {

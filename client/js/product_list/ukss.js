@@ -1,13 +1,74 @@
-import { getNode } from '../../lib/index.js';
+// Product-List ukss
 
 /* -------------------------------------------------------------------------- */
-/*                                product_list                                */
+/*                                  Navigator Part                               */
 /* -------------------------------------------------------------------------- */
-const brandCheck = getNode('.accordion_item__inputCheck');
+const checkBtn = document.querySelectorAll('.accordion_item__inputCheck');
+const moreBtn = document.querySelectorAll('.accordion_head__btn');
+const resetBtn = document.querySelector('.frame70__btn');
 
-function handleBrand(e) {
+// 체크박스
+function handleCheckbox(e) {
   e.preventDefault();
-  console.log(brandCheck);
+  let select = e.target.closest('.accordion_item__checkbox');
+
+  select.classList.toggle('is-active');
 }
 
-brandCheck.addEventListener('click', handleBrand);
+// 더보기
+function handleMore(e) {
+  e.preventDefault();
+  let more = e.target.closest('.accordion_set');
+
+  more.classList.toggle('is-active');
+}
+
+// 초기화
+function handleReset(e) {
+  e.preventDefault();
+  let active = document.querySelectorAll('.accordion_set .is-active');
+  let status = document.querySelectorAll('.frame70__status');
+  let activeArr = Array.from(active);
+
+  activeArr.forEach((active) => active.classList.remove('is-active'));
+  status.forEach((stat) => (stat.innerText = ''));
+}
+
+// 상태 변화
+export function handleStatus(e) {
+  e.preventDefault();
+
+  let checkList = e.target.closest('.accordion_set');
+  let active = checkList.querySelectorAll('.is-active');
+  let status = checkList.querySelector('.frame70__status');
+
+  if (!active.length) {
+    status.innerText = '';
+  } else {
+    status.innerText = active.length;
+  }
+}
+
+checkBtn.forEach((check) => check.addEventListener('click', handleCheckbox));
+checkBtn.forEach((check) => check.addEventListener('click', handleStatus));
+moreBtn.forEach((more) => more.addEventListener('click', handleMore));
+resetBtn.addEventListener('click', handleReset);
+
+/* -------------------------------------------------------------------------- */
+/*                                    group                                   */
+/* -------------------------------------------------------------------------- */
+const group = document.querySelectorAll('.group-menu__button');
+
+// 상품 출력 순서 선택
+function handleType(e) {
+  e.preventDefault();
+  let isActive = document.querySelector('.group-menu__button.is-active');
+  let target = e.target.closest('.group-menu__button');
+
+  if (isActive !== target) {
+    target.classList.add('is-active');
+    isActive.classList.remove('is-active');
+  }
+}
+
+group.forEach((type) => type.addEventListener('click', handleType));

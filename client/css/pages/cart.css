@@ -27,18 +27,10 @@
 display: flex;
 flex-direction: column;
 align-items: center;
+
 padding: 80px 0px;
 gap: 44px;
 
-width: 1920px;
-height: 945px;
-
-
-/* Inside auto layout */
-
-flex: none;
-order: 2;
-flex-grow: 0;
 }
 .title{
 /* Label/Large */
@@ -73,8 +65,7 @@ align-items: flex-start;
 padding: 0px;
 gap: 55px;
 
-width: 1050px;
-height: 709px;
+box-sizing: border-box;
 
 
 /* Inside auto layout */
@@ -103,7 +94,8 @@ input[type=checkbox] {
 }
 input[type=checkbox] + label { 
   cursor: pointer; 
-  padding-left: 23px; 
+  padding-left: 24px;
+  padding-bottom: 5px;
   background-repeat: no-repeat;
   background-image: url("/client/assets/icons/Icon/check-off.svg");
   margin-right:8.5px;
@@ -147,6 +139,9 @@ line-height: 150%;
 
 .food{
   display:flex;
+  line-height: 180%;
+  justify-content: space-between;
+  gap:10px;
 }
 
 .down-button{
@@ -160,6 +155,7 @@ line-height: 150%;
 .box-long{
   display:flex;
   flex-direction: column;
+  width: 284px;
 }
 .box-5{
   border:1px solid #E1E1E1;
@@ -177,7 +173,7 @@ line-height: 150%;
   font-family: 'Pretendard';
   font-style: normal;
   font-weight: 600;
-  font-size: 13px;
+  font-size: 16px;
   line-height: 150%;
   /* or 24px */
   
@@ -235,7 +231,7 @@ margin-top:12px;
 font-family: 'Pretendard';
 font-style: normal;
 font-weight: 600;
-font-size: 14px;
+font-size: 16px;
 line-height: 150%;
 
 color: #5F0080;
@@ -251,6 +247,7 @@ color: #5F0080;
   flex-direction: row;
   justify-content: space-between;
   font-family: 'Pretendard';
+  font-size: 16px;
 
 color: #333333;
 }
@@ -282,7 +279,7 @@ color: #333333;
 }
 
 .span-result{
-  ont-family: 'Pretendard';
+  font-family: 'Pretendard';
 font-style: normal;
 font-weight: 700;
 font-size: 28.43px;
