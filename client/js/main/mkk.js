@@ -29,3 +29,15 @@ function mainBannerArrowOut(){
 
 $mainBanner.addEventListener('mouseover', mainBannerArrowIn)
 $mainBanner.addEventListener('mouseleave', mainBannerArrowOut)
+
+
+
+// pop-up
+
+const $popupClose = getNode('.popup__btn button:last-child');
+const $popupTodayClose = getNode('.popup__btn button:first-child');
+const $popup = getNode('.popup');
+
+function closePopup(){
+  $popup.style.display="none";
+}
