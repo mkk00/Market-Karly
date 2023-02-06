@@ -72,3 +72,21 @@ function handleType(e) {
 }
 
 group.forEach((type) => type.addEventListener('click', handleType));
+
+/* -------------------------------------------------------------------------- */
+/*                                  Add-Cart                                  */
+/* -------------------------------------------------------------------------- */
+const cartBtn = document.querySelectorAll('.visual__icon');
+const addCart = document.querySelector('.add-cart');
+const cancelCart = document.querySelector('.add-cart__cancelBtn');
+
+function handlerCart() {
+  addCart.classList.toggle('is-active');
+}
+
+function handlerCancelCart() {
+  addCart.classList.remove('is-active');
+}
+
+cartBtn.forEach((cart) => cart.addEventListener('click', handlerCart));
+cancelCart.addEventListener('click', handlerCancelCart);
