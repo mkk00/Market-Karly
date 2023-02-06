@@ -1,40 +1,30 @@
 import { 
   getNode,
   clearContents, 
-  insertLast
+  insertFirst
 } from '../../lib/dom/index.js';
 
 /* -------------------------------------------------------------------------- */
 /*                               product_detail                               */
 /* -------------------------------------------------------------------------- */
-// -,+버튼 노드 가져오기 0
-// -,+버튼 노드 값 가져오기 0
-
-// +버튼 눌리면0
-// span값 가져와서 
-//  span값(숫자)값 증가
-// 화면에 있는 값 지우고
-// 증가한 값 뿌리기
-// 화면에 뿌리기
-
-// -버튼 눌리면 0
-// span값 가져와서 span값(숫자)값 하락
 const buyBtnPlus = getNode('.product__buy-btn__plus');
 const buyBtnMinus = getNode('.product__buy-btn__minus');
 const buyBtnNum=getNode('.product__buy-btn__num');
 const buyBtnNumPrice=getNode('.product__buy-last-money');
 
-let buyBtnText = +getSpanText(buyBtnNum); //텍스트컨텐트
-// console.log('찍힘1');
-let buyBtnPriceText = +getSpanText(buyBtnNumPrice);
-// console.log('찍힘2');
-let buyBtnTotalPrice=buyBtnPriceText;
+const buyHeartBtn=getNode('.product__buy-heart-btn'); //버튼
 
+//텍스트컨텐트
+let buyBtnText = +getSpanText(buyBtnNum); 
+let buyBtnPriceText = +getSpanText(buyBtnNumPrice);
+let buyBtnTotalPrice=buyBtnPriceText;
+/* --------------------------------------------------------------------------------------------------------------------------- */
 function getSpanText(node){
   if(node.tagName !== 'SPAN') refError('getInputValue 함수는 SPAN ELEMENT만 허용합니다.')
   return node.textContent;
 }
-function handler(e){
+/* 수량 버튼,총합 금액 */
+function handlerBuy(e){
   e.preventDefault();
 
   if(e.currentTarget === buyBtnPlus){
@@ -59,15 +49,23 @@ function handler(e){
     buyBtnNumPrice.textContent=buyBtnTotalPrice;
   }
 }
+/* 하트 아이콘 색 변경 */
+function handlerBuyHeart(e){
+  let buyEmptyHeart=getNode('.product__buy-empty-heart'); //빈 하트 이미지
 
-buyBtnPlus.addEventListener('click',handler);
-buyBtnMinus.addEventListener('click',handler);
+  if(buyHeartBtn.firstElementChild.className=="product__buy-empty-heart"){ //누른게 빈 하트면
+    buyEmptyHeart.remove();
+    insertFirst(buyHeartBtn,` <img class="product__buy-heart" src="../assets/icons/Icon/squre-heart.svg" alt="좋아요 아이콘"/>`);
+  }
+  else{
+      let buyHeart=getNode('.product__buy-heart'); //색 하트 이미지
 
-// function plus(e){
-//   e.preventDefault();
-    
-// }
-// function minus(){
-//   e.preventDefault();
-// }
-//let butBtnText = getSpanText(buyBtnNum);
+      buyHeart.remove();
+      insertFirst(buyHeartBtn,` <img class="product__buy-empty-heart" src="../assets/icons/Icon/squre-empty-heart.svg" alt="빈 좋아요 아이콘"/>`);
+  }
+}
+
+buyBtnPlus.addEventListener('click',handlerBuy);
+buyBtnMinus.addEventListener('click',handlerBuy);
+
+buyHeartBtn.addEventListener('click',handlerBuyHeart);
