@@ -119,6 +119,10 @@ button {
   padding: 4px 5px;
 }
 
+.member li:first-child{
+  color: var(--primary);
+}
+
 .member li:last-child a::before{
   content: "";
   font-size: 0;
@@ -210,7 +214,7 @@ input::-webkit-search-results-decoration{
 	display:none;
 }
 
-input{
+.search input{
   width: 400px;
   height: 60px;
   padding: var(--spacing-sm) 56px var(--spacing-sm) var(--spacing-md);
@@ -220,7 +224,7 @@ input{
   position: relative;
 }
 
-input:focus{
+.search input:focus{
   outline: none;
   border: 1px solid var(--content);
 }
@@ -231,6 +235,36 @@ input:focus{
   right: 15px;
 }
 
+.rearrIcon{
+  width: 242px;
+  height: 56px;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  margin-left: 100px;
+  z-index: 1000;
+}
+
+.rearrIcon input{
+  width: 242px;
+  height: 36px;
+  margin-top: 10px;
+  background: var(--gray-50);
+  border: 1px solid var(--gray-50);
+  border-radius: 7px;
+  font-size: var(--text-xs);
+}
+
+.rearrIcon input:focus{
+  background: var(--white);
+}
+
+
+.user-order.rearrIcon{
+  width: 148px;
+  margin-top: 10px;
+  margin-left: 380px;
+}
 
 /* {#ddd} header-nav */
 
@@ -241,22 +275,36 @@ input:focus{
   box-shadow: rgb(0, 0, 0, 7%) 0px 3px 4px 0px;
 }
 
+.header-nav.fixed{
+  position: fixed;
+  top: 0;
+}
+
 .header-nav__inner{
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: relative;
-  padding: var(--spacing-base) 0;
+}
+
+.header-nav__inner.flexStart{
+  -webkit-box-pack: start;
+  justify-content: flex-start;  
+}
+
+.header-nav__inner.flexStart .main-menu{
+  width: 500px;
 }
 
 /* category */
 
 .category{
   width: 84px;
-  height: 24px;
-  line-height: 24px;
+  height: 72px;
+  line-height: 72px;
   font-weight: 600;
   background: url('../../assets/icons/Icon/Hamburger-black.svg') no-repeat 0px 5px;
+  background-position: 0 29px;
   outline-offset: 5px;
 }
 
@@ -266,10 +314,11 @@ input:focus{
 }
 
 .category__text{
-  float: right;
+  float: left;
+  margin-left: 28px;
 }
 
-.category:hover{
+.category:hover .category__container{
   color: var(--primary);
   background: url('../../assets/icons/Icon/Hamburger.svg') no-repeat 0px 5px;
 }
@@ -338,6 +387,7 @@ input:focus{
   line-height: 40px;
   display: block;
   font-weight: 600;
+  text-align: left;
 }
 
 .sub-menu__list li a::before{
