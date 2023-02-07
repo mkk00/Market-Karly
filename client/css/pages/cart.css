@@ -95,13 +95,13 @@ input[type=checkbox] {
 input[type=checkbox] + label { 
   cursor: pointer; 
   padding-left: 24px;
-  padding-bottom: 5px;
+  padding-bottom: 25px;
   background-repeat: no-repeat;
-  background-image: url("/client/assets/icons/Icon/check-off.svg");
+  background-image: url("/Market-Karly/client/assets/icons/Icon/check-off.svg");
   margin-right:8.5px;
 }
 input[type=checkbox]:checked + label {
-  background-image: url("/client/assets/icons/Icon/check-on.svg");
+  background-image: url("/Market-Karly/client/assets/icons/Icon/check-on.svg");
 }
 
 
@@ -396,4 +396,24 @@ line-height: 150%;
 /* gray/400 */
 
 color: #898989;
+}
+
+#cart-active{
+  flex-direction: column;
+}
+.active-1{
+  display:flex;
+  justify-content: space-between;
+}
+
+.active-2{
+  display:flex;
+  align-items: center;
+  gap:8px;
+  margin:20px 0;
+}
+
+.active-3{
+  display:flex;
+  align-items: center;
 }
