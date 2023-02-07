@@ -80,9 +80,6 @@ const bodyTag = document.querySelector('body');
 const cartBtn = document.querySelectorAll('.visual__icon');
 const addCart = document.querySelector('.add-cart');
 const cancelCart = document.querySelector('.add-cart__cancelBtn');
-const minusBtn = document.querySelector('add-cart__minus');
-const plusBtn = document.querySelector('add-cart__plus');
-const countStatus = document.querySelector('add-cart__count');
 
 function handlerCart() {
   addCart.classList.toggle('is-active');
@@ -94,18 +91,33 @@ function handlerCancelCart() {
   bodyTag.style.overflow = 'auto';
 }
 
-// function handlerMinus() {
-//   console.log('Hello');
-// }
-
-// function handlerPlus() {
-//   console.log('Bye');
-// }
-
 cartBtn.forEach((cart) => cart.addEventListener('click', handlerCart));
 cancelCart.addEventListener('click', handlerCancelCart);
-// minusBtn.addEventListener('click', handlerMinus);
-// plusBtn.addEventListener('click', handlerPlus);
+
+const addCartMinus = document.querySelector('.add-cart__minus-icon');
+const addCartPlus = document.querySelector('.add-cart__plus-icon');
+let addCartCnt = document.querySelector('.add-cart__count');
+let addCartTotalPrice = document.querySelector('.add-cart__totalPrice');
+
+let cnt = 0;
+let price = 4980;
+
+function handleAddCartMinus() {
+  cnt--;
+  price *= cnt;
+  addCartCnt.innerText = cnt;
+  addCartTotalPrice.innerText = price;
+}
+
+function handleAddCartPlus() {
+  cnt++;
+  price *= cnt;
+  addCartCnt.innerText = cnt;
+  addCartTotalPrice.innerText = price;
+}
+
+addCartMinus.addEventListener('click', handleAddCartMinus);
+addCartPlus.addEventListener('click', handleAddCartPlus);
 
 /* -------------------------------------------------------------------------- */
 /*                                  data.json                                 */
