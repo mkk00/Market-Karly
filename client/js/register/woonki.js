@@ -126,7 +126,40 @@ import {
     return false
   }
 
+// 이메일 확인
+emailCheck.addEventListener('keyup', (event) => {
+  emailValidation();
+})
 
+// 이메일 유효성 검사
+function emailValidation() {
+  const REG = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i; 
+  if(!emailCheck.value.match(REG)){
+    addClass(userEmailCheck,'is-active');
+    userEmailCheck.innerText = '올바른 이메일을 작성해주세요';
+    emailLayout.style.marginBottom = '0px'; 
+    return false
+  }
+  removeClass(userEmailCheck,'is-active');
+  userEmailCheck.innerText = '';
+  emailLayout.style.marginBottom = '0px';
+}
+
+
+function clickEmailHandler(e){
+  e.preventDefault();
+  const REG = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i; 
+  let button = e.target.closest(".email-button")
+  if(!emailCheck.value.match(REG)){
+    button.disabled = false;
+    return false;
+  }     
+
+  alert('이메일이 확인되었습니다.')  
+}
+
+
+emailButton.addEventListener('click',clickEmailHandler)
 
 
 
