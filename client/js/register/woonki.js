@@ -7,7 +7,6 @@ import {
   attr,
   removeClass,
   addClass,
-  disableElement
 } from '../../lib/index.js';
 
 
@@ -25,15 +24,23 @@ import {
   let pwVerify = getNode('#verify-pw');
   let emailCheck = getNode('#user-email');
   let userIdCheck = getNode('.join-error__text-red');
+  let userPwCheck = getNode('.join-error__pw--text-red');
+  let userPwVerify = getNode('.join-error__verify--text-red');
+  let userEmailCheck = getNode('.join-error__email--text-red')
   let joinError = getNode('.join__error');
+  let pwMatches = getNode('.join-error__verify--text-red');
   let verifyButton = getNode('.verify-button');
-
+  let joinPwLayout = getNode('.join-pw__error');
+  let joinLayout = getNode('#join');
+  let pwLayout = getNode('.join-pw');
+  let pwVerifyLayout = getNode('.join-pw__required');
+  let emailLayout = getNode('.join_email');
+  let emailButton = getNode('.email-button');
   // input value 값 넣기
   function inputHandler(e) {
     // e.target()
     let test = e.target.closest(".input-box")
     test.setAttribute("value", e.target.value);
-
   }
 
   inputCheck.forEach((input) => input.addEventListener("change", inputHandler))
@@ -62,7 +69,6 @@ import {
   }
 
   // 아이디 중복검사
-
   function clickIdHandler(e){
     e.preventDefault();
     let button = e.target.closest(".verify-button")
@@ -80,13 +86,48 @@ import {
 
 
   // 비밀번호 검사
-
+  pwCheck.addEventListener('keyup', (event) => {
+    pwValidation();
+  })
 
   // 비밀번호 확인
+  function pwValidation() {
+    if(pwCheck.value.length < 8){
+      addClass(userPwCheck,'is-active');
+      userPwCheck.innerText = '8자리 이상 입력해주세요.';
+      joinError.style.marginBottom = '0px';
+      joinPwLayout.style.marginBottom = '0px';
+      pwLayout.style.marginBottom = '10px';
+      return false
+    }
+    removeClass(userPwCheck,'is-active');
+    userPwCheck.innerText = '';
+    joinError.style.marginBottom = '0px';
+  }
+
+
+  // 비밀번호 일치 확인
+  pwVerify.addEventListener('keyup', (event) => {
+    pwVerifyValidation();
+  })
+
+
+  function pwVerifyValidation() {
+    if(pwVerify.value === pwCheck.value){
+      addClass(userPwVerify,'is-active');
+      userPwVerify.innerText = '비밀번호가 일치 합니다.';
+      pwMatches.style.color = 'blue';
+      joinError.style.marginBottom = '0px'; 
+      return false
+    }
+    userPwVerify.innerText = '비밀번호가 일치 하지 않습니다.';
+    pwMatches.style.color = 'red';
+    joinError.style.marginBottom = '0px';
+    return false
+  }
 
 
 
-// 이메일 확인
 
 
 
