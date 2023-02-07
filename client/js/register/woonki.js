@@ -59,12 +59,12 @@ import {
   function idValidation() {
     const REGID = (/^[a-zA-Z0-9]{4,16}$/); // id 영문대문자와 소문자 6자리 이상 16자리 이하
     if(idCheck.value.length < 6 || !idCheck.value.match(REGID)){
-      addClass(userIdCheck,'is-active');
+      addClass(userIdCheck,'active');
       userIdCheck.innerText = '6자리 이상 16자 이하의 영문과 숫자를 조합';
       joinError.style.marginBottom = '0px'; 
       return false
     }
-    removeClass(userIdCheck,'is-active');
+    removeClass(userIdCheck,'active');
     userIdCheck.innerText = '';
     joinError.style.marginBottom = '0px';
   }
@@ -94,7 +94,7 @@ import {
   // 비밀번호 확인
   function pwValidation() {
     if(pwCheck.value.length < 8){
-      addClass(userPwCheck,'is-active');
+      addClass(userPwCheck,'active');
       userPwCheck.innerText = '8자리 이상 입력해주세요.';
       joinError.style.marginBottom = '0px';
       joinPwLayout.style.marginBottom = '0px';
@@ -118,7 +118,7 @@ import {
       addClass(userPwVerify,'is-active');
       userPwVerify.innerText = '비밀번호가 일치 합니다.';
       pwMatches.style.color = 'blue';
-      joinError.style.marginBottom = '0px'; 
+      joinError.style.marginBottom = '10px'; 
       return false
     }
     userPwVerify.innerText = '비밀번호가 일치 하지 않습니다.';
@@ -143,7 +143,7 @@ function emailValidation() {
   }
   removeClass(userEmailCheck,'is-active');
   userEmailCheck.innerText = '';
-  emailLayout.style.marginBottom = '0px';
+  emailLayout.style.marginBottom = '12px';
 }
 
 
@@ -172,8 +172,20 @@ function joinHandler(e) {
   if(!emailCheck.value.match(REG)|| pwVerify.value !== pwCheck.value){
     join.disabled = false;
     alert('비밀번호 와 이메일을 확인해주세요');
-    return false
+    return
   }
+  // 로컬스토리지에 아이디, 비번 값 넣기
+  function setData() {
+    const idValue = idCheck.value
+    const pwValue = pwCheck.value
+    const pwVerifyValue = pwVerify.value
+
+    if(pwValue === pwVerifyValue){
+    localStorage.setItem('id', JSON.stringify({idValue, pwValue}));
+    }
+  }
+  setData();
+
   alert('가입하기 완료');
 }
 
@@ -181,3 +193,22 @@ function joinHandler(e) {
 
 join.addEventListener('click',joinHandler)
 
+// data-json
+// function json() {
+//   fetch("https://localhost:3000/users", {
+//     method:'POST',
+//     body : JSON.stringify({
+//       id: idCheck.value
+//     }),
+    
+//   })
+//   .then((response) => console.log("response:", response))
+//   .catch((error) => console.log("error:", error));
+
+
+// }
+
+
+
+
+// json();
