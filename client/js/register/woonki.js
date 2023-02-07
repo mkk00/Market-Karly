@@ -36,6 +36,7 @@ import {
   let pwVerifyLayout = getNode('.join-pw__required');
   let emailLayout = getNode('.join_email');
   let emailButton = getNode('.email-button');
+  let join = getNode('.join-up');
   // input value 값 넣기
   function inputHandler(e) {
     // e.target()
@@ -164,6 +165,19 @@ emailButton.addEventListener('click',clickEmailHandler)
 
 
 
+// 가입하기 버튼
+function joinHandler(e) {
+  const REG = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i; 
+  e.preventDefault();
+  if(!emailCheck.value.match(REG)|| pwVerify.value !== pwCheck.value){
+    join.disabled = false;
+    alert('비밀번호 와 이메일을 확인해주세요');
+    return false
+  }
+  alert('가입하기 완료');
+}
 
 
+
+join.addEventListener('click',joinHandler)
 
