@@ -1,4 +1,4 @@
-import { getNode, getNodes, attr } from '../../lib/index.js';
+import { getNode, getNodes, attr, addClass } from '../../lib/index.js';
 
 /* -------------------------------------------------------------------------- */
 /*                                    main                                    */
@@ -34,7 +34,6 @@ $mainBanner.addEventListener('mouseleave', mainBannerArrowOut)
 // {#ddd} pop-up
 
 const $popupClose = getNode('.popup__btn button:last-child');
-const $popupTodayClose = getNode('.popup__btn button:first-child');
 const $popup = getNode('.popup');
 const $popupDim = getNode('.popup-dim');
 
@@ -60,15 +59,24 @@ for(const button of $cartIcon){
 function showCartBox(e){
   e.preventDefault();
   e.stopPropagation();
+  
+  $countNum.value = "1";
+  $priceTotal.textContent = $productPrice;
+
   $cartBox.style.display = "block";
   $popupDim.style.display = "block";
 }
 
 const $cartCancel = getNode('.add-cart__cancel');
 
-function closeCartBox(){
+function closeCartBox(e){
+  e.preventDefault();
+
   $cartBox.style.display = "none";
   $popupDim.style.display = "none";
+
+  $countNum.value = "1";
+  $priceTotal.textContent = $productPrice;
 }
 
 $cartCancel.addEventListener('click', closeCartBox);
@@ -134,3 +142,19 @@ function productCountDown(){
 
 $countPlus.addEventListener('click', productCountUp);
 $countMinus.addEventListener('click', productCountDown);
+
+
+const $getProduct = getNode('.add-cart__add');
+const $catchProduct = getNode('.catch-product');
+$catchProduct.textContent = 0;
+
+function topCartIconCountUp(e){
+  e.preventDefault();
+  $catchProduct.style.opacity="1";
+  setTimeout(() => {
+    $catchProduct.addClass('.vibrate');    
+  }, 500);
+  $catchProduct.textContent = Number($catchProduct.textContent) + 1;
+}
+
+$getProduct.addEventListener('click', topCartIconCountUp);

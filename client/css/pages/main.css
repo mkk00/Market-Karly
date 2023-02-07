@@ -485,7 +485,6 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 999999;
-  display: none;
 }
 
 .popup__banner img{
@@ -519,5 +518,4 @@ body {
   top: 0;
   left: 0;
   z-index: 999998;
-  display: none;
 }
