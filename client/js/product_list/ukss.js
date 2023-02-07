@@ -81,28 +81,21 @@ const cartBtn = document.querySelectorAll('.visual__icon');
 const addCart = document.querySelector('.add-cart');
 const cancelCart = document.querySelector('.add-cart__cancelBtn');
 
-function handlerCart() {
-  addCart.classList.toggle('is-active');
-  bodyTag.style.overflow = 'hidden';
-}
-
-function handlerCancelCart() {
-  addCart.classList.remove('is-active');
-  bodyTag.style.overflow = 'auto';
-}
-
-cartBtn.forEach((cart) => cart.addEventListener('click', handlerCart));
-cancelCart.addEventListener('click', handlerCancelCart);
-
 const addCartMinus = document.querySelector('.add-cart__minus-icon');
 const addCartPlus = document.querySelector('.add-cart__plus-icon');
-let addCartCnt = document.querySelector('.add-cart__count');
-let addCartTotalPrice = document.querySelector('.add-cart__totalPrice');
+const addCartCnt = document.querySelector('.add-cart__count');
+const addCartProductName = document.querySelector('.add-cart__productName');
+const addCartProductPrice = document.querySelector('.add-cart__productPrice');
+const addCartTotalPrice = document.querySelector('.add-cart__totalPrice');
 
 let cnt = 0;
-let price = 4980;
 
-function handleAddCartCnt() {
+function handleAddCartChange() {
+  const regex = /[^0-9]/g;
+  const beforePrice = addCartProductPrice.innerText;
+  const regexPrice = beforePrice.replace(regex, '');
+  const price = parseInt(regexPrice);
+
   let result = price * cnt;
 
   addCartCnt.innerText = cnt;
@@ -110,28 +103,56 @@ function handleAddCartCnt() {
 }
 
 function handleAddCartMinus() {
-  if (cnt === 0) {
+  if (!cnt) {
     return;
   } else {
     cnt--;
-    handleAddCartCnt();
   }
+  handleAddCartChange();
 }
 
 function handleAddCartPlus() {
   cnt++;
-  handleAddCartCnt();
+  handleAddCartChange();
 }
 
-addCartMinus.addEventListener('click', handleAddCartMinus);
+function handlerCancelCart() {
+  addCart.classList.remove('is-active');
+  bodyTag.style.overflow = 'auto';
+
+  cnt = 0;
+  handleAddCartChange();
+}
+
+for (let i = 0; i < cartBtn.length; i++) {
+  cartBtn[i].addEventListener('click', async function () {
+    addCart.classList.toggle('is-active');
+    bodyTag.style.overflow = 'hidden';
+
+    // JSON 읽기
+    let response = await fetch('http://localhost:3000/products');
+    let product = await response.json();
+
+    addCartProductName.innerText = `${product[i].name}`;
+
+    if (product[i].salePrice) {
+      addCartProductPrice.innerText = `${product[i].salePrice.toLocaleString()}윈`;
+    } else {
+      addCartProductPrice.innerText = `${product[i].price.toLocaleString()}윈`;
+    }
+  });
+}
+
+cancelCart.addEventListener('click', handlerCancelCart);
 addCartPlus.addEventListener('click', handleAddCartPlus);
+addCartMinus.addEventListener('click', handleAddCartMinus);
 
 /* -------------------------------------------------------------------------- */
 /*                                  data.json                                 */
 /* -------------------------------------------------------------------------- */
 const product = document.querySelectorAll('.slide');
 
-async function getData(num, node) {
+async function handlerList(num, node) {
   // JSON 읽기
   let response = await fetch('http://localhost:3000/products');
   let user = await response.json();
@@ -246,5 +267,5 @@ async function getData(num, node) {
 }
 
 for (let i = 0; i < product.length; i++) {
-  getData(i, product[i]);
+  handlerList(i, product[i]);
 }
