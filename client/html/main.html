@@ -65,7 +65,7 @@
                   <a href="./login.html"><img src="../assets/icons/Icon/Heart.svg" alt="관심상품" /></a>
                 </li>
                 <li>
-                  <a href="./cart.html"><img src="../assets/icons/Icon/Cart-1.svg" alt="장바구니" /></a>
+                  <a href="./cart.html"><img src="../assets/icons/Icon/Cart-1.svg" alt="장바구니" /><span class="catch-product">1</span></a>                  
                 </li>
               </ul>
               <div class="search">
@@ -138,25 +138,25 @@
       <!-- Main -->
       <main>
         <section class="main-banner">
-          <div class="swiper banner-swiper">
+          <div class="swiper banner-swiper" tabindex="-1">
             <div class="swiper-wrapper">
               <div class="swiper-slide">
-                <a href="#">
+                <a href="#" tabindex="-1">
                   <img src="../assets/banner/banner01.png" alt="특가 한눈에 보기" />
                 </a>
               </div>
               <div class="swiper-slide">
-                <a href="#">
+                <a href="#" tabindex="-1">
                   <img src="../assets/banner/banner02.png" alt="과일 앵콜특가 멜론 9900원" />
                 </a>
               </div>
               <div class="swiper-slide">
-                <a href="#">
+                <a href="#" tabindex="-1">
                   <img src="../assets/banner/banner03.png" alt="이달의 카드 혜택" />
                 </a>
               </div>
               <div class="swiper-slide">
-                <a href="#">
+                <a href="#" tabindex="-1">
                   <img src="../assets/banner/banner04.png" alt="퍼플위크 혜택" />
                 </a>
               </div>
@@ -172,10 +172,10 @@
             <div class="swiper today-product-swiper">
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                  <a href="./product-detail.html">
+                  <a href="./product-detail.html" tabindex="1">
                     <div class="today-products__item">
                       <img src="../assets/mainproduct/product01.png" class="today-products__thumbnail" alt="풀무원 탱탱쫄면" />
-                      <a href="#" class="today-products__add-cart">
+                      <a href="#" class="today-products__add-cart" tabindex="2">
                         <img src="../assets/icons/Icon/Cart-round.svg" alt="장바구니 추가" />
                       </a>
                     </div>
@@ -186,10 +186,10 @@
                   </a>
                 </div>
                 <div class="swiper-slide">
-                  <a href="./product-detail.html">
+                  <a href="./product-detail.html" tabindex="3">
                     <div class="today-products__item">
                       <img src="../assets/mainproduct/product02.png" class="today-products__thumbnail" alt="온더바디 시카 자석 선쿠션" />
-                      <a href="#" class="today-products__add-cart">
+                      <a href="#" class="today-products__add-cart" tabindex="4">
                         <img src="../assets/icons/Icon/Cart-round.svg" alt="장바구니 추가" />
                       </a>
                     </div>
@@ -258,8 +258,8 @@
                 </div>
               </div>
             </div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev" tabindex="0"></div>
+            <div class="swiper-button-next" tabindex="0"></div>
           </div>
         </section>
 
@@ -361,35 +361,35 @@
                 </div>
               </div>
             </div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev" tabindex="0"></div>
+            <div class="swiper-button-next" tabindex="0"></div>
           </div>
         </section>
 
         <aside class="recent-product">
           <button class="recent-product__up-btn">
-            <a href="#"><img src="../assets/icons/Icon/Direction_Up.svg" alt="최근 본 상품 리스트 위로가기" /></a>
+            <a href="#" tabindex="-1"><img src="../assets/icons/Icon/Direction_Up.svg" alt="최근 본 상품 리스트 위로가기" /></a>
           </button>
           <h2>최근 본 상품</h2>
           <ul class="recent-product__list">
-            <li>
-              <a href="../html/product-detail.html">
+            <li tabindex="0">
+              <a href="../html/product-detail.html" tabindex="-1">
                 <img src="../assets/mainproduct/product01.png" alt="풀무원 탱탱쫄면" />
               </a>
             </li>
-            <li>
-              <a href="../html/product-detail.html">
+            <li tabindex="0">
+              <a href="../html/product-detail.html" tabindex="-1">
                 <img src="../assets/mainproduct/product02.png" alt="온더바디 시카 자석 선쿠션" />
               </a>
             </li>
-            <li>
-              <a href="../html/product-detail.html">
+            <li tabindex="0">
+              <a href="../html/product-detail.html" tabindex="-1">
                 <img src="../assets/mainproduct/product03.png" alt="유기농 밀키퀸 현미" />
               </a>
             </li>
           </ul>
           <button class="recent-product__down-btn">
-            <a href="#"><img src="../assets/icons/Icon/Direction_Down.svg" alt="최근 본 상품 리스트 위로가기" /></a>
+            <a href="#" tabindex="-1"><img src="../assets/icons/Icon/Direction_Down.svg" alt="최근 본 상품 리스트 위로가기" /></a>
           </button>
         </aside>
 

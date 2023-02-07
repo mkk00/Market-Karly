@@ -1,4 +1,4 @@
-import { getNode, getNodes, attr } from '../../lib/index.js';
+import { getNode, getNodes, attr, addClass } from '../../lib/index.js';
 
 /* -------------------------------------------------------------------------- */
 /*                                    main                                    */
@@ -8,33 +8,32 @@ import { getNode, getNodes, attr } from '../../lib/index.js';
 
 // {#ddd} main banner prev&next Arrow fadeIn, fadeOut
 
-const $mainBanner = getNode('.main-banner');
-const $mainBanner_prevArrow = getNode('.swiper-button-prev');
-const $mainBanner_nextArrow = getNode('.swiper-button-next');
+// const $mainBanner = getNode('.main-banner');
+// const $mainBanner_prevArrow = getNode('.swiper-button-prev');
+// const $mainBanner_nextArrow = getNode('.swiper-button-next');
 
-function mainBannerArrowIn(){
-  $mainBanner_prevArrow.style.transitionDuration="300ms"
-  $mainBanner_nextArrow.style.transitionDuration="300ms"
-  $mainBanner_prevArrow.style.opacity=1;
-  $mainBanner_nextArrow.style.opacity=1;
-}
+// let mainBannerArrowIn = ()=>{
+//   $mainBanner_prevArrow.style.transitionDuration="300ms"
+//   $mainBanner_nextArrow.style.transitionDuration="300ms"
+//   $mainBanner_prevArrow.style.opacity=1;
+//   $mainBanner_nextArrow.style.opacity=1;
+// }
 
-function mainBannerArrowOut(){
-  $mainBanner_prevArrow.style.transitionDuration="500ms"
-  $mainBanner_nextArrow.style.transitionDuration="500ms"
-  $mainBanner_prevArrow.style.opacity=0;
-  $mainBanner_nextArrow.style.opacity=0;
-}
+// let mainBannerArrowOut = ()=>{
+//   $mainBanner_prevArrow.style.transitionDuration="500ms"
+//   $mainBanner_nextArrow.style.transitionDuration="500ms"
+//   $mainBanner_prevArrow.style.opacity=0;
+//   $mainBanner_nextArrow.style.opacity=0;
+// }
 
-$mainBanner.addEventListener('mouseover', mainBannerArrowIn)
-$mainBanner.addEventListener('mouseleave', mainBannerArrowOut)
+// $mainBanner.addEventListener('mouseover', mainBannerArrowIn)
+// $mainBanner.addEventListener('mouseleave', mainBannerArrowOut)
 
 
 
 // {#ddd} pop-up
 
 const $popupClose = getNode('.popup__btn button:last-child');
-const $popupTodayClose = getNode('.popup__btn button:first-child');
 const $popup = getNode('.popup');
 const $popupDim = getNode('.popup-dim');
 
@@ -45,6 +44,13 @@ function closePopup(){
 
 $popupClose.addEventListener('click', closePopup);
 $popupDim.addEventListener('qclick', closePopup);
+
+const $popupTodayHide = getNode('.popup__btn button:first-child');
+
+
+
+$popupTodayHide.addEventListener('click', TodayHide);
+
 
 
 // {#ddd} add cart
@@ -60,15 +66,24 @@ for(const button of $cartIcon){
 function showCartBox(e){
   e.preventDefault();
   e.stopPropagation();
+  
+  $countNum.value = "1";
+  $priceTotal.textContent = $productPrice;
+
   $cartBox.style.display = "block";
   $popupDim.style.display = "block";
 }
 
 const $cartCancel = getNode('.add-cart__cancel');
 
-function closeCartBox(){
+function closeCartBox(e){
+  e.preventDefault();
+
   $cartBox.style.display = "none";
   $popupDim.style.display = "none";
+
+  $countNum.value = "1";
+  $priceTotal.textContent = $productPrice;
 }
 
 $cartCancel.addEventListener('click', closeCartBox);
@@ -134,3 +149,19 @@ function productCountDown(){
 
 $countPlus.addEventListener('click', productCountUp);
 $countMinus.addEventListener('click', productCountDown);
+
+
+const $getProduct = getNode('.add-cart__add');
+const $catchProduct = getNode('.catch-product');
+$catchProduct.textContent = 0;
+
+function topCartIconCountUp(e){
+  e.preventDefault();
+  $catchProduct.style.opacity="1";
+  setTimeout(() => {
+    $catchProduct.addClass('.vibrate');    
+  }, 500);
+  $catchProduct.textContent = Number($catchProduct.textContent) + 1;
+}
+
+$getProduct.addEventListener('click', topCartIconCountUp);
