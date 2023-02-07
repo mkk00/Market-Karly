@@ -76,6 +76,7 @@ group.forEach((type) => type.addEventListener('click', handleType));
 /* -------------------------------------------------------------------------- */
 /*                                  Add-Cart                                  */
 /* -------------------------------------------------------------------------- */
+const bodyTag = document.querySelector('body');
 const cartBtn = document.querySelectorAll('.visual__icon');
 const addCart = document.querySelector('.add-cart');
 const cancelCart = document.querySelector('.add-cart__cancelBtn');
@@ -85,10 +86,12 @@ const countStatus = document.querySelector('add-cart__count');
 
 function handlerCart() {
   addCart.classList.toggle('is-active');
+  bodyTag.style.overflow = 'hidden';
 }
 
 function handlerCancelCart() {
   addCart.classList.remove('is-active');
+  bodyTag.style.overflow = 'auto';
 }
 
 // function handlerMinus() {
