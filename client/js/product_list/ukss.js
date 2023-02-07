@@ -161,7 +161,7 @@ async function getData(num, node) {
     const infoSale = slideInfo.querySelector('.info-sale');
     const infoPrice = slideInfo.querySelector('.info-price');
 
-    infoSale.innerText = `${user[num].saleRatio * 100}%`;
+    infoSale.innerText = `${Math.floor(user[num].saleRatio * 100)}%`;
     infoPrice.innerText = `${user[num].salePrice.toLocaleString()} 원`;
 
     // originalPrice
