@@ -18,6 +18,18 @@ const buyHeartBtn=getNode('.product__buy-heart-btn'); //버튼
 const buyCartBtn=getNode('.product__buy-feature-cart__btn'); //장바구니 버튼
 const userOrder=getNode('.user-order');//ul 장바구니 노드
 
+const navBtn_01=getNode('.product__nav-button_01'); //nav_상품 설명 
+const navBtn_02=getNode('.product__nav-button_02'); //nav_상세 정보
+const navBtn_03=getNode('.product__nav-button_03'); //nav_후기
+const navBtn_04=getNode('.product__nav-button_04'); //nav_문의
+const description=getNode('.description'); //상품 설명
+const detail=getNode('.detail');
+const review=getNode('.product-review');
+const inquiry=getNode('.product-inquiry');
+
+
+
+
 //텍스트컨텐트
 let buyBtnText = +getSpanText(buyBtnNum); 
 let buyBtnPriceText = +getSpanText(buyBtnNumPrice);
@@ -97,9 +109,27 @@ function handlerBuyCart(e){
   setTimeout(removeAlert, 2000, buyCartAlert );
 }
 
+function moveScrollDescription(e){
+  description.scrollIntoView({ behavior: 'smooth' });
+}
+function moveScrollDetail(e){
+  detail.scrollIntoView({ behavior: 'smooth' });
+}
+function moveScrollReview(e){
+  review.scrollIntoView({ behavior: 'smooth' });
+}
+function moveScrollInquiry(e){
+  inquiry.scrollIntoView({ behavior: 'smooth' });
+}
+
 buyBtnPlus.addEventListener('click',handlerBuy); // +
 buyBtnMinus.addEventListener('click',handlerBuy); //-
 
 buyHeartBtn.addEventListener('click',handlerBuyHeart); //하트 아이콘
 
 buyCartBtn.addEventListener('click',handlerBuyCart); //장바구니 
+
+navBtn_01.addEventListener('click',moveScrollDescription);
+navBtn_02.addEventListener('click',moveScrollDetail);
+navBtn_03.addEventListener('click',moveScrollReview);
+navBtn_04.addEventListener('click',moveScrollInquiry);
