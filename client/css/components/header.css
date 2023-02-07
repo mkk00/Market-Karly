@@ -195,6 +195,28 @@ button {
   top: 12px;
 }
 
+.user-order li{
+  position: relative;
+}
+
+.catch-product{
+  width: 15px;
+  height: 15px;
+  line-height: 15px;
+  display: inline-block;
+  position: absolute;
+  right: -2px;
+  top: 2px;
+  text-align: center;
+  border: 1px solid var(--white);
+  border-radius: 50%;
+  font-size: 10px;
+  background: var(--primary);
+  color: var(--white);
+  opacity: 0;
+  transition: .4s;
+}
+
 .search{
   height: 100%;
 }
@@ -289,6 +311,7 @@ input::-webkit-search-results-decoration{
 }
 
 .header-nav__inner{
+  height: 72px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -308,17 +331,15 @@ input::-webkit-search-results-decoration{
 
 .category{
   width: 84px;
-  height: 72px;
-  line-height: 72px;
+  height: 40px;
+  line-height: 40px;
   font-weight: 600;
-  background: url('../../assets/icons/Icon/Hamburger-black.svg') no-repeat 0px 5px;
-  background-position: 0 29px;
-  outline-offset: 5px;
+  background: url('../../assets/icons/Icon/Hamburger-black.svg') no-repeat center;
+  background-position: 0 13px;
 }
 
 .category__hamburger{
   float: left;
-  margin-top: 5px;
 }
 
 .category__text{
