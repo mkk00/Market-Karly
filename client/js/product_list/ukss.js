@@ -102,18 +102,25 @@ let addCartTotalPrice = document.querySelector('.add-cart__totalPrice');
 let cnt = 0;
 let price = 4980;
 
-function handleAddCartMinus() {
-  cnt--;
-  price *= cnt;
+function handleAddCartCnt() {
+  let result = price * cnt;
+
   addCartCnt.innerText = cnt;
-  addCartTotalPrice.innerText = price;
+  addCartTotalPrice.innerText = `${result.toLocaleString()}원`;
+}
+
+function handleAddCartMinus() {
+  if (cnt === 0) {
+    return;
+  } else {
+    cnt--;
+    handleAddCartCnt();
+  }
 }
 
 function handleAddCartPlus() {
   cnt++;
-  price *= cnt;
-  addCartCnt.innerText = cnt;
-  addCartTotalPrice.innerText = price;
+  handleAddCartCnt();
 }
 
 addCartMinus.addEventListener('click', handleAddCartMinus);

@@ -839,9 +839,9 @@
 .add-cart__frame94 {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   align-items: center;
   padding: 0px;
-  gap: 213px;
 
   width: 356px;
   height: 30px;
@@ -864,9 +864,7 @@
   flex-direction: row;
   align-items: center;
   padding: 0px;
-  gap: 8px;
 
-  width: 84px;
   height: 30px;
 
   border: 1px solid var(--gray-200);
@@ -879,6 +877,12 @@
 }
 
 .add-cart__count {
+  width: 24px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   font-family: 'Pretendard';
   font-style: normal;
   font-weight: 600;
@@ -903,9 +907,9 @@
 .add-cart__frame96 {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   align-items: flex-end;
   padding: 0px;
-  gap: 218px;
 
   width: 352px;
   height: 40px;
