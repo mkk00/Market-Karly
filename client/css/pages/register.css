@@ -147,6 +147,12 @@ input[placeholder]{
   flex-grow: 1;
 }
 
+.join__input{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
 
 /* 주소 검색 */
 .join-address{
@@ -167,6 +173,7 @@ input[placeholder]{
 .address__p--text{
   font-size: 12px;
   font-weight: 400;
+  margin-left: 4px;
 }
 
 
@@ -243,9 +250,14 @@ input[type=radio]:checked + label {
   height: 100%;
   border:none;
   color:var(--gray-400);
-  outline: none;
 }
 
+#join-yyyy,
+#join-mm,
+#join-dd
+{
+  border:none;
+}
 .join-birthday__text{
   color:var(--gray-400);
   line-height: 40px;
@@ -297,7 +309,7 @@ input[type=radio]:checked + label {
   color: var(--info-error);
   position:relative;
   top:-4px;
-  left:47px;
+  left:0px;
 }
 .agree-user{
   margin-left: 40px;
@@ -373,4 +385,21 @@ input[type=checkbox]:checked + label {
   top:50%;
   left:50%;
   transform: translate(-50%,-50%);
+}
+
+
+
+
+
+.is-active{
+  display: block;
+  color: red;
+  font-size: var(--spacing-sm);
+  margin-top: -12px;
+}
+
+
+.join__error{
+  margin-bottom: 11px;
+  align-items: center;
 }
