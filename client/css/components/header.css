@@ -99,6 +99,9 @@ button {
   position: absolute;
   top: 0;
   right: 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
 }
 
 .member li{
@@ -107,6 +110,7 @@ button {
   position: relative;
   float: left;
   padding-top: 8px;
+  text-align: center;
 } 
 
 .list-divider{
@@ -115,19 +119,24 @@ button {
 }
 
 .member li a{
-  padding: 4px 12px;
+  display: inline-block;
 }
 
 .member li:first-child{
   color: var(--primary);
 }
-.member li:last-child{
-  margin-right: -12px;
-}
+/*.member li:last-child{
+  margin-right: -12px; 
+}*/
 
 .member li:last-child a::before{
   content: "";
   font-size: 0;
+}
+
+.member li span{
+  display: inline-block;
+  margin-right: 15px;
 }
 
 .member li img{
@@ -272,7 +281,7 @@ input::-webkit-search-results-decoration{
 .rearrIcon input{
   width: 242px;
   height: 36px;
-  margin-top: 10px;
+  margin-top: 20px;
   background: var(--gray-50);
   border: 1px solid var(--gray-50);
   border-radius: 7px;
@@ -285,14 +294,14 @@ input::-webkit-search-results-decoration{
 }
 
 .rearrIcon .search__search-btn img{
-  transform: translateX(10px);
+  transform: translate(10px, 10px);
   width: 90%;
 }
 
 
 .user-order.rearrIcon{
   width: 148px;
-  margin-top: 10px;
+  margin-top: 20px;
   margin-left: 380px;
 }
 
