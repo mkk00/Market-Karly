@@ -8,26 +8,26 @@ import { getNode, getNodes, attr, addClass } from '../../lib/index.js';
 
 // {#ddd} main banner prev&next Arrow fadeIn, fadeOut
 
-const $mainBanner = getNode('.main-banner');
-const $mainBanner_prevArrow = getNode('.swiper-button-prev');
-const $mainBanner_nextArrow = getNode('.swiper-button-next');
+// const $mainBanner = getNode('.main-banner');
+// const $mainBanner_prevArrow = getNode('.swiper-button-prev');
+// const $mainBanner_nextArrow = getNode('.swiper-button-next');
 
-function mainBannerArrowIn(){
-  $mainBanner_prevArrow.style.transitionDuration="300ms"
-  $mainBanner_nextArrow.style.transitionDuration="300ms"
-  $mainBanner_prevArrow.style.opacity=1;
-  $mainBanner_nextArrow.style.opacity=1;
-}
+// let mainBannerArrowIn = ()=>{
+//   $mainBanner_prevArrow.style.transitionDuration="300ms"
+//   $mainBanner_nextArrow.style.transitionDuration="300ms"
+//   $mainBanner_prevArrow.style.opacity=1;
+//   $mainBanner_nextArrow.style.opacity=1;
+// }
 
-function mainBannerArrowOut(){
-  $mainBanner_prevArrow.style.transitionDuration="500ms"
-  $mainBanner_nextArrow.style.transitionDuration="500ms"
-  $mainBanner_prevArrow.style.opacity=0;
-  $mainBanner_nextArrow.style.opacity=0;
-}
+// let mainBannerArrowOut = ()=>{
+//   $mainBanner_prevArrow.style.transitionDuration="500ms"
+//   $mainBanner_nextArrow.style.transitionDuration="500ms"
+//   $mainBanner_prevArrow.style.opacity=0;
+//   $mainBanner_nextArrow.style.opacity=0;
+// }
 
-$mainBanner.addEventListener('mouseover', mainBannerArrowIn)
-$mainBanner.addEventListener('mouseleave', mainBannerArrowOut)
+// $mainBanner.addEventListener('mouseover', mainBannerArrowIn)
+// $mainBanner.addEventListener('mouseleave', mainBannerArrowOut)
 
 
 
@@ -44,6 +44,13 @@ function closePopup(){
 
 $popupClose.addEventListener('click', closePopup);
 $popupDim.addEventListener('qclick', closePopup);
+
+const $popupTodayHide = getNode('.popup__btn button:first-child');
+
+
+
+$popupTodayHide.addEventListener('click', TodayHide);
+
 
 
 // {#ddd} add cart
