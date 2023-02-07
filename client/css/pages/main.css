@@ -319,7 +319,7 @@ body {
   transform: translate(-50%, -50%);
   z-index: 999999;
   font-weight: bold; 
-  display: none; 
+  display: none;
 }
 
 .add-cart__inner{
@@ -434,7 +434,7 @@ body {
 
 .add-cart__btn button{
   display: inline-block;
-  width: 174px;
+  width: 48.2%;
   border-radius: 4px;
 }
 
@@ -452,6 +452,7 @@ body {
 .add-cart__add{
   background: var(--primary);
   color: var(--white);
+  border: 1px solid var(--primary);
 }
 
 
