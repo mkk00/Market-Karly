@@ -71,7 +71,6 @@
   display: flex;
   align-items: center;
   gap:var(--spacing-xs);
-
 }
 
 /* 필수입력사항 공통부분 */
@@ -391,15 +390,34 @@ input[type=checkbox]:checked + label {
 
 
 
-.is-active{
-  display: block;
-  color: red;
-  font-size: var(--spacing-sm);
-  margin-top: -12px;
-}
 
+/* 자스 css */
+  .is-active{
+    display: block;
+    color: red;
+    font-size: var(--spacing-sm);
+    margin-top: -12px;
+  }
 
-.join__error{
-  margin-bottom: 11px;
-  align-items: center;
-}
+  .join__error{
+    margin-bottom: 12px;
+    align-items: center;
+  }
+
+  .join-pw,
+  .join-email{
+    height: 84px;
+  }
+
+  form .join-pw__required{
+    height: 84px;
+  }
+
+  .join-pw__error,
+  .join-pw__check{
+    margin-bottom: 12px;
+  }
+
+  .join_email{
+    margin-bottom: 12px;
+  }
