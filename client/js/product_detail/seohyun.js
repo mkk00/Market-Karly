@@ -2,7 +2,9 @@ import {
   getNode,
   clearContents, 
   insertFirst,
-  insertLast
+  insertLast,
+  addClass,
+  removeClass
 } from '../../lib/dom/index.js';
 
 /* -------------------------------------------------------------------------- */
@@ -26,6 +28,10 @@ const description=getNode('.description'); //상품 설명
 const detail=getNode('.detail');
 const review=getNode('.product-review');
 const inquiry=getNode('.product-inquiry');
+
+const review_Header_Btn=getNode('.product-review_header-btn'); //후기 작성하기 버튼
+const review_Modal_CloseBtn=getNode('.review__modal-close_btn') // X 닫기 버튼
+
 
 
 
@@ -55,7 +61,7 @@ function handlerBuy(e){
     clearContents(buyBtnNumPrice);
 
     buyBtnNum.textContent=buyBtnTotal;
-    buyBtnNumPrice.textContent=buyBtnTotalPrice;
+    buyBtnNumPrice.textContent=buyBtnTotalPrice.toLocaleString();
     
   }
   else{
@@ -66,7 +72,7 @@ function handlerBuy(e){
     clearContents(buyBtnNumPrice);
 
     buyBtnNum.textContent=buyBtnTotal;
-    buyBtnNumPrice.textContent=buyBtnTotalPrice;
+    buyBtnNumPrice.textContent=buyBtnTotalPrice.toLocaleString();
   }
 }
 /* 하트 아이콘 색 변경 */
@@ -122,6 +128,17 @@ function moveScrollInquiry(e){
   inquiry.scrollIntoView({ behavior: 'smooth' });
 }
 
+function open(){
+  let review_Modal=getNode('.product-review__modal'); //리뷰 후기 작성 팝업 열기
+  review_Modal.classList.remove('hidden')
+  // removeClass(review_Modal,'hidden')
+}
+function close(){
+  let review_Modal=getNode('.product-review__modal'); //리뷰 후기 작성 팝업 닫기
+  review_Modal.classList.addClass('hidden')
+  // addClass(review_Modal,'hidden')
+}
+
 buyBtnPlus.addEventListener('click',handlerBuy); // +
 buyBtnMinus.addEventListener('click',handlerBuy); //-
 
@@ -129,7 +146,10 @@ buyHeartBtn.addEventListener('click',handlerBuyHeart); //하트 아이콘
 
 buyCartBtn.addEventListener('click',handlerBuyCart); //장바구니 
 
-navBtn_01.addEventListener('click',moveScrollDescription);
+navBtn_01.addEventListener('click',moveScrollDescription); // 설명~문의 스크롤 이동
 navBtn_02.addEventListener('click',moveScrollDetail);
 navBtn_03.addEventListener('click',moveScrollReview);
 navBtn_04.addEventListener('click',moveScrollInquiry);
+
+review_Header_Btn.addEventListener('click',open); // 후기 작성하기
+review_Modal_CloseBtn.addEventListener('click',close); //후기 작성하기 닫기
