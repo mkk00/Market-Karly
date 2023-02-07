@@ -80,6 +80,7 @@ const bodyTag = document.querySelector('body');
 const cartBtn = document.querySelectorAll('.visual__icon');
 const addCart = document.querySelector('.add-cart');
 const cancelCart = document.querySelector('.add-cart__cancelBtn');
+const okayCart = document.querySelector('.add-cart__addCartBtn');
 
 const addCartMinus = document.querySelector('.add-cart__minus-icon');
 const addCartPlus = document.querySelector('.add-cart__plus-icon');
@@ -143,12 +144,58 @@ for (let i = 0; i < cartBtn.length; i++) {
   });
 }
 
+// LocalStorage 147 ~ 190
+let beforeKey;
+let beforeValue = [];
+
+function handleTimeStamp() {
+  const today = new Date();
+  const year = today.getFullYear();
+  const month = today.getMonth() + 1;
+  const day = today.getDate();
+  const hours = today.getHours();
+
+  const nowArr = [year, month, day, hours];
+  const key = nowArr.join('-');
+
+  if (beforeKey !== key) {
+    beforeKey = key;
+    beforeValue = [];
+  }
+}
+
+function handleInputStorage() {
+  localStorage.setItem(beforeKey, JSON.stringify(beforeValue));
+}
+
+async function handleOkayAddCart() {
+  // JSON 읽기
+  let response = await fetch('http://localhost:3000/products');
+  let products = await response.json();
+
+  handleTimeStamp();
+
+  for (let i = 0; i < products.length; i++) {
+    if (products[i].name === addCartProductName.innerText) {
+      beforeValue.push({
+        id: products[i].id,
+        name: products[i].name,
+        price: addCartProductPrice.innerText,
+        cnt: addCartCnt.innerText,
+      });
+    }
+  }
+
+  handleInputStorage();
+}
+
 cancelCart.addEventListener('click', handlerCancelCart);
 addCartPlus.addEventListener('click', handleAddCartPlus);
 addCartMinus.addEventListener('click', handleAddCartMinus);
+okayCart.addEventListener('click', handleOkayAddCart);
 
 /* -------------------------------------------------------------------------- */
-/*                                  data.json                                 */
+/*                                  Product List                                 */
 /* -------------------------------------------------------------------------- */
 const product = document.querySelectorAll('.slide');
 
