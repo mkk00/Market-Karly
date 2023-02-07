@@ -1,4 +1,4 @@
-import { getNode, getNodes, insertLast, addClass, removeClass } from '../../lib/index.js';
+import { getNode, getNodes, insertLast, addClass, removeClass, attr } from '../../lib/index.js';
 
 /* -------------------------------------------------------------------------- */
 /*                                   header                                   */
@@ -74,6 +74,7 @@ function fixed(){
     $category.style.lineHeight="56px";
     $category.style.backgroundPosition="0 20px";
     $main.style.marginTop="-90px"
+    attr('.search__search-btn img', 'src', '../assets/icons/Icon/search-b.svg');
 
   }else{
     removeClass($Nav, 'fixed');
@@ -88,6 +89,7 @@ function fixed(){
     $category.style.backgroundPosition="0 29px";
     $deliveryNotice.style.display="block";
     $main.style.marginTop="0"
+    attr('.search__search-btn img', 'src', '../assets/icons/Icon/search.svg');
   }
 }
 
