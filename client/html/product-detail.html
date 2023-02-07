@@ -369,9 +369,29 @@
                     <li>작성하신 후기는 확인 후 적립금이 지급됩니다. (영업일 기준 평균 1~2일 소요)</li>
                   </ul>
                 </div>
-                <button class="product__header-btn" type="button" aria-label="review-btn">
-                  <a href="/">후기 작성하기</a>
+                <button class="product-review_header-btn" type="button" aria-label="review-btn">
+                  <span>후기 작성하기</span>
                 </button>
+                <section class="product-review__modal hidden">
+                  <article class="product-review__modal_frame">
+                  <header class="product-review__modal-header">
+                    <h1>후기 작성하기</h1>
+                    <button class="review__modal-close_btn">✖</button>
+                  </header>
+                  <div class="product-review__modal-info">
+                    <img class="product-review__modal-img" src="../assets/icons/Icon/product-detail-first.svg" width="72" height="72">
+                    <p>[풀무원] 탱탱쫄면 (4개입)</p>
+                  </div>
+                  <form class="product-review__modal-form" action=" " method="get">
+                    <p>제목</p>  
+                    <input class="review__modal__input-title" type="text" name="modal-form__title">
+                    <input class="review__modal__input-content" type="text" name="modal-form__content">
+                    <p class="review__modal__input-content-p">내용</p> 
+                    <button class="modal-form__cancel-btn">취소</button>
+                    <input class="modal-form__submit-btn" type="submit" value="등록">
+                  </form>
+                </article>
+                </section>
               </header>
               <!-- 상품후기게시판 -->
               <article class="product-review__board">
