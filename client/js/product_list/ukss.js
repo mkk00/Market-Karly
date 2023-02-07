@@ -144,6 +144,16 @@ for (let i = 0; i < cartBtn.length; i++) {
   });
 }
 
+const cartStatus = document.querySelector('.user-order li:last-child');
+const cartStatusDiv = document.createElement('div');
+cartStatusDiv.setAttribute('class', 'user-order__cart is-active');
+
+function handleCartStatus() {
+  if (localStorage.length) {
+    cartStatus.appendChild(cartStatusDiv);
+  }
+}
+
 // LocalStorage 147 ~ 190
 let beforeKey;
 let beforeValue = [];
@@ -187,12 +197,15 @@ async function handleOkayAddCart() {
   }
 
   handleInputStorage();
+  handleCartStatus();
 }
 
 cancelCart.addEventListener('click', handlerCancelCart);
 addCartPlus.addEventListener('click', handleAddCartPlus);
 addCartMinus.addEventListener('click', handleAddCartMinus);
 okayCart.addEventListener('click', handleOkayAddCart);
+
+handleCartStatus();
 
 /* -------------------------------------------------------------------------- */
 /*                                  Product List                                 */
