@@ -525,9 +525,10 @@ input::-webkit-search-results-decoration{
   right: 49px;
   /* bottom: 15px; */
   bottom: -60px;
+  transition: .5s;
 }
 
-.goto-top.topAction{
+.topAction{
   bottom: 15px;
   transition: .5s;
 }

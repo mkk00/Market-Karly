@@ -17,7 +17,6 @@ history.scrollRestoration = "manual"
 
 const $topBanner = getNode('.top-banner');
 const $topBannerCloseBtn = getNode('.top-banner__close-btn');
-console.log(localStorage.getItem("topBanner"))
 
 if( localStorage.getItem("topBanner") ){
   $topBanner.style.height = 0;
@@ -105,6 +104,31 @@ function fixed(){
 }
 
 window.addEventListener('scroll', fixed);
+
+
+// {#ddd} go to top button
+
+const $topButton = getNode('.goto-top');
+
+
+function showTopBtn () {
+  if(window.scrollY > 200) {
+    addClass($topButton, 'topAction'); 
+  }else{
+    removeClass($topButton, 'topAction');
+  }
+}
+
+let GotoScrollTop = (e) => {
+  e.preventDefault();
+  window.scrollTo({top:0, behavior:"smooth"});  
+}
+
+window.addEventListener('scroll', showTopBtn);
+$topButton.addEventListener('click', GotoScrollTop);
+
+
+
 
 
 
