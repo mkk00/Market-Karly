@@ -194,7 +194,8 @@
   line-height: 150%;
 }
 
-.info-originPrice {
+.today-products .info-originPrice, 
+.recommend-products .info-originPrice {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
