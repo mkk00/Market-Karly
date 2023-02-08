@@ -11,7 +11,7 @@ export function addClass(node,className){
     typeError('addClass 함수의 두 번째 인자는 문자 타입 이어야 합니다.');
   }
   
-  node.classList.add(className)
+  return node.classList.add(className)
 
 }
 
@@ -30,7 +30,7 @@ export function removeClass(node,className){
     typeError('removeClass 함수의 두 번째 인자는 문자 타입 이어야 합니다.');
   }
 
-  node.classList.remove(className)  
+    return  node.classList.remove(className)  
 }
 
 
@@ -40,7 +40,7 @@ export function toggleClass(node,className){
     typeError('toggleClass 함수의 두 번째 인자는 문자 타입 이어야 합니다.');
   }
 
-  node.classList.toggle(className)
+  return node.classList.toggle(className)
 }
 
 

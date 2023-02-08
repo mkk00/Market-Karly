@@ -136,20 +136,30 @@
           <div class="box-1">
             <div class="box-2">
               <input type="checkbox" name="checker" id="checker1" /><label for="checker1"></label> 전체선택(3/3)<span class="cart-divider">|</span
-              ><button class="delete-button">선택삭제</button>
+              ><button class="delete-button" id="delbtn">선택삭제</button>
             </div>
             <div class="box-3">
               <span class="food"><img src="../assets/icons/Icon/Refrigerated.svg" alt="Refrigerated" />냉장식품</span
               ><button class="down-button" id="actbtn"><img src="../assets/icons/Icon/Icon_down2.svg" alt="downbutton"/></button>
             </div>
             <div id="cart-active">
-              <div class="active-1">
+              <div class="active-1" id="aid-1">
                 <div class="active-2"><input type="checkbox" name="checker" id="checker3" /><label for="checker3"></label><img src="../assets/tangtang/detail_view.jpg" width="60px" height="78px" alt="taengtaeng"/>[풀무원]탱탱쫄면(4개입)</div>
-                <div class="active-3">4980원<button class="xbutton"><img src="../assets/icons/Icon/x.svg" alt="cancel"/></button></div>
+                <div class="active-4">
+                  <div class="active-5">
+                  <button type="button"  id="pbtn-1">+</button><div id="result-1">1</div><button type="button" id="mbtn-1">-</button>
+                  </div>
+                <div class="active-3"><span id="money-1">4980원</span><button class="xbutton" id="x-1"><img src="../assets/icons/Icon/x.svg" alt="cancel"/></button></div>
               </div>
-              <div class="active-1">
+              </div>
+              <div class="active-1" id="aid-2">
                 <div class="active-2"><input type="checkbox" name="checker" id="checker4" /><label for="checker4"></label><img src="../assets/tangtang/detail_view.jpg" width="60px" height="78px" alt="taengtaeng"/>[풀무원]탱탱쫄면(4개입)</div>
-                <div class="active-3">4980원<button class="xbutton"><img src="../assets/icons/Icon/x.svg" alt="cancel"/></button></div>
+                <div class="active-4">
+                  <div class="active-5">
+                  <button type="button"  id="pbtn-2">+</button><div id="result-2">1</div><button type="button" id="mbtn-2">-</button>
+                  </div>
+                <div class="active-3"><span id="money-2">4980원</span><button class="xbutton" id="x-2"><img src="../assets/icons/Icon/x.svg" alt="cancel"/></button></div>
+              </div>
               </div>
             </div>
             <div class="box-3">
@@ -183,7 +193,7 @@
               <div class="math-gap">
                 <div class="box-8">
                   <span>상품금액</span>
-                  <span>40,680원</span>
+                  <span id="s-money">9960원</span>
                 </div>
                 <div class="box-8">
                   <span>상품할인금액</span>
@@ -198,7 +208,7 @@
             <div class="box-9">
               <div class="result">
                 <span class="expected">결제예정금액</span>
-                <div class="won"><span class="span-result">40,680</span>원</div>
+                <div class="won"><span class="span-result" id="f-money">8309</span>원</div>
               </div>
               <div class="bank">
                 <span class="span-bank">적립</span>
