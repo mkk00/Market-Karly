@@ -282,7 +282,7 @@ input::-webkit-search-results-decoration{
 .rearrIcon input{
   width: 242px;
   height: 36px;
-  margin-top: 20px;
+  margin-top: 10px;
   background: var(--gray-50);
   border: 1px solid var(--gray-50);
   border-radius: 7px;
@@ -295,14 +295,14 @@ input::-webkit-search-results-decoration{
 }
 
 .rearrIcon .search__search-btn img{
-  transform: translate(10px, 10px);
+  transform: translate(10px, 0);
   width: 90%;
 }
 
 
 .user-order.rearrIcon{
   width: 148px;
-  margin-top: 20px;
+  margin-top: 10px;
   margin-left: 380px;
 }
 
@@ -345,7 +345,7 @@ input::-webkit-search-results-decoration{
   line-height: 40px;
   font-weight: 600;
   background: url('../../assets/icons/Icon/Hamburger-black.svg') no-repeat center;
-  background-position: 0 13px;
+  background-position: 0 12px;
 }
 
 .category__hamburger{

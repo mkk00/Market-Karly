@@ -77,13 +77,10 @@ function fixed(){
     addClass($search, 'rearrIcon');
     addClass($userOrder, 'rearrIcon');
     
-    $subMenu.style.transform="translateY(-16px)"
     $deliveryNotice.style.display="none";
     $category.style.width="120px";
-    $category.style.height="56px";
-    $category.style.lineHeight="56px";
-    $category.style.backgroundPosition="0 20px";
-    $main.style.marginTop="-90px"
+    $NavInner.style.height="56px";
+    $category.style.backgroundPosition="0 13px";     
     attr('.search__search-btn img', 'src', '../assets/icons/Icon/search-b.svg');
 
   }else{
@@ -94,9 +91,8 @@ function fixed(){
 
     $subMenu.style.transform="translateY(0)"
     $category.style.width="84px"
-    $category.style.height="72px";
-    $category.style.lineHeight="72px";
-    $category.style.backgroundPosition="0 29px";
+    $NavInner.style.height="72px";
+    $NavInner.style.lineHeight="72px";
     $deliveryNotice.style.display="block";
     $main.style.marginTop="0"
     attr('.search__search-btn img', 'src', '../assets/icons/Icon/search.svg');
