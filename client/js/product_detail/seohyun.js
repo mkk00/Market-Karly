@@ -3,8 +3,7 @@ import {
   clearContents, 
   insertFirst,
   insertLast,
-  addClass,
-  removeClass
+  attr
 } from '../../lib/dom/index.js';
 
 /* -------------------------------------------------------------------------- */
@@ -29,26 +28,18 @@ const detail=getNode('.detail');
 const review=getNode('.product-review');
 const inquiry=getNode('.product-inquiry');
 
-const review_Header_Btn=getNode('.product-review_header-btn'); //후기 작성하기 버튼
-const review_Modal_CloseBtn=getNode('.review__modal-close_btn') // X 닫기 버튼
-
-
-
-
 
 //텍스트컨텐트
 let buyBtnText = +getSpanText(buyBtnNum); 
 let buyBtnPriceText = +getSpanText(buyBtnNumPrice);
 let buyBtnTotalPrice=buyBtnPriceText;
 /* --------------------------------------------------------------------------------------------------------------------------- */
+
 function getSpanText(node){
   if(node.tagName !== 'SPAN') refError('getInputValue 함수는 SPAN ELEMENT만 허용합니다.')
   return node.textContent;
 }
-/* 장바구니 (노드 지우기) setTimeout 함수 쓰기 위함*/
-function removeAlert(node){
-  return node.remove();
-}
+
 /* 수량 버튼,총합 금액 */
 function handlerBuy(e){
   e.preventDefault();
@@ -75,7 +66,10 @@ function handlerBuy(e){
     buyBtnNumPrice.textContent=buyBtnTotalPrice.toLocaleString();
   }
 }
-/* 하트 아이콘 색 변경 */
+
+
+
+/* 하트 아이콘 색 변경 ------------------------------------------------------------------------------------------------------------------------------------*/
 function handlerBuyHeart(e){
   let buyEmptyHeart=getNode('.product__buy-empty-heart'); //빈 하트 이미지
 
@@ -91,6 +85,13 @@ function handlerBuyHeart(e){
       insertFirst(buyHeartBtn,` <img class="product__buy-empty-heart" src="../assets/icons/Icon/squre-empty-heart.svg" alt="빈 좋아요 아이콘"/>`);
   }
 }
+
+
+/* 장바구니 (노드 지우기) setTimeout 함수 쓰기 위함 --------------------------------------------------------------------------------------------------------------------*/
+function removeAlert(node){
+  return node.remove();
+}
+
 /* 장바구니 알람 */
 function handlerBuyCart(e){
 
@@ -115,6 +116,8 @@ function handlerBuyCart(e){
   setTimeout(removeAlert, 2000, buyCartAlert );
 }
 
+
+/* 스크롤 이동 ------------------------------------------------------------------------------------------------------------------------*/
 function moveScrollDescription(e){
   description.scrollIntoView({ behavior: 'smooth' });
 }
@@ -128,15 +131,28 @@ function moveScrollInquiry(e){
   inquiry.scrollIntoView({ behavior: 'smooth' });
 }
 
-function open(){
-  let review_Modal=getNode('.product-review__modal'); //리뷰 후기 작성 팝업 열기
-  review_Modal.classList.remove('hidden')
-  // removeClass(review_Modal,'hidden')
+
+  /* 후기 팝업 (스크롤 막기 js모달창구현)----------------------------------------------------------------------------------------------------- */
+
+ //모달
+let reviewModal=getNode('.product-review__modal'); //리뷰 후기 작성 팝업 열기
+let reviewHeaderBtn=getNode('.product-review_header-btn'); //후기 작성하기 버튼
+let reviewModalCloseBtn=getNode('.review__modal-close_btn') // X 닫기 버튼
+let reviewModalCancelBtn=getNode('.modal-form__cancel-btn')
+
+function modalToggle(){
+  reviewModal.classList.toggle('hidden');
 }
-function close(){
-  let review_Modal=getNode('.product-review__modal'); //리뷰 후기 작성 팝업 닫기
-  review_Modal.classList.addClass('hidden')
-  // addClass(review_Modal,'hidden')
+
+
+/* 문의 팝업 ---------------------------------------------------------------------------------------------------------------------*/
+let inquiryModal=getNode('.product-inquiry__modal'); //리뷰 문의 작성 팝업 열기
+let inquiryHeaderBtn=getNode('.product-inquiry_header-btn'); //문의 작성하기 버튼
+let inquiryModalCloseBtn=getNode('.inquiry__modal-close_btn'); // X 닫기 버튼
+let inquiryModalCancelBtn=getNode('.inquiry__modal-form__cancel-btn');
+
+function InquiryModalToggle(){
+  inquiryModal.classList.toggle('hidden');
 }
 
 buyBtnPlus.addEventListener('click',handlerBuy); // +
@@ -146,10 +162,21 @@ buyHeartBtn.addEventListener('click',handlerBuyHeart); //하트 아이콘
 
 buyCartBtn.addEventListener('click',handlerBuyCart); //장바구니 
 
+
 navBtn_01.addEventListener('click',moveScrollDescription); // 설명~문의 스크롤 이동
 navBtn_02.addEventListener('click',moveScrollDetail);
 navBtn_03.addEventListener('click',moveScrollReview);
 navBtn_04.addEventListener('click',moveScrollInquiry);
 
-review_Header_Btn.addEventListener('click',open); // 후기 작성하기
-review_Modal_CloseBtn.addEventListener('click',close); //후기 작성하기 닫기
+
+
+reviewHeaderBtn.addEventListener('click',modalToggle); // 후기 작성하기
+reviewModalCloseBtn.addEventListener('click',modalToggle); // X 닫기
+reviewModalCancelBtn.addEventListener('click',modalToggle); //취소
+
+
+inquiryHeaderBtn.addEventListener('click',InquiryModalToggle); // 문의 작성하기
+inquiryModalCloseBtn.addEventListener('click',InquiryModalToggle); // X 닫기
+inquiryModalCancelBtn.addEventListener('click',InquiryModalToggle); //취소
+
+
