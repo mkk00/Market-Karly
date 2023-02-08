@@ -145,7 +145,7 @@
                 <legend>회원 정보 입력</legend>
                 <!-- 아이디 섹션 -->
 
-                <div class="join">
+                <div class="join" id="join">
                   <div class="join__inner">
                     <div class="join__input">
                         <h3 class="join__title">
@@ -154,7 +154,7 @@
                         <div class="join__error">
                           <input type="text" id="user-id" name="user-id" placeholder="아이디를 입력해주세요" autocomplete="username" class="input-box" minlength="6" maxlength="16" required/>
                           <div class="join-error">
-                            <span class="join-error__text-red is-active"></span>
+                            <span class="join-error__text-red active"></span>
                           </div>
                         </div>
 
@@ -171,6 +171,9 @@
                   </h3>
                   <div class="join-pw__error">
                     <input type="password" id="user-pw" name="user-pw" placeholder="비밀번호를 입력해주세요" class="input-box" minlength="8" required/>
+                    <div class="join-error">
+                      <span class="join-error__pw--text-red active"></span>
+                    </div>
                   </div>
                 </div>
 
@@ -180,6 +183,9 @@
                   </h3>
                   <div class="join-pw__check">
                     <input type="password" id="verify-pw" name="verify-pw" placeholder="비밀번호를 한번 더 입력해주세요" class="input-box" minlength="8" required/>
+                    <div class="join-error">
+                      <span class="join-error__verify--text-red active"></span>
+                    </div>
                   </div>
                 </div>
               </fieldset>
@@ -194,16 +200,19 @@
                   <input type="text" id="user-name" name="user-name" placeholder="이름을 한번 더 입력해주세요" autocomplete="name" class="input-box" required/>
                 </div>
                 <!-- 이메일 -->
-                <div class="join">
+                <div class="join join-email">
                   <div class="join__inner">
                     <h3 class="join__title">
                       <label for="user-email" class="required">이메일</label>
                     </h3>
                     <div class="join_email">
                       <input type="text" id="user-email" name="user-email" placeholder="예) marketkarly@karly.com" class="input-box" required/>
+                      <div class="join-error">
+                        <span class="join-error__email--text-red active"></span>
+                      </div>
                     </div>
                   </div>
-                  <button type="button" class="verify-button">중복확인</button>
+                  <button type="button" class="verify-button email-button">중복확인</button>
                 </div>
 
                 <!-- 휴대폰 -->
@@ -342,7 +351,7 @@
                 </div>
 
                 <!-- 가입하기 버튼 -->
-                <button type="submit" class="join-up input-box" disabled>가입하기</button>
+                <button type="submit" class="join-up input-box">가입하기</button>
               </fieldset>
             </form>
           </section>

@@ -76,40 +76,143 @@ group.forEach((type) => type.addEventListener('click', handleType));
 /* -------------------------------------------------------------------------- */
 /*                                  Add-Cart                                  */
 /* -------------------------------------------------------------------------- */
+const bodyTag = document.querySelector('body');
 const cartBtn = document.querySelectorAll('.visual__icon');
 const addCart = document.querySelector('.add-cart');
 const cancelCart = document.querySelector('.add-cart__cancelBtn');
-const minusBtn = document.querySelector('add-cart__minus');
-const plusBtn = document.querySelector('add-cart__plus');
-const countStatus = document.querySelector('add-cart__count');
+const okayCart = document.querySelector('.add-cart__addCartBtn');
 
-function handlerCart() {
-  addCart.classList.toggle('is-active');
+const addCartMinus = document.querySelector('.add-cart__minus-icon');
+const addCartPlus = document.querySelector('.add-cart__plus-icon');
+const addCartCnt = document.querySelector('.add-cart__count');
+const addCartProductName = document.querySelector('.add-cart__productName');
+const addCartProductPrice = document.querySelector('.add-cart__productPrice');
+const addCartTotalPrice = document.querySelector('.add-cart__totalPrice');
+
+let cnt = 0;
+
+function handleAddCartChange() {
+  const regex = /[^0-9]/g;
+  const beforePrice = addCartProductPrice.innerText;
+  const regexPrice = beforePrice.replace(regex, '');
+  const price = parseInt(regexPrice);
+
+  let result = price * cnt;
+
+  addCartCnt.innerText = cnt;
+  addCartTotalPrice.innerText = `${result.toLocaleString()}원`;
+}
+
+function handleAddCartMinus() {
+  if (!cnt) {
+    return;
+  } else {
+    cnt--;
+  }
+  handleAddCartChange();
+}
+
+function handleAddCartPlus() {
+  cnt++;
+  handleAddCartChange();
 }
 
 function handlerCancelCart() {
   addCart.classList.remove('is-active');
+  bodyTag.style.overflow = 'auto';
+
+  cnt = 0;
+  handleAddCartChange();
 }
 
-// function handlerMinus() {
-//   console.log('Hello');
-// }
+for (let i = 0; i < cartBtn.length; i++) {
+  cartBtn[i].addEventListener('click', async function () {
+    addCart.classList.toggle('is-active');
+    bodyTag.style.overflow = 'hidden';
 
-// function handlerPlus() {
-//   console.log('Bye');
-// }
+    // JSON 읽기
+    let response = await fetch('http://localhost:3000/products');
+    let product = await response.json();
 
-cartBtn.forEach((cart) => cart.addEventListener('click', handlerCart));
+    addCartProductName.innerText = `${product[i].name}`;
+
+    if (product[i].salePrice) {
+      addCartProductPrice.innerText = `${product[i].salePrice.toLocaleString()}윈`;
+    } else {
+      addCartProductPrice.innerText = `${product[i].price.toLocaleString()}윈`;
+    }
+  });
+}
+
+const cartStatus = document.querySelector('.user-order li:last-child');
+const cartStatusDiv = document.createElement('div');
+cartStatusDiv.setAttribute('class', 'user-order__cart is-active');
+
+function handleCartStatus() {
+  if (localStorage.length) {
+    cartStatus.appendChild(cartStatusDiv);
+  }
+}
+
+// LocalStorage 147 ~ 190
+let beforeKey;
+let beforeValue = [];
+
+function handleTimeStamp() {
+  const today = new Date();
+  const year = today.getFullYear();
+  const month = today.getMonth() + 1;
+  const day = today.getDate();
+  const hours = today.getHours();
+
+  const nowArr = [year, month, day, hours];
+  const key = nowArr.join('-');
+
+  if (beforeKey !== key) {
+    beforeKey = key;
+    beforeValue = [];
+  }
+}
+
+function handleInputStorage() {
+  localStorage.setItem(beforeKey, JSON.stringify(beforeValue));
+}
+
+async function handleOkayAddCart() {
+  // JSON 읽기
+  let response = await fetch('http://localhost:3000/products');
+  let products = await response.json();
+
+  handleTimeStamp();
+
+  for (let i = 0; i < products.length; i++) {
+    if (products[i].name === addCartProductName.innerText) {
+      beforeValue.push({
+        id: products[i].id,
+        name: products[i].name,
+        price: addCartProductPrice.innerText,
+        cnt: addCartCnt.innerText,
+      });
+    }
+  }
+
+  handleInputStorage();
+  handleCartStatus();
+}
+
 cancelCart.addEventListener('click', handlerCancelCart);
-// minusBtn.addEventListener('click', handlerMinus);
-// plusBtn.addEventListener('click', handlerPlus);
+addCartPlus.addEventListener('click', handleAddCartPlus);
+addCartMinus.addEventListener('click', handleAddCartMinus);
+okayCart.addEventListener('click', handleOkayAddCart);
+
+handleCartStatus();
 
 /* -------------------------------------------------------------------------- */
-/*                                  data.json                                 */
+/*                                  Product List                                 */
 /* -------------------------------------------------------------------------- */
 const product = document.querySelectorAll('.slide');
 
-async function getData(num, node) {
+async function handlerList(num, node) {
   // JSON 읽기
   let response = await fetch('http://localhost:3000/products');
   let user = await response.json();
@@ -224,5 +327,5 @@ async function getData(num, node) {
 }
 
 for (let i = 0; i < product.length; i++) {
-  getData(i, product[i]);
+  handlerList(i, product[i]);
 }
