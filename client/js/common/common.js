@@ -1,4 +1,4 @@
-import { getNode, getNodes, insertLast, addClass, removeClass, attr } from '../../lib/index.js';
+import { getNode, getNodes, insertLast, addClass, removeClass, attr, loadStorage, saveStorage } from '../../lib/index.js';
 
 /* -------------------------------------------------------------------------- */
 /*                                   header                                   */
@@ -10,19 +10,30 @@ window.onload = () =>{
   setTimeout(scrollTo(0,0),100)
 }
 
+history.scrollRestoration = "manual"
 
 
 // {#ddd} top banner close
 
 const $topBanner = getNode('.top-banner');
 const $topBannerCloseBtn = getNode('.top-banner__close-btn');
+console.log(localStorage.getItem("topBanner"))
 
-function topBannerClose(){
-  $topBanner.style.transitionDuration="300ms"
-  $topBanner.style.height = 0;  
+if( localStorage.getItem("topBanner") ){
+  $topBanner.style.height = 0;
+
+} else{
+  $topBanner.style.transition = "300ms";
+  $topBanner.style.height = "50px";
 }
 
-$topBannerCloseBtn.addEventListener('click', topBannerClose)
+let hideTopBanner = () => {
+  saveStorage("topBanner", true);
+  $topBanner.style.height = 0;
+  $topBanner.style.transition = "300ms";
+}
+
+$topBannerCloseBtn.addEventListener('click', hideTopBanner);
 
 
 
