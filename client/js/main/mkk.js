@@ -1,4 +1,4 @@
-import { getNode, getNodes, attr, addClass } from '../../lib/index.js';
+import { getNode, getNodes, attr, addClass, saveStorage } from '../../lib/index.js';
 
 /* -------------------------------------------------------------------------- */
 /*                                    main                                    */
@@ -37,7 +37,7 @@ const $popupClose = getNode('.popup__btn button:last-child');
 const $popup = getNode('.popup');
 const $popupDim = getNode('.popup-dim');
 
-function closePopup(){
+let closePopup = () => {
   $popup.style.display="none";
   $popupDim.style.display="none";
 }
@@ -45,11 +45,60 @@ function closePopup(){
 $popupClose.addEventListener('click', closePopup);
 $popupDim.addEventListener('qclick', closePopup);
 
+
+
 const $popupTodayHide = getNode('.popup__btn button:first-child');
+/* 스토리지 제어 함수 정의 */
+let handleStorage = {
+  // 스토리지에 데이터 쓰기(이름, 만료일)
+  setStorage: function (name, expires) {
+    // 만료 시간 구하기(exp를 ms단위로 변경)
+    let date = new Date();
+    date = date.setTime(date.getTime() + expires * 24 * 60 * 60 * 1000);
+
+    // 로컬 스토리지에 저장하기
+    // (값을 따로 저장하지 않고 만료 시간을 저장)
+    localStorage.setItem(name, date)
+  },
+  // 스토리지 읽어오기
+  getStorage: function (name) {
+    let now = new Date();
+    now = now.setTime(now.getTime());
+    // 현재 시각과 스토리지에 저장된 시각을 각각 비교하여
+    // 시간이 남아 있으면 true, 아니면 false 리턴
+    return parseInt(localStorage.getItem(name)) > now
+  }
+};
+
+// 쿠키 읽고 화면 보이게
+if (handleStorage.getStorage("todayHide")) {      
+  $popup.style.display="none";
+  $popupDim.style.display="none";
+} else {
+  $popup.style.display="block";
+  $popupDim.style.display="block";
+}
+
+// 오늘하루 보지 않기 버튼
+$popupTodayHide.addEventListener('click', () => {
+  handleStorage.setStorage("todayHide", 1);
+  $popup.style.display="none";
+  $popupDim.style.display="none";
+});
 
 
-
-$popupTodayHide.addEventListener('click', TodayHide);
+// function getCookie(name) {
+//   let cookie = document.cookie;
+//   if (document.cookie != "") {
+//     let cookieArray = cookie.split("; ");
+//     for ( let index in cookieArray) {
+//       let cookieName = cookieArray[index].split("=");
+//         if (cookieName[0] == "popupFlag") {
+//           return cookieName[1];
+//         }
+//     }
+//   } return ;    
+// }
 
 
 
@@ -103,16 +152,16 @@ let setCount = Number($countNum.value);
 
 let $parseIntPrice = parseInt($productPrice.replaceAll(/,/g, ""))
 
-let getOnlyPrice = function(node){
+let getOnlyPrice = node => {
   return parseInt(node.replaceAll(/,/g, ""));
 }
 
-let calculateTotalPrice = function (){
+let calculateTotalPrice = () =>{
   $priceTotal.textContent = (setCount * $parseIntPrice).toLocaleString() + '원'
 }
 
 
-function productCountUp(){
+let productCountUp = () => {
   if(Number($countNum.value)>=99){
     setCount = 99;
     $countNum.value = setCount;
@@ -129,7 +178,7 @@ function productCountUp(){
   }
   attr($countIconMinus, 'src', '../assets/icons/Icon/count_minus_on.svg');  
 }
-function productCountDown(){
+let productCountDown = () => {
   if(Number($countNum.value)<=1){
     setCount = 1;
     $countNum.value = setCount;
