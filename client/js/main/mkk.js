@@ -1,4 +1,4 @@
-import { getNode, getNodes, attr, addClass, saveStorage } from '../../lib/index.js';
+import { getNode, getNodes, attr, addClass, removeClass, saveStorage } from '../../lib/index.js';
 
 /* -------------------------------------------------------------------------- */
 /*                                    main                                    */
@@ -214,3 +214,19 @@ function topCartIconCountUp(e){
 }
 
 $getProduct.addEventListener('click', topCartIconCountUp);
+
+
+
+// recent products
+
+const $sideBar = getNode('.recent-product');
+
+function fixedSideBar () {  
+  if(window.scrollY > 215) {
+    addClass($sideBar, 'fixedSideBar'); 
+  }else{
+    removeClass($sideBar, 'fixedSideBar');
+  }
+}
+
+window.addEventListener('scroll', fixedSideBar);

@@ -19,14 +19,6 @@
 
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable.css');
 
-body::-webkit-scrollbar {
-  display: none;
-}
-
-body {
-  -ms-overflow-style: none; /* 인터넷 익스플로러 */
-  scrollbar-width: none; /* 파이어폭스 */
-}
 
 /* {#ddd} main */
 
@@ -236,75 +228,6 @@ body {
 
 
 
-/* recent-product */
-
-.recent-product{
-  width: 74px;
-  height: 223px;
-  background: var(--white);
-  padding: var(--spacing-xs);
-  border: 1px solid var(--gray-200);
-  position: fixed;
-  z-index: 9;
-  top: 50%;
-  right: 39px;
-  transform: translateY(-50%);
-}
-
-.recent-product__up-btn,
-.recent-product__down-btn{
-  display: block;
-  width: 18px;
-  height: 18px;
-  margin: 0 auto; 
-}
-
-.recent-product__up-btn{
-  margin-bottom: var(--spacing-xs);
-}
-
-.recent-product__down-btn{
-  margin-top: var(--spacing-xs);
-}
-
-.recent-product__up-btn a,
-.recent-product__down-btn a,
-.recent-product__up-btn img,
-.recent-product__down-btn img{
-  display: inline-block;
-  width: 100%;
-  height: 100%;
-}
-
-.recent-product h2{
-  width: 58px;
-  height: 18px;
-  line-height: 18px;
-  font-size: var(--text-xs);
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: var(--spacing-xs);
-}
-
-.recent-product__list{
-  width: 40px;
-  height: 129px;  
-  margin: 0 auto;
-  overflow: hidden;
-}
-
-.recent-product__list li{
-  width: 100%;
-  height: 51px;
-  margin-bottom: var(--spacing-xxs);
-}
-
-.recent-product__list li img{
-  width: 100%;
-  height: 100%;
-}
-
-
 /* {#ddd} Add cart */
 
 .add-cart{
@@ -380,10 +303,6 @@ body {
   margin: 0;
 }
 
-#product-count[type=number]{
-  -moz-appearance: textfield;
-}
-
 .add-cart__sum{
   width: 100%;
   height: 68px;
@@ -456,23 +375,6 @@ body {
 }
 
 
-/* {#ddd} Go to top */
-
-.goto-top{
-  width: 58px;
-  height: 58px;
-  position: fixed;
-  right: 49px;
-  bottom: 15px;
-  /* display: none; */
-}
-
-.goto-top img{
-  width: 100%;
-}
-
-
-
 /* {#ddd} popup */
 
 .popup{
@@ -520,4 +422,15 @@ body {
   left: 0;
   z-index: 999998;
   display: none;
+}
+
+
+/* recent-product */
+aside.recent-product{
+  position: absolute;
+  top: 810px;
+}
+aside.recent-product.fixedSideBar{
+  position: fixed;
+  top: 50%;
 }

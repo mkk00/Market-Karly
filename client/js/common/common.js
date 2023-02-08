@@ -1,4 +1,4 @@
-import { getNode, getNodes, insertLast, addClass, removeClass, attr } from '../../lib/index.js';
+import { getNode, getNodes, insertLast, addClass, removeClass, attr, loadStorage, saveStorage } from '../../lib/index.js';
 
 /* -------------------------------------------------------------------------- */
 /*                                   header                                   */
@@ -10,6 +10,7 @@ window.onload = () =>{
   setTimeout(scrollTo(0,0),100)
 }
 
+history.scrollRestoration = "manual"
 
 
 // {#ddd} top banner close
@@ -17,12 +18,21 @@ window.onload = () =>{
 const $topBanner = getNode('.top-banner');
 const $topBannerCloseBtn = getNode('.top-banner__close-btn');
 
-function topBannerClose(){
-  $topBanner.style.transitionDuration="300ms"
-  $topBanner.style.height = 0;  
+if( localStorage.getItem("topBanner") ){
+  $topBanner.style.height = 0;
+
+} else{
+  $topBanner.style.transition = "300ms";
+  $topBanner.style.height = "50px";
 }
 
-$topBannerCloseBtn.addEventListener('click', topBannerClose)
+let hideTopBanner = () => {
+  saveStorage("topBanner", true);
+  $topBanner.style.height = 0;
+  $topBanner.style.transition = "300ms";
+}
+
+$topBannerCloseBtn.addEventListener('click', hideTopBanner);
 
 
 
@@ -66,14 +76,18 @@ function fixed(){
     addClass($NavInner, 'flexStart');
     addClass($search, 'rearrIcon');
     addClass($userOrder, 'rearrIcon');
+    addClass($userOrder, 'rearrIcon');
     
-    $subMenu.style.transform="translateY(-16px)"
     $deliveryNotice.style.display="none";
     $category.style.width="120px";
     $category.style.height="56px";
     $category.style.lineHeight="56px";
+    $NavInner.style.height="56px";
+    $NavInner.style.lineHeight="56px";
     $category.style.backgroundPosition="0 20px";
-    $main.style.marginTop="-90px"
+    $main.style.marginTop="-100px"
+    $subMenu.style.marginTop="-16px"
+    
     attr('.search__search-btn img', 'src', '../assets/icons/Icon/search-b.svg');
 
   }else{
@@ -82,18 +96,45 @@ function fixed(){
     removeClass($search, 'rearrIcon');
     removeClass($userOrder, 'rearrIcon');
 
-    $subMenu.style.transform="translateY(0)"
     $category.style.width="84px"
     $category.style.height="72px";
-    $category.style.lineHeight="72px";
+    $category.style.lineHeight="72px";    
+    $NavInner.style.height="72px";
+    $NavInner.style.lineHeight="72px";
     $category.style.backgroundPosition="0 29px";
     $deliveryNotice.style.display="block";
     $main.style.marginTop="0"
+    $subMenu.style.marginTop="0"
     attr('.search__search-btn img', 'src', '../assets/icons/Icon/search.svg');
   }
 }
 
 window.addEventListener('scroll', fixed);
+
+
+// {#ddd} go to top button
+
+const $topButton = getNode('.goto-top');
+
+
+function showTopBtn () {
+  if(window.scrollY > 200) {
+    addClass($topButton, 'topAction'); 
+  }else{
+    removeClass($topButton, 'topAction');
+  }
+}
+
+let GotoScrollTop = (e) => {
+  e.preventDefault();
+  window.scrollTo({top:0, behavior:"smooth"});  
+}
+
+window.addEventListener('scroll', showTopBtn);
+$topButton.addEventListener('click', GotoScrollTop);
+
+
+
 
 
 
