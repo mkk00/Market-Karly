@@ -428,7 +428,7 @@
 /* recent-product */
 aside.recent-product{
   position: absolute;
-  top: 810px;
+  top: 860px;
 }
 aside.recent-product.fixedSideBar{
   position: fixed;

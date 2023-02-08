@@ -341,11 +341,10 @@ input::-webkit-search-results-decoration{
 
 .category{
   width: 84px;
-  height: 40px;
-  line-height: 40px;
+  line-height: 72px;
   font-weight: 600;
   background: url('../../assets/icons/Icon/Hamburger-black.svg') no-repeat center;
-  background-position: 0 12px;
+  background-position: 0 28px;
 }
 
 .category__hamburger{

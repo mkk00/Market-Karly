@@ -85,7 +85,7 @@ function fixed(){
     $NavInner.style.height="56px";
     $NavInner.style.lineHeight="56px";
     $category.style.backgroundPosition="0 20px";
-    $main.style.marginTop="-100px"
+    $main.style.marginTop="-40px"
     $subMenu.style.marginTop="-16px"
     
     attr('.search__search-btn img', 'src', '../assets/icons/Icon/search-b.svg');
