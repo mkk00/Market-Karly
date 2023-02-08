@@ -73,7 +73,7 @@
 .today-products__inner, 
 .recommend-products__inner{
   width: 1050px;
-  height: 601px;
+  height: 650px;
   margin: 0 auto;
   padding-top: 40px;
   position: relative;
@@ -145,38 +145,73 @@
 
 .today-products__info, 
 .recommend-products__info{
-  margin-top: var(--spacing-base);
+  margin-top: var(--spacing-xs);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  /* padding: 0px 0px 24px; */
+  gap: 3px;
+  width: 100%;
 }
 
 .today-products__name, 
 .recommend-products__name{
   width: 100%;
-  height: 26px;
-  line-height: 26px;  
+  height: auto;
+  line-height: 140%; 
 }
 
 .today-products__price, 
 .recommend-products__price{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 8px;
+  width: 148px;
   height: 32px;
-  line-height: 32px;
-  font-weight: bold;
-  font-size: 21px;
-  margin-top: var(--spacing-xs);
 }
-.today-products__price span,
-.recommend-products__price span{
-  color: var(--accent-yellow);
-  margin-right: var(--spacing-xs);
+
+.recommend-products__info-price,
+.today-products__info-price {
+  height: 32px;
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 21.328px;
+  line-height: 150%;
+  color: var(--content);
+}
+
+.today-products__price .today-products__info-sale,
+.recommend-products__price .recommend-products__info-sale{
+  color: var(--accent-yellow); 
+  height: 32px;
+  font-family: 'Pretendard';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 21.328px;
+  line-height: 150%;
+}
+
+.today-products .info-originPrice, 
+.recommend-products .info-originPrice {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  isolation: isolate;
+  height: 15px;
+  position: relative;
 }
 
 .today-products__price-origin,
 .recommend-products__price-origin{
   height: 19px;
-  line-height: 19px;
-  font-size: var(--text-xs);
-  color: var(--gray-400);
   text-decoration: line-through;
-  margin-top: var(--spacing-xs);
+  font-weight: 400;
+  font-size: 12.003px;
+  color: var(--gray-400);
 }
 
 .today-products .swiper-button-prev::after, 
@@ -191,12 +226,12 @@
 .recommend-products .swiper-button-prev,
 .recommend-products .swiper-button-next{
   display: inline-block;
-  top: 50%;
+  top: 45%;
   width: 60px;
   height: 60px;
   background: url('../../assets/icons/Icon/arrow_w.svg') no-repeat center;
   background-size: 100% auto;
-  transform: translateY(-50%);
+  transform: translateY(-45%);
 }
 
 .today-products .swiper-button-prev,

@@ -102,6 +102,166 @@ $popupTodayHide.addEventListener('click', () => {
 
 
 
+
+async function mainProductTodayRender(num, node) {
+  // JSON 읽기
+  let responseData = await fetch('http://localhost:3000/products');
+  let user = await responseData.json();
+
+  // 상품 이미지
+  let productImg = node.querySelector('.today-products__thumbnail');
+  productImg.setAttribute("src", `../assets/${user[num].image.thumbnail}`)
+
+  // 상품 설명란
+  let slideInfoDiv = document.createElement('div');
+  node.append(slideInfoDiv);
+  slideInfoDiv.setAttribute('class', 'today-products__info');
+  const slideInfo = node.querySelector('.today-products__info');
+
+  // 제품 이름
+  let infoProductNameSpan = document.createElement('span');
+  slideInfo.append(infoProductNameSpan);
+  infoProductNameSpan.setAttribute('class', 'today-products__name');
+  const infoProductName = slideInfo.querySelector('.today-products__name');
+  infoProductName.innerText = `${user[num].name}`;
+
+  // 상품 가격
+  let infoSalePriceDiv = document.createElement('div');
+  let infoSaleSpan = document.createElement('span');
+  let infoPriceSpan = document.createElement('span');
+
+  let infoOriginPriceDiv = document.createElement('div');
+  let infoOriginPriceSpan = document.createElement('span');
+  let infoOriginPriceRecDiv = document.createElement('div');
+
+  // 만약 할인이 있다면?
+  if (user[num].salePrice) {
+    slideInfo.append(infoSalePriceDiv);
+    infoSalePriceDiv.setAttribute('class', 'today-products__price');
+    const infoSalePrice = slideInfo.querySelector('.today-products__price');
+  
+    // 할인
+    infoSalePrice.appendChild(infoSaleSpan);
+    infoSaleSpan.setAttribute('class', 'today-products__info-sale');
+    const infoSale = slideInfo.querySelector('.today-products__info-sale');
+
+    // 가격
+    infoSalePrice.appendChild(infoPriceSpan);
+    infoPriceSpan.setAttribute('class', 'today-products__info-price');
+    const infoPrice = slideInfo.querySelector('.today-products__info-price');
+
+    infoSale.innerText = `${Math.floor(user[num].saleRatio * 100)}%`;
+    infoPrice.innerText = `${user[num].salePrice.toLocaleString()} 원`;
+
+    // 원래 가격
+    slideInfo.append(infoOriginPriceDiv);
+    infoOriginPriceDiv.setAttribute('class', 'info-originPrice');
+    const infoOriginPrice = slideInfo.querySelector('.info-originPrice');
+
+    infoOriginPrice.appendChild(infoOriginPriceSpan);
+    infoOriginPriceSpan.setAttribute('class', 'today-products__price-origin');
+    const infoOriginPriceNum = slideInfo.querySelector('.today-products__price-origin');
+
+    infoOriginPriceNum.innerText = `${user[num].price.toLocaleString()} 원`;
+
+    // 할인이 없다면?
+  } else{
+    slideInfo.append(infoPriceSpan);
+    infoPriceSpan.setAttribute('class', 'today-products__info-price');
+    const infoPrice = slideInfo.querySelector('.today-products__info-price');
+
+    infoPrice.innerText = `${user[num].price.toLocaleString()} 원`;
+  }
+}
+
+// for (let i = mainProductToday.length; i > 0; i--) {
+//   mainProductTodayRender(i, mainProductToday[i]);
+// }
+
+
+
+const mainProduct = document.querySelectorAll('.product-slide');
+
+async function mainProductRender(num, node) {
+  // JSON 읽기
+  let responseData = await fetch('http://localhost:3000/products');
+  let user = await responseData.json();
+
+  // 상품 이미지
+  let productImg = node.querySelector('.recommend-products__thumbnail');
+  productImg.setAttribute("src", `../assets/${user[num].image.thumbnail}`)
+
+  // 상품 설명란
+  let slideInfoDiv = document.createElement('div');
+  node.append(slideInfoDiv);
+  slideInfoDiv.setAttribute('class', 'recommend-products__info');
+  const slideInfo = node.querySelector('.recommend-products__info');
+
+  // 제품 이름
+  let infoProductNameSpan = document.createElement('span');
+  slideInfo.append(infoProductNameSpan);
+  infoProductNameSpan.setAttribute('class', 'recommend-products__name');
+  const infoProductName = slideInfo.querySelector('.recommend-products__name');
+  infoProductName.innerText = `${user[num].name}`;
+
+  // 상품 가격
+  let infoSalePriceDiv = document.createElement('div');
+  let infoSaleSpan = document.createElement('span');
+  let infoPriceSpan = document.createElement('span');
+
+  let infoOriginPriceDiv = document.createElement('div');
+  let infoOriginPriceSpan = document.createElement('span');
+  let infoOriginPriceRecDiv = document.createElement('div');
+
+  // 만약 할인이 있다면?
+  if (user[num].salePrice) {
+    slideInfo.append(infoSalePriceDiv);
+    infoSalePriceDiv.setAttribute('class', 'recommend-products__price');
+    const infoSalePrice = slideInfo.querySelector('.recommend-products__price');
+  
+    // 할인
+    infoSalePrice.appendChild(infoSaleSpan);
+    infoSaleSpan.setAttribute('class', 'recommend-products__info-sale');
+    const infoSale = slideInfo.querySelector('.recommend-products__info-sale');
+
+    // 가격
+    infoSalePrice.appendChild(infoPriceSpan);
+    infoPriceSpan.setAttribute('class', 'recommend-products__info-price');
+    const infoPrice = slideInfo.querySelector('.recommend-products__info-price');
+
+    infoSale.innerText = `${Math.floor(user[num].saleRatio * 100)}%`;
+    infoPrice.innerText = `${user[num].salePrice.toLocaleString()} 원`;
+
+    // 원래 가격
+    slideInfo.append(infoOriginPriceDiv);
+    infoOriginPriceDiv.setAttribute('class', 'info-originPrice');
+    const infoOriginPrice = slideInfo.querySelector('.info-originPrice');
+
+    infoOriginPrice.appendChild(infoOriginPriceSpan);
+    infoOriginPriceSpan.setAttribute('class', 'recommend-products__price-origin');
+    const infoOriginPriceNum = slideInfo.querySelector('.recommend-products__price-origin');
+
+    infoOriginPriceNum.innerText = `${user[num].price.toLocaleString()} 원`;
+
+    // 할인이 없다면?
+  } else{
+    slideInfo.append(infoPriceSpan);
+    infoPriceSpan.setAttribute('class', 'recommend-products__info-price');
+    const infoPrice = slideInfo.querySelector('.recommend-products__info-price');
+
+    infoPrice.innerText = `${user[num].price.toLocaleString()} 원`;
+  }
+}
+
+for (let i = mainProduct.length; i > 0; i--) {
+  mainProductRender(i, mainProduct[i]);
+}
+for (let i = 0; i < mainProduct.length; i++) {
+  mainProductTodayRender(i, mainProduct[i]);
+}
+
+
+
 // {#ddd} add cart
 
 // add cart event
@@ -230,3 +390,6 @@ function fixedSideBar () {
 }
 
 window.addEventListener('scroll', fixedSideBar);
+
+
+
