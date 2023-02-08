@@ -97,11 +97,11 @@ input[type=checkbox] + label {
   padding-left: 24px;
   padding-bottom: 25px;
   background-repeat: no-repeat;
-  background-image: url("/client/assets/icons/Icon/check-off.svg");
+  background-image: url("../../assets/icons/Icon/check-off.svg");
   margin-right:8.5px;
 }
 input[type=checkbox]:checked + label {
-  background-image: url("/client/assets/icons/Icon/check-on.svg");
+  background-image: url("../../assets/icons/Icon/check-on.svg");
 }
 
 
@@ -420,7 +420,7 @@ color: #898989;
 .active-4{
   display:flex;
   justify-content: space-between;
-  gap:76px;
+  width:250px;
   align-items: center;
 }
 
@@ -466,9 +466,5 @@ color: #898989;
 }
 
 #money-2{
-  width:42px;
   margin-right:1px;
-  display:flex;
-  justify-content: flex-start;
-  overflow:inherit;
 }
