@@ -513,3 +513,25 @@ input::-webkit-search-results-decoration{
 .sub-menu__list li:nth-child(22) a::before{
   background-position-y: -420px;
 }
+
+
+
+/* {#ddd} Go to top */
+
+.goto-top{
+  width: 58px;
+  height: 58px;
+  position: fixed;
+  right: 49px;
+  /* bottom: 15px; */
+  bottom: -60px;
+}
+
+.goto-top.topAction{
+  bottom: 15px;
+  transition: .5s;
+}
+
+.goto-top img{
+  width: 100%;
+}
