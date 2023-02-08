@@ -80,7 +80,9 @@ function fixed(){
     $deliveryNotice.style.display="none";
     $category.style.width="120px";
     $NavInner.style.height="56px";
-    $category.style.backgroundPosition="0 13px";     
+    $category.style.backgroundPosition="0 13px";
+    $subMenu.style.transform="translateY(-16px)"
+    $main.style.marginTop="-40px"
     attr('.search__search-btn img', 'src', '../assets/icons/Icon/search-b.svg');
 
   }else{
