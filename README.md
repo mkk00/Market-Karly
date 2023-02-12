@@ -17,9 +17,22 @@ Dev Day 2023.02.09
 |---|---|---|---|---|
 |![홍성욱의 프로필 사진](https://avatars.githubusercontent.com/u/86929961?v=4)|![김미경의 프로필 사진](https://avatars.githubusercontent.com/u/92783354?v=4)|![빈운기의 프로필 사진](https://avatars.githubusercontent.com/u/119389337?v=4)|![신정명의 프로필 사진](https://avatars.githubusercontent.com/u/101976106?v=4)|![장서현의 프로필 사진](https://avatars.githubusercontent.com/u/52877992?v=4)|]
 
-### 🔧 멤버 역할
+**🔧 멤버 역할**
 - [홍성욱](https://github.com/ukssss) - 팀장, Footer, Product-List
 - [김미경](https://github.com/tiramin) - Header, Main
 - [빈운기](https://github.com/binwoonki) - Register
 - [신정명](https://github.com/mungmung2j) - Login, Cart
 - [장서현](https://github.com/seohyun0620) - Product-Detail
+
+### ⚙️ 개발 환경
+- `HTML`, `CSS`
+- `JavaScript`
+- **IDE :** `VSCode`
+- **Database :**  X
+- **Server :** X (테스트 할 경우 `Live Server`, DB 파일은 `JSON Server` 사용)
+- **ORM :** X (테스트 할 경우 `Fetch` 방식으로 파싱하여 진행)
+
+### 📌 주요 기능
+-
+
+
